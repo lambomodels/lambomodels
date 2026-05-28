@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>The Collection — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<div class="cat-nav" id="cat-nav" style="display:none;"><div class="cat-nav-inner" id="cat-nav-inner"></div></div>
+<main class="page">
+<div class="container">
+  <div class="section-header collection-hdr" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div><div class="eyebrow">LAMBOMODELS</div><h1 class="section-title">The <span>Collection</span></h1></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <button class="btn btn-ghost btn-sm" onclick="goRandom()">🎲 Random</button>
+      <a class="btn btn-ghost btn-sm" href="compare.html">⚖ Compare</a>
+      <a class="btn btn-ghost btn-sm" href="catalogue.html" id="cat-link" style="display:none;">🖨 Catalogue</a>
+      <div class="view-toggle" id="view-toggle">
+        <button class="view-toggle-btn active" id="btn-family" onclick="setView('family')">By Model</button>
+        <button class="view-toggle-btn" id="btn-all" onclick="setView('all')">All Models</button>
+      </div>
+    </div>
+  </div>
+  <div id="coll-root"><div class="loading">Loading collection…</div></div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+let _data=[], _view='family';
+
+function goRandom(){
+  if(!_data.length)return;
+  const item=_data[Math.floor(Math.random()*_data.length)];
+  location.href='model.html?id='+encodeURIComponent(item.id);
+}
+// Secret admin mode: add ?admin=1 to URL to reveal catalogue button
+if(new URLSearchParams(location.search).get('admin')==='1'||localStorage.getItem('lm_admin')==='1'){
+  document.getElementById('cat-link').style.display='inline-flex';
+  localStorage.setItem('lm_admin','1'); // persist for session
+}
+
+async function init(){
+  _data=await LM.load();
+  document.getElementById('btn-all').textContent='All '+_data.length+' Models';
+  buildCatNav();
+  buildFamilyView();
+  if(location.hash) setTimeout(()=>document.getElementById('cat-'+location.hash.slice(1))?.scrollIntoView({behavior:'smooth'}),150);
+}
+
+function setView(v){
+  _view=v;
+  document.getElementById('btn-family').classList.toggle('active',v==='family');
+  document.getElementById('btn-all').classList.toggle('active',v==='all');
+  document.getElementById('cat-nav').style.display=v==='family'?'block':'none';
+  v==='family'?buildFamilyView():buildAllView();
+}
+
+function buildCatNav(){
+  const catCnt={};_data.forEach(i=>{catCnt[i.category]=(catCnt[i.category]||0)+1;});
+  const el=document.getElementById('cat-nav-inner');el.innerHTML='';
+  LM.CAT_ORDER.forEach(catId=>{
+    if(!catCnt[catId])return;
+    const btn=document.createElement('button');btn.className='cat-nav-btn';
+    btn.textContent=LM.CAT_META[catId].short;
+    btn.onclick=()=>document.getElementById('cat-'+catId)?.scrollIntoView({behavior:'smooth'});
+    el.appendChild(btn);
+  });
+  document.getElementById('cat-nav').style.display='block';
+  setTimeout(()=>{
+    const secs=document.querySelectorAll('.cat-section');
+    const btns=document.querySelectorAll('.cat-nav-btn');
+    new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){btns.forEach(b=>b.classList.remove('active'));const i=[...secs].indexOf(e.target);if(btns[i])btns[i].classList.add('active');}});
+    },{threshold:0.1,rootMargin:'-116px 0px -40% 0px'}).observe;
+    // simple scroll-based fallback
+    const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){btns.forEach(b=>b.classList.remove('active'));const i=[...secs].indexOf(e.target);if(btns[i])btns[i].classList.add('active');}});},{threshold:0.1,rootMargin:'-116px 0px -40% 0px'});
+    secs.forEach(s=>obs.observe(s));
+  },400);
+}
+
+function buildFamilyView(){
+  const root=document.getElementById('coll-root');root.innerHTML='';
+  const byCat={};LM.CAT_ORDER.forEach(c=>{byCat[c]=[];});
+  _data.forEach(i=>{(byCat[i.category]=byCat[i.category]||[]).push(i);});
+
+  LM.CAT_ORDER.forEach(catId=>{
+    const items=byCat[catId];if(!items?.length)return;
+    const meta=LM.CAT_META[catId];
+    const sec=document.createElement('section');sec.className='cat-section';sec.id='cat-'+catId;
+    const hdr=document.createElement('div');hdr.className='cat-section-hdr';
+    hdr.innerHTML=`<h2 class="cat-section-title">${meta.label}</h2><span class="cat-section-count">${items.length}</span>`;
+    sec.appendChild(hdr);
+
+    // Trattori: show individual models (no family grouping)
+    // Motorcycles: show individual models too (probably just 1)
+    if(catId==='trattori'||catId==='motorcycles'){
+      const grid=document.createElement('div');grid.className='family-grid';
+      // Sort by carYear
+      const sorted=[...items].sort((a,b)=>(parseInt(a.carYear)||9999)-(parseInt(b.carYear)||9999));
+      sorted.forEach(item=>{
+        const card=buildIndividualCard(item);
+        grid.appendChild(card);
+      });
+      sec.appendChild(grid);
+    } else {
+      // Group by family
+      const groups=LM.groupByFamily(items);
+      const sortedNames=LM.sortFamilies(Object.keys(groups),catId,groups);
+      const grid=document.createElement('div');grid.className='family-grid';
+      sortedNames.forEach(famName=>{
+        const group=groups[famName];
+        // Sort group by carYear to find earliest reliably
+        const sortedGroup=[...group].sort((a,b)=>(parseInt(a.carYear)||9999)-(parseInt(b.carYear)||9999));
+        const first=sortedGroup[0];
+        // Earliest carYear from any model in the group (first non-empty)
+        const earliestYear=sortedGroup.find(i=>i.carYear)?.carYear||'';
+        // Single model → link directly to model page; multiple → group page
+        const href=group.length===1
+          ?`model.html?id=${encodeURIComponent(first.id)}`
+          :`model-group.html?cat=${catId}&fam=${encodeURIComponent(famName)}`;
+        const card=document.createElement('a');card.className='family-card';card.href=href;
+        const imgId='fimg-'+LM.slug(catId+famName);
+        const countLabel=group.length===1
+          ?[first.scale,first.color].filter(Boolean).join(' · ')
+          :`${group.length} models`;
+        const showPrefix = ['production','concepts','oneoffs','racing','trattori','motorcycles'].includes(catId);
+        const displayFamName = showPrefix ? `Lamborghini ${famName}` : famName;
+        const yearSpan=earliestYear?`<span style="font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--text-dim);display:block;margin-bottom:4px;">${earliestYear}</span>`:'';
+        card.innerHTML=`<div class="family-card-img-wrap" id="${imgId}"><div class="family-card-img-ph">${famName}</div></div>
+          <div style="text-align:center;">
+            ${yearSpan}
+            <div class="family-card-name">${displayFamName}</div>
+            <div class="family-card-count">${countLabel}</div>
+          </div>`;
+        grid.appendChild(card);
+        const cands=[...LM.previewImages(famName,'./'), ...LM.heroImages(first.code,'./'),];
+        LM.resolveImage(cands).then(src=>{
+          if(!src)return;const w=document.getElementById(imgId);
+          if(w){w.innerHTML=`<img src="${src}" alt="${famName}" style="opacity:1"/>`;w.querySelector('img').addEventListener('load',e=>e.target.classList.add('loaded'));}
+          setTimeout(LM.initLazyImages,100);
+        });
+      });
+      sec.appendChild(grid);
+    }
+    root.appendChild(sec);
+  });
+}
+
+function buildIndividualCard(item){
+  const card=document.createElement('a');card.className='family-card';
+  card.href=`model.html?id=${encodeURIComponent(item.id)}`;
+  const imgId='ind-'+item.id;
+  const yearSpan=item.carYear?`<span style="font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--text-dim);display:block;margin-bottom:4px;">${item.carYear}</span>`:'';
+  const nameToShow=item.fullName||item.displayName;
+  card.innerHTML=`<div class="family-card-img-wrap" id="${imgId}"><div class="family-card-img-ph">${item.displayName}</div></div>
+    <div style="text-align:center;">${yearSpan}<div class="family-card-name">${nameToShow}</div>
+    <div class="family-card-count">${[item.scale,item.color].filter(Boolean).join(' · ')}</div></div>`;
+  LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+    if(!src)return;const w=document.getElementById(imgId);
+    if(w){const img=document.createElement('img');img.src=src;img.alt=item.displayName;img.style.opacity='1';w.innerHTML='';w.appendChild(img);}
+  });
+  return card;
+}
+
+// "All models" state
+let _allSort='alpha', _allDisplay='list';
+
+function buildAllControls(){
+  const bar=document.createElement('div');
+  bar.style.cssText='display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;align-items:center;';
+  bar.innerHTML=`
+    <div class="view-toggle">
+      <button class="view-toggle-btn${_allSort==='alpha'?' active':''}" onclick="setAllOpts('alpha',null)">A–Z</button>
+      <button class="view-toggle-btn${_allSort==='year'?' active':''}" onclick="setAllOpts('year',null)">By Car Year</button>
+    </div>
+    <div class="view-toggle">
+      <button class="view-toggle-btn${_allDisplay==='list'?' active':''}" onclick="setAllOpts(null,'list')">List</button>
+      <button class="view-toggle-btn${_allDisplay==='cards'?' active':''}" onclick="setAllOpts(null,'cards')">Cards</button>
+    </div>`;
+  return bar;
+}
+
+function setAllOpts(sort, display){
+  if(sort) _allSort=sort;
+  if(display) _allDisplay=display;
+  buildAllView();
+}
+
+function buildAllView(){
+  const root=document.getElementById('coll-root');root.innerHTML='';
+
+  // Controls bar
+  root.appendChild(buildAllControls());
+
+  // Sort
+  let sorted=[..._data];
+  if(_allSort==='year'){
+    sorted.sort((a,b)=>{
+      const ay=parseInt(a.carYear)||9999, by=parseInt(b.carYear)||9999;
+      if(ay!==by) return ay-by;
+      return a.fullName.localeCompare(b.fullName);
+    });
+  } else {
+    sorted.sort((a,b)=>a.fullName.localeCompare(b.fullName));
+  }
+
+  const wrap=document.createElement('div');wrap.style.paddingBottom='80px';
+
+  if(_allDisplay==='cards'){
+    // Card grid view
+    const grid=document.createElement('div');grid.className='family-grid';
+    sorted.forEach(item=>{
+      const card=document.createElement('a');card.className='family-card';
+      card.href=`model.html?id=${encodeURIComponent(item.id)}`;
+      const imgId='ac-'+item.id;
+      const yearSpan=item.carYear?`<span style="font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--text-dim);display:block;margin-bottom:4px;">${item.carYear}</span>`:'';
+      card.innerHTML=`<div class="family-card-img-wrap" id="${imgId}"><div class="family-card-img-ph">${item.displayName}</div></div>
+        <div style="text-align:center;">${yearSpan}<div class="family-card-name" style="font-size:1rem;">${item.fullName||item.displayName}</div>
+        <div class="family-card-count">${[item.scale,item.color].filter(Boolean).join(' · ')}</div></div>`;
+      grid.appendChild(card);
+      LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+        if(!src)return;const w=document.getElementById(imgId);
+        if(w)w.innerHTML=`<img src="${src}" alt="${item.displayName}" style="opacity:1"/>`;
+      });
+    });
+    wrap.appendChild(grid);
+  } else {
+    // List view — grouped by letter (alpha) or decade (year)
+    const groups={};
+    sorted.forEach(item=>{
+      let key;
+      if(_allSort==='year'){
+        const y=parseInt(item.carYear);
+        key=isNaN(y)?'Unknown':(y<1970?'1960s':y<1980?'1970s':y<1990?'1980s':y<2000?'1990s':y<2010?'2000s':y<2020?'2010s':'2020s');
+      } else {
+        key=(item.fullName||item.displayName)[0].toUpperCase();
+      }
+      (groups[key]=groups[key]||[]).push(item);
+    });
+
+    const groupKeys=Object.keys(groups);
+    if(_allSort==='year') groupKeys.sort();
+    else groupKeys.sort();
+
+    groupKeys.forEach(key=>{
+      const sec=document.createElement('div');sec.style.marginBottom='40px';
+      sec.innerHTML=`<div class="alpha-letter">${key}</div>`;
+      const rows=document.createElement('div');rows.className='all-models-list';
+      groups[key].forEach(item=>{
+        const row=document.createElement('a');row.className='model-row';row.href=`model.html?id=${encodeURIComponent(item.id)}`;
+        const imgId='al-'+item.id;
+        const tagHtml=LM.renderTags(item,'./');
+        row.innerHTML=`<div class="model-row-img" id="${imgId}"><div class="model-row-img-ph">${item.scale||'—'}</div></div>
+          <div>
+            <div class="model-row-name">${item.fullName||item.displayName}</div>
+            <div class="model-row-sub">${[item.carYear||null,item.manufacturer,item.year?'Added '+item.year:null].filter(Boolean).join(' · ')}</div>
+          </div>
+          <div class="model-row-tags" style="flex-wrap:wrap;gap:6px;">${tagHtml}</div>`;
+        rows.appendChild(row);
+        LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+          if(!src)return;const w=document.getElementById(imgId);
+          if(w)w.innerHTML=`<img src="${src}" alt="${item.displayName}" style="opacity:1"/>`;
+        });
+      });
+      sec.appendChild(rows);wrap.appendChild(sec);
+    });
+  }
+  root.appendChild(wrap);
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

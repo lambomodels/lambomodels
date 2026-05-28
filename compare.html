@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Compare Models — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.compare-search-wrap{position:relative;flex:1;min-width:200px}
+.compare-search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--fb);font-size:0.95rem;padding:10px 14px;border-radius:var(--r);outline:none;transition:border-color 0.18s}
+.compare-search-wrap input:focus{border-color:var(--yellow-dim)}
+.ac-list{position:absolute;top:100%;left:0;right:0;background:var(--surface2);border:1px solid var(--border);border-top:none;z-index:20;max-height:200px;overflow-y:auto;display:none}
+.ac-item{padding:9px 14px;cursor:pointer;font-size:0.92rem;color:var(--text-dim);display:flex;justify-content:space-between;gap:8px;transition:background 0.15s}
+.ac-item:hover{background:var(--border);color:var(--yellow)}
+.ac-item small{font-family:var(--fm);font-size:0.7rem;color:var(--text-muted)}
+
+/* Compare slot cards */
+.compare-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}
+@media(max-width:1000px){.compare-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.compare-grid{grid-template-columns:1fr}}
+
+.cslot{background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cslot.empty{border-style:dashed;opacity:0.5}
+.cslot-bar{height:4px;flex-shrink:0}
+.cslot-img{aspect-ratio:4/3;background:var(--dark);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cslot-img img{width:100%;height:100%;object-fit:contain;padding:12px}
+.cslot-img-ph{font-family:var(--fd);font-weight:900;font-size:1rem;color:var(--border2);text-align:center;padding:12px;text-transform:uppercase}
+.cslot-body{padding:14px 16px 16px;flex:1;min-width:0;overflow:hidden}
+.cslot-name{font-family:var(--fd);font-weight:800;font-size:1rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--white);line-height:1.2;margin-bottom:6px}
+.cslot-empty-label{font-family:var(--fm);font-size:0.8rem;color:var(--text-muted);text-align:center;padding:24px 16px}
+.cslot-row{display:flex;justify-content:space-between;gap:6px;padding:4px 0;border-bottom:1px solid var(--border2);font-size:0.82rem}
+.cslot-row:last-child{border-bottom:none}
+.cslot-key{font-family:var(--fm);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted)}
+.cslot-val{font-family:var(--fd);font-weight:700;font-size:0.9rem;color:var(--yellow);text-align:right;text-transform:uppercase}
+.cslot-clear{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.6);border:none;cursor:pointer;color:var(--text-muted);font-size:1rem;padding:4px 8px;border-radius:2px;z-index:5;transition:color 0.18s;line-height:1}
+.cslot-clear:hover{color:var(--yellow)}
+.cslot-link{display:block;margin-top:10px;font-family:var(--fd);font-weight:700;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);text-decoration:none}
+.cslot-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+<div class="container">
+  <div class="section-header">
+    <div class="eyebrow">LAMBOMODELS</div>
+    <h1 class="section-title">Compare <span>Models</span></h1>
+  </div>
+  <p style="color:var(--text-dim);font-size:1.05rem;line-height:1.75;max-width:680px;margin-bottom:36px;font-weight:500;">Put up to 4 models side by side. Compare scales, colors, manufacturers, and car years at a glance.</p>
+
+  <!-- Search bar -->
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;max-width:700px;">
+    <div class="compare-search-wrap">
+      <input type="text" id="add-input" placeholder="Search by name, code, scale…" autocomplete="off"/>
+      <div class="ac-list" id="ac-list"></div>
+    </div>
+    <button class="btn btn-primary btn-sm" onclick="doAdd()">Add Model</button>
+    <button class="btn btn-ghost btn-sm" onclick="clearAll()">Clear All</button>
+  </div>
+
+  <!-- Slot grid -->
+  <div class="compare-grid" id="cslot-grid"></div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();LM.initLightbox();
+
+const COLORS=['#fdc30d','#e86020','#2a8030','#702a9a'];
+const slots=[null,null,null,null];
+let _data=[];
+
+async function init(){
+  _data=await LM.load();
+  const params=new URLSearchParams(location.search);
+  const preId=params.get('id');
+  if(preId){const item=_data.find(i=>i.id===preId||i.code===preId);if(item)slots[0]=item;}
+  renderSlots();
+}
+
+function renderSlots(){
+  const grid=document.getElementById('cslot-grid');grid.innerHTML='';
+  slots.forEach((item,i)=>{
+    const el=document.createElement('div');el.className='cslot'+(item?'':' empty');
+    if(item){
+      const tags=LM.renderTags(item,'./');
+      el.innerHTML=`
+        <div class="cslot-bar" style="background:${COLORS[i]};"></div>
+        <button class="cslot-clear" onclick="clearSlot(${i})" title="Remove">✕</button>
+        <div class="cslot-img" id="ci-${i}"><div class="cslot-img-ph">${item.displayName}</div></div>
+        <div class="cslot-body">
+          <a class="cslot-name" href="model.html?id=${encodeURIComponent(item.id)}" style="display:block;text-decoration:none;color:var(--white);">${item.fullName||item.displayName}</a>
+          <div style="margin:8px 0 10px;">${tags}</div>
+          <div>
+            ${[
+              ['Car Year',item.carYear||'—'],
+              ['Scale',item.scale||'—'],
+              ['Color',item.color||'—'],
+              ['Manufacturer',item.manufacturer||'—'],
+              ['Category',LM.CAT_META[item.category]?.short||item.category],
+              ['Year Added',item.year||'—'],
+            ].map(([k,v])=>`<div class="cslot-row"><span class="cslot-key">${k}</span><span class="cslot-val">${v}</span></div>`).join('')}
+          </div>
+          <a class="cslot-link" href="model.html?id=${encodeURIComponent(item.id)}">View full page →</a>
+        </div>`;
+      grid.appendChild(el);
+      LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+        if(!src)return;const w=document.getElementById('ci-'+i);
+        if(w){w.innerHTML=`<img src="${src}" alt="${item.displayName}" loading="lazy"/>`;const im=w.querySelector('img');im.addEventListener('load',()=>im.classList.add('loaded'));}
+      });
+    } else {
+      el.innerHTML=`
+        <div class="cslot-bar" style="background:${COLORS[i]};opacity:0.3;"></div>
+        <div class="cslot-empty-label">Slot ${i+1}<br/>Search and add a model</div>`;
+      grid.appendChild(el);
+    }
+  });
+  setTimeout(LM.initLazyImages,50);
+}
+
+function clearSlot(i){
+  slots[i]=null;
+  const filled=slots.filter(Boolean);
+  for(let j=0;j<4;j++)slots[j]=filled[j]||null;
+  renderSlots();
+}
+
+function clearAll(){slots.fill(null);renderSlots();}
+
+function addModel(id){
+  const item=_data.find(i=>i.id===id);if(!item)return;
+  if(slots.some(s=>s&&s.id===id))return;
+  const empty=slots.findIndex(s=>!s);if(empty<0)return;
+  slots[empty]=item;
+  document.getElementById('add-input').value='';
+  document.getElementById('ac-list').style.display='none';
+  renderSlots();
+}
+
+function doAdd(){
+  const q=document.getElementById('add-input').value.trim();if(!q)return;
+  const r=compareSearch(q);if(r.length)addModel(r[0].id);
+}
+
+// Multi-term search: split query into words, item must match ALL terms
+function compareSearch(q) {
+  if (!q || q.length < 2) return [];
+  const terms = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  return _data.filter(item =>
+    terms.every(t => item.searchText.includes(t))
+  );
+}
+
+const addInp=document.getElementById('add-input');
+const acList=document.getElementById('ac-list');
+addInp.addEventListener('input',()=>{
+  const q=addInp.value.trim();
+  if(q.length<2){acList.style.display='none';return;}
+  const r=compareSearch(q).slice(0,10);
+  if(!r.length){acList.style.display='none';return;}
+  acList.innerHTML=r.map(item=>{
+    const meta=[item.scale,item.color].filter(Boolean).join(' · ');
+    return `<div class="ac-item" onclick="addModel('${item.id}')">
+      <span>${item.fullName||item.displayName}</span>
+      <small>${meta}</small>
+    </div>`;
+  }).join('');
+  acList.style.display='block';
+});
+addInp.addEventListener('keydown',e=>{if(e.key==='Enter')doAdd();if(e.key==='Escape')acList.style.display='none';});
+document.addEventListener('click',e=>{if(!e.target.closest('.compare-search-wrap'))acList.style.display='none';});
+
+init().catch(console.error);
+</script>
+</body>
+</html>

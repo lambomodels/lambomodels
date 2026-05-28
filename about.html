@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+<div class="container-narrow">
+  <div class="section-header"><div class="eyebrow">LAMBOMODELS</div><h1 class="section-title">About the <span>Collection</span></h1></div>
+  <div style="padding-bottom:80px;max-width:700px;">
+    <p style="font-size:1.18rem;color:var(--text-dim);line-height:1.82;margin-bottom:1.4em;">This is the LAMBOMODELS collection — a dedicated catalogue of Lamborghini scale models built over many years. Not a hobby. An empire.</p>
+    <p style="font-size:1.18rem;color:var(--text-dim);line-height:1.82;margin-bottom:1.4em;">The collection aims to document <strong style="color:var(--text);">every Lamborghini model from 1963 to 2024</strong> based on specific criteria — covering every significant production car, concept, one-off, race car, and affiliated brand that has carried the raging bull. The criteria for inclusion will be detailed here in full.</p>
+    <p style="font-size:1.18rem;color:var(--text-dim);line-height:1.82;margin-bottom:1.4em;">It goes further — tractors, marine engines, concepts that never reached production, one-of-a-kind specials, race cars, motorcycles, and the related cars that share Lamborghini DNA.</p>
+    <p style="font-size:1.18rem;color:var(--text-dim);line-height:1.82;margin-bottom:48px;">Every model is catalogued with its scale, manufacturer, color, year of acquisition, estimated price, and the real car's production year.</p>
+    <div class="divider"></div>
+    <div id="about-stats" style="margin:40px 0;"></div>
+    <div class="divider"></div>
+    <div style="margin-top:40px;">
+      <div class="inline-label" style="margin-bottom:20px;">Find LAMBOMODELS</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/lambomodels/" target="_blank" rel="noopener" class="btn btn-ghost">Instagram →</a>
+        <a href="https://x.com/lambomodels" target="_blank" rel="noopener" class="btn btn-ghost">X / Twitter →</a>
+        <a href="https://www.facebook.com/LAMBOMODELS/" target="_blank" rel="noopener" class="btn btn-ghost">Facebook →</a>
+        <a href="https://www.linkedin.com/in/lambo-models-30b062331/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+LM.load().then(()=>{
+  const s=LM.stats();
+  document.getElementById('about-stats').innerHTML=`
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);">
+      ${[{n:s.total,l:'Scale Models'},{n:s.uniqueFamilies,l:'Car Models'},{n:s.uniqueManufacturers,l:'Manufacturers'},{n:s.uniqueScales,l:'Scales'},{n:s.uniqueColors,l:'Colors'}]
+        .map(i=>`<div style="background:var(--dark);padding:28px 24px;">
+          <div style="font-family:var(--fd);font-weight:900;font-size:2.8rem;color:var(--yellow);line-height:1;">${i.n}</div>
+          <div style="font-family:var(--fm);font-size:0.86rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);margin-top:7px;">${i.l}</div>
+        </div>`).join('')}
+    </div>`;
+});
+</script>
+</body>
+</html>

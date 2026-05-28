@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Statistics — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page" style="padding-bottom:80px;">
+<div class="container">
+  <div class="section-header"><div class="eyebrow">LAMBOMODELS</div><h1 class="section-title">Collection <span>Statistics</span></h1></div>
+  <div id="stats-root"><div class="loading">Calculating…</div></div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+const CAT_LABELS={production:'Production',concepts:'Concepts',oneoffs:'One-Offs',racing:'Racing',trattori:'Trattori',motorcycles:'Motorcycles',related:'Related'};
+
+function colorFor(name){
+  const m={
+    'yellow':'#f5d000','gold':'#c8a030','orange':'#e86020','red':'#cc2020',
+    'green':'#2a8030','blue':'#2050a0','white':'#d0ccc4','black':'#282828',
+    'silver':'#909090','grey':'#686868','gray':'#686868',
+    'metallic':'#7a8898',  // generic metallic = blue-gray
+    'copper':'#b87333',    // copper = warm brown-orange
+    'purple':'#702a9a','brown':'#704020','pink':'#c04080',
+    'beige':'#c8a878','tan':'#c8a878','cream':'#d4c89a',
+    'dark':'#282828','light':'#a8a49c','bronze':'#9a6030',
+    'champagne':'#c8b870','turquoise':'#1a9a8a','lime':'#80b820',
+    'cyan':'#1a9ab0','maroon':'#801028','navy':'#182060','teal':'#1a7a7a',
+    'pearl':'#d8d4cc','anthracite':'#484848','racing red':'#cc2020',
+  };
+  const c=(name||'').toLowerCase();
+  for(const[k,v]of Object.entries(m))if(c.includes(k))return v;
+  return '#5a5652';
+}
+
+function barChart(items,maxVal,alt,linkKey){
+  return `<div class="bar-chart">${items.slice(0,18).map(([lbl,cnt])=>{
+    const href=linkKey?`href="search.html?q=${encodeURIComponent(lbl)}&filter=${linkKey}"`:'';
+    const tag=linkKey?'a':'div';
+    return `<${tag} class="bar-row" ${href} style="${linkKey?'text-decoration:none;':''}">\n      <div class="bar-label" title="${lbl}">${lbl}</div>\n      <div class="bar-track"><div class="bar-fill${alt?' bar-fill-alt':''}" style="width:${Math.round(cnt/maxVal*100)}%"></div></div>\n      <div class="bar-count">${cnt}</div>\n    </${tag}>`;
+  }).join('')}</div>`;
+}
+
+function ringChart(items,total,label){
+  const pal=['#fdc30d','#a07e00','#d47000','#8a4400','#2060aa','#1a4070','#4a8a40','#2a5a2a','#7a3a8a','#4a2060','#888','#2a2a2a'];
+  let angle=0;
+  const segs=items.slice(0,10).map(([l,c],i)=>{const deg=c/total*360;const s={l,c,s:angle,e:angle+deg,col:pal[i%pal.length]};angle+=deg;return s;});
+  if(items.length>10){const oc=items.slice(10).reduce((s,[,c])=>s+c,0);segs.push({l:'Other',c:oc,s:angle,e:360,col:'#2a2a2a'});}
+  const grad=segs.map(s=>`${s.col} ${s.s.toFixed(1)}deg ${s.e.toFixed(1)}deg`).join(',');
+  return `<div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+    <div style="width:170px;height:170px;flex-shrink:0;border-radius:50%;background:conic-gradient(${grad});position:relative;">
+      <div style="position:absolute;inset:26px;background:var(--surface);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div style="font-family:var(--fd);font-weight:900;font-size:2.2rem;color:var(--yellow);line-height:1;">${total}</div>
+        <div style="font-family:var(--fm);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">${label}</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:1;min-width:140px;">
+      ${segs.map(s=>`<div style="display:flex;align-items:center;gap:9px;">
+        <div style="width:11px;height:11px;border-radius:50%;background:${s.col};flex-shrink:0;"></div>
+        <div style="font-family:var(--fm);font-size:0.82rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-dim);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${s.l}">${s.l}</div>
+        <div style="font-family:var(--fm);font-size:0.82rem;font-weight:700;color:var(--text-dim);">${s.c}</div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function timeline(cleanYears){
+  if(!cleanYears.length)return`<p style="color:var(--text-dim);font-size:1rem;font-family:var(--fm);font-weight:700;">Insufficient data.</p>`;
+  const max=Math.max(...cleanYears.map(([,c])=>c));
+  const n=cleanYears.length;
+  // Equal-width columns: every year gets the same slice. Simple. Future-proof.
+  const colPct=(100/n).toFixed(2);
+  return `<div style="width:100%;overflow:hidden;">
+    <div style="display:flex;align-items:flex-end;height:150px;border-bottom:1px solid var(--border);">${cleanYears.map(([y,c])=>{
+      const h=Math.max(Math.round(c/max*100),2);
+      return `<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;padding:0 1px;" title="${y}: ${c} models">
+        <div style="font-family:var(--fm);font-size:0.6rem;font-weight:700;color:var(--text-dim);margin-bottom:3px;text-align:center;white-space:nowrap;">${c}</div>
+        <div style="width:100%;height:${h}%;background:var(--yellow);border-radius:2px 2px 0 0;min-height:3px;" onmouseover="this.style.background='var(--white)'" onmouseout="this.style.background='var(--yellow)'"></div>
+      </div>`;
+    }).join('')}</div>
+    <div style="display:flex;">${cleanYears.map(([y])=>`<div style="flex:1 1 0;min-width:0;text-align:center;font-family:var(--fm);font-size:0.6rem;font-weight:700;color:var(--text-dim);overflow:hidden;text-overflow:clip;white-space:nowrap;margin-top:4px;">${y}</div>`).join('')}</div>
+  </div>`;
+}
+function yearNote(s){
+  // Handle 201X specially
+  const parts=[];
+  if(s.years201X>0) parts.push(`201X — could be any year 2011–2019 (${s.years201X} model${s.years201X!==1?'s':''})`);
+  const other=(s.byYear||[]).filter(([y])=>!/^\d{4}$/.test(y)&&y!=='201X');
+  other.forEach(([y,c])=>parts.push(`${y} (${c})`));
+  if(!parts.length)return'';
+  return`<div style="margin-top:20px;font-family:var(--fm);font-size:0.88rem;font-weight:700;color:var(--text-dim);line-height:1.6;">${parts.join('<br>')}</div>`;
+}
+
+function colorSwatches(items){
+  return `<div class="color-swatches">${items.slice(0,32).map(([c,n])=>`<a class="cswatch" href="search.html?q=${encodeURIComponent(c)}&filter=color" style="text-decoration:none;">
+    <div class="cswatch-dot" style="background:${colorFor(c)};"></div>
+    <div class="cswatch-name">${c.split(' ')[0]}</div>
+    <div class="cswatch-count">${n}</div>
+  </a>`).join('')}</div>`;
+}
+
+async function init(){
+  await LM.load();
+  const s=LM.stats();
+  const mmax=s.byModel[0]?.[1]||1;
+  const mfrmax=s.byManufacturer[0]?.[1]||1;
+  const fammax=s.byFamily[0]?.[1]||1;
+
+  document.getElementById('stats-root').innerHTML=`
+    <div class="stat-big-grid">
+      ${[
+        {n:s.total,l:'Scale Models'},
+        {n:s.uniqueFamilies,l:'Car Families'},
+        {n:s.byModel.length,l:'Unique Models'},
+        {n:s.uniqueManufacturers,l:'Makers'},
+        {n:s.uniqueScales,l:'Scales'},
+        {n:s.uniqueColors,l:'Colors'},
+      ].map(i=>`<div class="stat-big"><div class="stat-big-num">${i.n}</div><div class="stat-big-label">${i.l}</div></div>`).join('')}
+    </div>
+
+    <div class="stats-grid">
+      <div class="stats-card">
+        <div class="stats-card-title">By Unique Model</div>
+        <p style="font-family:var(--fm);font-size:0.88rem;font-weight:700;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.06em;">Each unique model name counted separately</p>
+        ${barChart(s.byModel.slice(0,18),mmax,false,'model')}
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-title">By Car Family</div>
+        <p style="font-family:var(--fm);font-size:0.88rem;font-weight:700;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.06em;">All variants grouped by car name</p>
+        ${barChart(s.byFamily.slice(0,18),fammax,true,'family')}
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-title">By Category</div>
+        ${ringChart(s.byCategory.map(([k,v])=>[CAT_LABELS[k]||k,v]),s.total,'Models')}
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-title">By Scale Maker</div>
+        ${barChart(s.byManufacturer.slice(0,18),mfrmax,false,'manufacturer')}
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-title">By Scale</div>
+        ${ringChart(s.byScale,s.total,'Scales')}
+      </div>
+      <div class="stats-card" style="grid-column:1/-1;">
+        <div class="stats-card-title">Acquisitions by Year</div>
+        ${timeline(s.cleanYears)}
+        ${yearNote(s)}
+      </div>
+      <div class="stats-card" style="grid-column:1/-1;">
+        <div class="stats-card-title">Color Distribution</div>
+        ${colorSwatches(s.byColor)}
+      </div>
+    </div>`;
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

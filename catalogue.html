@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Print Catalogue — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* Controls (not printed) */
+.ctrl-panel{background:var(--surface);border:1px solid var(--border);padding:28px;margin-bottom:32px}
+.ctrl-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.ctrl-label{font-family:var(--fm);font-size:0.84rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);min-width:120px}
+.ctrl-toggle{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.ctrl-btn{font-family:var(--fd);font-weight:700;font-size:0.88rem;letter-spacing:0.1em;text-transform:uppercase;padding:9px 18px;background:var(--surface);color:var(--text-dim);border:none;cursor:pointer;transition:all 0.18s}
+.ctrl-btn.active{background:var(--yellow);color:var(--black)}
+.ctrl-btn:hover:not(.active){color:var(--yellow)}
+.category-checks{display:flex;gap:10px;flex-wrap:wrap}
+.cat-check{display:flex;align-items:center;gap:6px;font-family:var(--fm);font-size:0.8rem;font-weight:700;color:var(--text-dim);cursor:pointer;padding:6px 12px;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r);transition:all 0.18s;user-select:none}
+.cat-check.on{background:var(--yellow-glow);color:var(--yellow);border-color:rgba(253,195,13,0.3)}
+.cat-check input{display:none}
+.preview-count{font-family:var(--fm);font-size:0.82rem;font-weight:700;color:var(--text-muted);margin-left:auto}
+.print-btn-wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* ── PRINT PREVIEW (shown on screen) ── */
+#print-preview{background:var(--surface);border:1px solid var(--border);padding:32px;font-family:'Barlow',sans-serif;line-height:1.5}
+
+@media print{
+  #print-preview{padding:0;border:none;background:white}
+}
+
+/* ── CATALOGUE STYLES (injected into new window) ── */
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+<div class="container">
+  <div class="section-header">
+    <div class="eyebrow">LAMBOMODELS</div>
+    <h1 class="section-title">Print <span>Catalogue</span></h1>
+  </div>
+  <p style="color:var(--text-dim);font-size:1.05rem;line-height:1.75;max-width:660px;margin-bottom:36px;font-weight:500;">Generate a printable catalogue from your collection. Choose categories, display mode, and whether to print in light or dark mode.</p>
+
+  <!-- Controls -->
+  <div class="ctrl-panel">
+    <!-- Theme -->
+    <div class="ctrl-row">
+      <span class="ctrl-label">Mode</span>
+      <div class="ctrl-toggle">
+        <button class="ctrl-btn active" id="mode-light" onclick="setMode('light')">☀ Light (Paper)</button>
+        <button class="ctrl-btn" id="mode-dark" onclick="setMode('dark')">◑ Dark</button>
+      </div>
+    </div>
+    <!-- Layout -->
+    <div class="ctrl-row">
+      <span class="ctrl-label">Layout</span>
+      <div class="ctrl-toggle">
+        <button class="ctrl-btn active" id="layout-list" onclick="setLayout('list')">List</button>
+        <button class="ctrl-btn" id="layout-grid" onclick="setLayout('grid')">Cards</button>
+      </div>
+    </div>
+    <!-- Sort -->
+    <div class="ctrl-row">
+      <span class="ctrl-label">Sort by</span>
+      <div class="ctrl-toggle">
+        <button class="ctrl-btn active" id="sort-cat" onclick="setSort('category')">Category</button>
+        <button class="ctrl-btn" id="sort-year" onclick="setSort('year')">Car Year</button>
+        <button class="ctrl-btn" id="sort-alpha" onclick="setSort('alpha')">A–Z</button>
+      </div>
+    </div>
+    <!-- Categories -->
+    <div class="ctrl-row" style="align-items:flex-start">
+      <span class="ctrl-label" style="margin-top:6px;">Categories</span>
+      <div class="category-checks" id="cat-checks"></div>
+    </div>
+    <!-- Actions -->
+    <div class="ctrl-row" style="margin-bottom:0;">
+      <div class="print-btn-wrap">
+        <button class="btn btn-primary" onclick="openPrint()">🖨 Print / Save PDF</button>
+        <button class="btn btn-ghost" onclick="previewInPage()">Preview</button>
+      </div>
+      <span class="preview-count" id="preview-count"></span>
+    </div>
+  </div>
+
+  <!-- In-page preview -->
+  <div id="print-preview-wrap" style="display:none;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+      <div style="font-family:var(--fm);font-size:0.84rem;font-weight:700;color:var(--yellow);letter-spacing:0.15em;text-transform:uppercase;">Preview (scroll to see full catalogue)</div>
+      <button class="btn btn-ghost btn-sm" onclick="document.getElementById('print-preview-wrap').style.display='none'">Close Preview</button>
+    </div>
+    <div style="border:1px solid var(--border);overflow:hidden;">
+      <iframe id="preview-frame" style="width:100%;height:70vh;border:none;background:white;"></iframe>
+    </div>
+  </div>
+
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+
+let _data=[], _mode='light', _layout='list', _sort='category';
+const _cats=new Set(['production','concepts','oneoffs','racing','trattori','motorcycles','related']);
+
+async function init(){
+  _data=await LM.load();
+  // Category checkboxes
+  const checks=document.getElementById('cat-checks');
+  LM.CAT_ORDER.forEach(catId=>{
+    const meta=LM.CAT_META[catId];
+    const cnt=_data.filter(i=>i.category===catId).length;
+    if(!cnt)return;
+    const el=document.createElement('label');el.className='cat-check on';
+    el.innerHTML=`<input type="checkbox" checked onchange="toggleCat('${catId}',this.checked)"/>${meta.short} (${cnt})`;
+    checks.appendChild(el);
+  });
+  updateCount();
+}
+
+function toggleCat(catId, on){ on?_cats.add(catId):_cats.delete(catId); updateCount(); }
+function setMode(m){ _mode=m; document.getElementById('mode-light').classList.toggle('active',m==='light'); document.getElementById('mode-dark').classList.toggle('active',m==='dark'); }
+function setLayout(l){ _layout=l; document.getElementById('layout-list').classList.toggle('active',l==='list'); document.getElementById('layout-grid').classList.toggle('active',l==='grid'); }
+function setSort(s){ _sort=s; document.getElementById('sort-cat').classList.toggle('active',s==='category'); document.getElementById('sort-year').classList.toggle('active',s==='year'); document.getElementById('sort-alpha').classList.toggle('active',s==='alpha'); updateCount(); }
+
+function updateCount(){
+  const n=getFiltered().length;
+  document.getElementById('preview-count').textContent=`${n} model${n!==1?'s':''} selected`;
+}
+
+function getFiltered(){
+  return _data.filter(i=>_cats.has(i.category));
+}
+
+function getSorted(items){
+  if(_sort==='year') return [...items].sort((a,b)=>(parseInt(a.carYear)||9999)-(parseInt(b.carYear)||9999)||a.fullName.localeCompare(b.fullName));
+  if(_sort==='alpha') return [...items].sort((a,b)=>a.fullName.localeCompare(b.fullName));
+  // category order
+  return [...items].sort((a,b)=>{
+    const ao=LM.CAT_ORDER.indexOf(a.category),bo=LM.CAT_ORDER.indexOf(b.category);
+    if(ao!==bo)return ao-bo;
+    return a.fullName.localeCompare(b.fullName);
+  });
+}
+
+function generateHTML(forPrint=false){
+  const items=getSorted(getFiltered());
+  const dark=_mode==='dark';
+  const bg=dark?'#181818':'#ffffff';
+  const fg=dark?'#f0ece4':'#111111';
+  const fgDim=dark?'#a0a098':'#333333';
+  const fgMuted=dark?'#6a6860':'#666666';
+  const accent=dark?'#fdc30d':'#a07000';
+  const border=dark?'#2e2e2e':'#dddddd';
+  const surface=dark?'#222222':'#f5f5f3';
+  const fd="'Barlow Condensed',Arial,sans-serif";
+  const fm="'Share Tech Mono',monospace";
+
+  // Group if category sort
+  let content='';
+  if(_sort==='category'){
+    LM.CAT_ORDER.forEach(catId=>{
+      if(!_cats.has(catId))return;
+      const catItems=getSorted(items.filter(i=>i.category===catId));
+      if(!catItems.length)return;
+      const meta=LM.CAT_META[catId];
+      content+=`<div class="cat-section"><h2 class="cat-title">${meta.label}</h2>`;
+      content+=renderItems(catItems,dark,fg,fgDim,fgMuted,border,surface,fd,fm,accent);
+      content+=`</div>`;
+    });
+  } else {
+    content=renderItems(items,dark,fg,fgDim,fgMuted,border,surface,fd,fm,accent);
+  }
+
+  const gridStyle=_layout==='grid'?`
+    .item-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .item{border:1px solid ${border};padding:12px;break-inside:avoid;background:${surface}}
+    .item-code{font-family:${fm};font-size:7pt;color:${fgMuted};margin-bottom:2px}
+    .item-name{font-family:${fd};font-weight:800;font-size:12pt;text-transform:uppercase;letter-spacing:0.03em;color:${fg};line-height:1.2;margin:3px 0}
+    .item-meta{font-family:${fm};font-size:7pt;color:${fgDim}}
+    .item-code,.item-year{font-family:${fm};font-size:7pt;color:${fgMuted}}
+  `:`
+    .item-list{display:table;width:100%;border-collapse:collapse}
+    .item{display:table-row;break-inside:avoid}
+    .item>*{display:table-cell;padding:6px 10px;border-bottom:1px solid ${border};vertical-align:top}
+    .item-code{font-family:${fm};font-size:8pt;color:${fgMuted};width:90px}
+    .item-name{font-family:${fd};font-weight:700;font-size:11pt;text-transform:uppercase;letter-spacing:0.03em;color:${fg};line-height:1.3}
+    .item-meta{font-family:${fm};font-size:8pt;color:${fgDim};width:220px}
+    .item-year{font-family:${fm};font-size:8pt;color:${accent};width:55px;font-weight:700}
+  `;
+
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"/>
+<title>LAMBOMODELS Catalogue</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:${bg};color:${fg};font-family:Arial,sans-serif;font-size:10pt;padding:20mm;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1.main-title{font-family:${fd};font-weight:900;font-size:32pt;text-transform:uppercase;letter-spacing:-0.01em;color:${fg};margin-bottom:4px}
+h1.main-title span{color:${accent}}
+.subtitle{font-family:${fm};font-size:9pt;color:${fgMuted};margin-bottom:6px;letter-spacing:0.12em;text-transform:uppercase}
+.meta-bar{font-family:${fm};font-size:8pt;color:${fgMuted};margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid ${accent}}
+.cat-section{margin-bottom:28px;break-before:avoid}
+.cat-title{font-family:${fd};font-weight:900;font-size:16pt;text-transform:uppercase;letter-spacing:0.04em;color:${accent};margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid ${border}}
+${gridStyle}
+@media print{
+  @page{margin:15mm;size:A4}
+  body{padding:0}
+  .no-print{display:none}
+  .cat-section{break-before:auto}
+}
+</style></head><body>
+<h1 class="main-title">LAMBO<span>MODELS</span></h1>
+<div class="subtitle">The Lamborghini Model Collection</div>
+<div class="meta-bar">lambomodels.com · ${items.length} models · Generated ${new Date().toLocaleDateString('en-GB',{year:'numeric',month:'long',day:'numeric'})}</div>
+${content}
+</body></html>`;
+}
+
+function renderItems(items,dark,fg,fgDim,fgMuted,border,surface,fd,fm,accent){
+  if(!items.length)return'';
+  if(_layout==='grid'){
+    // Card view with images
+    return `<div class="item-list">${items.map(item=>{
+      // Use absolute URL for images so they work in the print window
+      const imgCode=item.code||'';
+      const imgAttempts=['png','jpg','webp'].map(e=>`images/${imgCode}.${e}`);
+      // We can't async-load in generated HTML, so use onerror chain
+      const imgHtml=imgCode?`<div style="width:100%;aspect-ratio:4/3;background:${dark?'#111':'#eee'};display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+        <img src="images/${imgCode}.png" alt="" style="max-width:100%;max-height:100%;object-fit:contain;padding:6px;"
+          onerror="this.src='images/${imgCode}.jpg'" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.2s"/>
+      </div>`:'';
+      return `<div class="item">
+        ${imgHtml}
+        <div class="item-code">${item.code||'—'}</div>
+        <div class="item-name">${item.fullName||item.displayName}</div>
+        <div class="item-meta">${[item.carYear,item.scale,item.color,item.manufacturer].filter(Boolean).join(' · ')}</div>
+      </div>`;
+    }).join('')}</div>`;
+  }
+  // List / table view
+  return `<div class="item-list">${items.map(item=>`
+    <div class="item">
+      <div class="item-code">${item.code||'—'}</div>
+      <div class="item-name">${item.fullName||item.displayName}</div>
+      <div class="item-meta">${[item.scale,item.color,item.manufacturer].filter(Boolean).join(' · ')}</div>
+      <div class="item-year">${item.carYear||''}</div>
+    </div>`).join('')}</div>`;
+}
+
+function openPrint(){
+  const html=generateHTML(true);
+  const win=window.open('','_blank','width=900,height=700');
+  win.document.open();win.document.write(html);win.document.close();
+  win.onload=()=>setTimeout(()=>win.print(),300);
+}
+
+function previewInPage(){
+  const html=generateHTML(false);
+  const frame=document.getElementById('preview-frame');
+  const wrap=document.getElementById('print-preview-wrap');
+  wrap.style.display='block';
+  const doc=frame.contentDocument||frame.contentWindow.document;
+  doc.open();doc.write(html);doc.close();
+  wrap.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+init().catch(console.error);
+</script>
+</body>
+</html>

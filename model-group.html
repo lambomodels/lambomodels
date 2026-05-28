@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Model Group — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page"><div class="container"><div id="root"><div class="loading" style="padding:120px 0;">Loading…</div></div></div></main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();LM.initLightbox();
+const p=new URLSearchParams(location.search);
+const catId=p.get('cat')||'production';
+const famName=decodeURIComponent(p.get('fam')||'');
+
+async function init(){
+  await LM.load();
+  const catMeta=LM.CAT_META[catId]||{label:'Collection'};
+  const items=LM.byCategory(catId).filter(i=>i.family===famName);
+  if(!items.length){
+    document.getElementById('root').innerHTML=`<div style="padding:100px 0;text-align:center;"><p style="color:var(--text-muted);font-family:var(--fm);">No models found.</p><a href="collection.html" class="btn btn-ghost" style="margin-top:24px;display:inline-flex;">← Back</a></div>`;
+    return;
+  }
+
+  const showPrefix=['production','concepts','oneoffs','racing','trattori','motorcycles'].includes(catId);
+  const isDeutzFahr=m=>(m||'').toLowerCase().includes('deutz');
+  // Use first item's fullName prefix + famName for display
+  const displayFamName=showPrefix?`Lamborghini ${famName}`:famName;
+  document.title=`${displayFamName} — LAMBOMODELS`;
+
+  const root=document.getElementById('root');
+
+  // Get family description
+  const famDesc=LM.FAMILY_DESC[famName]||null;
+
+  root.innerHTML=`
+    <div style="padding:56px 0 36px;border-bottom:1px solid var(--border);margin-bottom:44px;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><sep>/</sep>
+        <a href="collection.html">Collection</a><sep>/</sep>
+        <a href="collection.html#${catId}">${catMeta.label}</a><sep>/</sep>
+        <span>${displayFamName}</span>
+      </div>
+      <h1 class="model-title" style="margin-bottom:14px;">${displayFamName}</h1>
+      <div style="font-family:var(--fm);font-size:0.92rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--yellow);">
+        ${items.length} scale model${items.length!==1?'s':''} in the collection
+      </div>
+    </div>
+
+    ${famDesc?`<div class="family-desc-box" style="max-width:920px;margin-bottom:44px;">${famDesc}</div>`:''}`;
+
+  // Sort by carYear
+  const sorted=[...items].sort((a,b)=>(parseInt(a.carYear)||9999)-(parseInt(b.carYear)||9999));
+
+  const grid=document.createElement('div');grid.className='family-grid';
+  sorted.forEach(item=>{
+    const card=document.createElement('a');card.className='family-card';card.href=`model.html?id=${encodeURIComponent(item.id)}`;
+    const imgId='fg-'+item.id;
+    const yearPart=item.carYear?`<span style="font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--text-dim);display:block;margin-bottom:4px;">${item.carYear}</span>`:'';
+    const cardFullName=showPrefix&&!isDeutzFahr(item.model)?`Lamborghini ${item.displayName}`:item.displayName;
+    card.innerHTML=`<div class="family-card-img-wrap" id="${imgId}"><div class="family-card-img-ph">${item.displayName}</div></div>
+      <div style="text-align:center;">${yearPart}<div class="family-card-name" style="font-size:1.1rem;">${cardFullName}</div>
+      <div class="family-card-count">${[item.scale,item.color,item.manufacturer].filter(Boolean).join(' · ')}</div></div>`;    grid.appendChild(card);
+    LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+      if(!src)return;const w=document.getElementById(imgId);
+      if(w)w.innerHTML=`<img src="${src}" alt="${item.displayName}" style="opacity:1"/>`;
+    });
+  });
+  root.appendChild(grid);
+
+  const back=document.createElement('div');back.style.cssText='padding:36px 0 80px;';
+  back.innerHTML=`<a href="collection.html#${catId}" class="btn btn-ghost">← ${catMeta.label}</a>`;
+  root.appendChild(back);
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

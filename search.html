@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Search — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.search-bar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.search-bar input{flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--fb);font-size:1rem;padding:12px 16px;border-radius:var(--r);outline:none;transition:border-color 0.18s}
+.search-bar input:focus{border-color:var(--yellow-dim)}
+.search-bar button{background:var(--yellow);color:var(--black);border:none;font-family:var(--fd);font-weight:800;font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;padding:0 24px;border-radius:var(--r);cursor:pointer;transition:background 0.18s;white-space:nowrap}
+.search-bar button:hover{background:var(--white)}
+
+/* Filter chips */
+.filter-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.filter-chip{font-family:var(--fm);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--border2);background:var(--surface);color:var(--text-muted);cursor:pointer;border-radius:2px;transition:all 0.15s;white-space:nowrap;user-select:none}
+.filter-chip:hover{color:var(--yellow);border-color:var(--yellow-dim)}
+.filter-chip.active{background:var(--yellow);color:var(--black);border-color:var(--yellow)}
+.filter-label{font-family:var(--fm);font-size:0.72rem;font-weight:700;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-right:4px}
+
+.filter-info{font-family:var(--fm);font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;padding:10px 16px;background:var(--yellow-glow);border:1px solid rgba(253,195,13,0.15);border-radius:var(--r)}
+.search-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
+.result-count{font-family:var(--fm);font-size:0.82rem;font-weight:700;color:var(--text-muted);margin-left:auto}
+
+/* Card view */
+.search-card{background:var(--dark);text-decoration:none;color:var(--text);display:flex;flex-direction:column;border:1px solid var(--border);transition:all var(--t)}
+.search-card:hover{background:var(--surface);border-color:var(--border2)}
+.search-card-img{aspect-ratio:4/3;background:var(--surface);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.search-card-img img{width:100%;height:100%;object-fit:contain;padding:10px;opacity:1}
+.search-card-img-ph{font-family:var(--fd);font-weight:900;font-size:1rem;color:var(--border2);text-transform:uppercase;text-align:center;padding:10px}
+.search-card-body{padding:12px 14px 16px}
+.search-card-name{font-family:var(--fd);font-weight:800;font-size:0.98rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--white);line-height:1.2;margin-bottom:4px}
+.search-card-meta{font-family:var(--fm);font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:8px}
+.search-card-tags{display:flex;flex-wrap:wrap;gap:4px}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page"><div class="container">
+  <div class="section-header"><div class="eyebrow">LAMBOMODELS</div><h1 class="section-title" id="search-heading">Search</h1></div>
+
+  <div class="search-bar">
+    <input type="text" id="q-input" placeholder="Model name, code, color, maker, year…" autocomplete="off"/>
+    <button onclick="doSearch()">Search</button>
+  </div>
+
+  <!-- Filter chips -->
+  <div class="filter-chips" id="filter-chips">
+    <span class="filter-label">Filter by:</span>
+  </div>
+
+  <div id="filter-info" style="display:none;" class="filter-info"></div>
+  <div class="search-controls" id="search-controls" style="display:none;">
+    <div class="view-toggle">
+      <button class="view-toggle-btn active" id="sv-cards" onclick="setSearchView('cards')">Cards</button>
+      <button class="view-toggle-btn" id="sv-list" onclick="setSearchView('list')">List</button>
+    </div>
+    <span class="result-count" id="result-count"></span>
+  </div>
+
+  <div id="results-root"><div style="color:var(--text-muted);font-family:var(--fm);font-size:0.88rem;padding:20px 0;">Enter a search term above.</div></div>
+</div></main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();LM.initLightbox();
+
+// Filter chip definitions
+const FILTERS = [
+  {key:'all',      label:'All Fields'},
+  {key:'name',     label:'Model Name'},
+  {key:'color',    label:'Color'},
+  {key:'scale',    label:'Scale'},
+  {key:'maker',    label:'Maker'},
+  {key:'carYear',  label:'Car Year'},
+  {key:'yearAdded',label:'Year Added'},
+  {key:'category', label:'Category'},
+  {key:'code',     label:'Code'},
+];
+
+let _activeFilter = 'all';
+let _searchView = 'cards';
+let _lastResults = [], _lastQ = '';
+
+// Build filter chips
+const chipsEl = document.getElementById('filter-chips');
+FILTERS.forEach(f => {
+  const chip = document.createElement('button');
+  chip.className = 'filter-chip' + (f.key==='all'?' active':'');
+  chip.textContent = f.label;
+  chip.dataset.key = f.key;
+  chip.onclick = () => {
+    _activeFilter = f.key;
+    document.querySelectorAll('.filter-chip').forEach(c=>c.classList.toggle('active', c.dataset.key===f.key));
+    if(_lastQ) doSearch(_lastQ);
+  };
+  chipsEl.appendChild(chip);
+});
+
+// Read URL params on load — may set filter chip too
+(async()=>{
+  await LM.load();
+  const p = new URLSearchParams(location.search);
+  const q = p.get('q');
+  const filter = p.get('filter');
+  if(filter){
+    // Map legacy filter keys to our chip keys
+    const legacyMap={year:'yearAdded',manufacturer:'maker'};
+    const mappedFilter = legacyMap[filter]||filter;
+    // Activate matching chip if exists
+    const chip = document.querySelector(`.filter-chip[data-key="${mappedFilter}"]`);
+    if(chip){
+      _activeFilter = mappedFilter;
+      document.querySelectorAll('.filter-chip').forEach(c=>c.classList.toggle('active',c.dataset.key===mappedFilter));
+    }
+  }
+  if(q){document.getElementById('q-input').value=q; doSearch(q);}
+})();
+
+document.getElementById('q-input').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+
+function setSearchView(v){
+  _searchView=v;
+  document.getElementById('sv-cards').classList.toggle('active',v==='cards');
+  document.getElementById('sv-list').classList.toggle('active',v==='list');
+  if(_lastResults.length) renderResults(_lastResults,_lastQ);
+}
+
+function hl(text,q){
+  if(!q||!text)return text||'';
+  const words=q.trim().split(/\s+/).filter(Boolean);
+  let out=String(text);
+  words.forEach(w=>{out=out.replace(new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'),'<mark>$1</mark>');});
+  return out;
+}
+
+function doSearch(override){
+  const inp=document.getElementById('q-input');
+  const q=override!==undefined?override:inp.value.trim();
+  _lastQ=q;
+  if(q)inp.value=q;
+  if(!q){document.getElementById('results-root').innerHTML='<div style="color:var(--text-muted);font-family:var(--fm);font-size:0.88rem;padding:20px 0;">Enter a search term above.</div>';document.getElementById('search-controls').style.display='none';document.getElementById('filter-info').style.display='none';return;}
+
+  const results=LM.search(q, _activeFilter==='all'?null:_activeFilter);
+  _lastResults=results;
+
+  const fi=document.getElementById('filter-info');
+  if(_activeFilter&&_activeFilter!=='all'){
+    const label=FILTERS.find(f=>f.key===_activeFilter)?.label||_activeFilter;
+    fi.style.display='block';fi.textContent=`Filtering by ${label}: "${q}"`;
+  } else fi.style.display='none';
+
+  const url=new URL(location.href);url.searchParams.set('q',q);
+  if(_activeFilter&&_activeFilter!=='all') url.searchParams.set('filter',_activeFilter);
+  else url.searchParams.delete('filter');
+  history.replaceState({},'',url);
+
+  renderResults(results,q);
+}
+
+function renderResults(items,q){
+  const root=document.getElementById('results-root');
+  document.getElementById('search-controls').style.display=items.length?'flex':'none';
+  document.getElementById('result-count').textContent=`${items.length} result${items.length!==1?'s':''}`;
+
+  const heading=document.getElementById('search-heading');
+  heading.innerHTML=q?`<span style="color:var(--yellow);">"${q}"</span>`:'Search';
+
+  if(!items.length){root.innerHTML=`<div style="padding:40px 0;color:var(--text-muted);font-family:var(--fm);font-size:0.9rem;">No models found for "${q}"${_activeFilter!=='all'?` in ${FILTERS.find(f=>f.key===_activeFilter)?.label||_activeFilter}`:''}.</div>`;return;}
+
+  if(_searchView==='cards'){
+    root.innerHTML='';
+    const grid=document.createElement('div');
+    grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;padding-bottom:60px;';
+    items.forEach(item=>{
+      const card=document.createElement('a');card.className='search-card';card.href=`model.html?id=${encodeURIComponent(item.id)}`;
+      const imgId='sc-'+item.id;
+      const tagsHTML=LM.renderTags(item,'./');
+      card.innerHTML=`<div class="search-card-img" id="${imgId}"><div class="search-card-img-ph">${item.displayName}</div></div>
+        <div class="search-card-body">
+          <div class="search-card-name">${hl(item.fullName||item.displayName,q)}</div>
+          <div class="search-card-meta">${hl([item.carYear,item.manufacturer].filter(Boolean).join(' · '),q)}</div>
+          <div class="search-card-tags">${tagsHTML}</div>
+        </div>`;
+      grid.appendChild(card);
+      LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+        if(!src)return;const w=document.getElementById(imgId);
+        if(w)w.innerHTML=`<img src="${src}" alt="${item.displayName}" style="opacity:1"/>`;
+      });
+    });
+    root.appendChild(grid);
+  } else {
+    root.innerHTML=`<div style="padding-bottom:60px;">${items.map(item=>{
+      const tagsHTML=LM.renderTags(item,'./');
+      return `<a class="search-result" href="model.html?id=${encodeURIComponent(item.id)}">
+        <div style="width:72px;height:54px;background:var(--surface);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;" id="sl-${item.id}">
+          <div style="font-family:var(--fm);font-size:0.58rem;color:var(--text-muted);text-align:center;padding:4px;">${item.scale||'—'}</div>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div class="sr-name">${hl(item.fullName||item.displayName,q)}</div>
+          <div class="sr-sub">${hl([item.carYear,item.manufacturer,item.color].filter(Boolean).join(' · '),q)}</div>
+        </div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;align-items:flex-start;flex-shrink:0;max-width:200px;min-width:0;">${tagsHTML}</div>
+      </a>`;
+    }).join('')}</div>`;
+    items.forEach(item=>{
+      LM.resolveImage(LM.heroImages(item.code,'./')).then(src=>{
+        if(!src)return;const w=document.getElementById('sl-'+item.id);
+        if(w)w.innerHTML=`<img src="${src}" alt="" style="width:100%;height:100%;object-fit:contain;padding:3px;opacity:1"/>`;
+      });
+    });
+  }
+}
+</script>
+</body>
+</html>

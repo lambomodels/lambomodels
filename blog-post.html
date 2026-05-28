@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Blog — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.post-body{max-width:720px;font-size:1.1rem;color:var(--text-dim);line-height:1.85}
+.post-body p{margin-bottom:1.4em;font-weight:500}
+.post-body h2{font-family:var(--fd);font-weight:800;font-size:1.8rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--white);margin:2.4em 0 0.9em}
+.post-img{width:100%;margin:2.2em 0;border:1px solid var(--border);display:block}
+.post-img-caption{font-family:var(--fm);font-size:0.8rem;font-weight:700;color:var(--text-muted);text-align:center;margin-top:-1.6em;margin-bottom:2em;letter-spacing:0.1em}
+.post-img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px;margin:2.2em 0}
+.post-img-grid img{width:100%;height:240px;object-fit:cover;border:1px solid var(--border)}
+.post-quote{border-left:3px solid var(--yellow);padding:20px 28px;margin:2.2em 0;background:var(--surface);font-size:1.15rem;font-style:italic;color:var(--text-dim);line-height:1.7}
+.post-quote-author{font-family:var(--fm);font-size:0.78rem;font-weight:700;color:var(--text-muted);margin-top:10px;font-style:normal;letter-spacing:0.12em;text-transform:uppercase}
+.post-divider{height:1px;background:var(--border);margin:3em 0;position:relative}
+.post-divider::after{content:'';position:absolute;left:0;top:0;width:60px;height:1px;background:var(--yellow)}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+<div class="container-narrow">
+  <div id="post-root"><div class="loading" style="padding:120px 0;">Loading…</div></div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script src="js/blog-data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+LM.initLightbox();
+
+const id=new URLSearchParams(location.search).get('id');
+const posts=window.BLOG_POSTS||[];
+const post=posts.find(p=>p.id===id);
+const root=document.getElementById('post-root');
+
+function renderBlock(block) {
+  switch(block.type) {
+    case 'text':
+      return `<p>${block.text}</p>`;
+    case 'heading':
+      return `<h2>${block.text}</h2>`;
+    case 'image':
+      return `<img class="post-img" src="${block.src}" alt="${block.caption||''}" loading="lazy" onclick="LM.openLightbox(['${block.src}'],0)" style="cursor:zoom-in;"/>
+        ${block.caption?`<div class="post-img-caption">${block.caption}</div>`:''}`;
+    case 'images': {
+      const srcs=block.srcs||[];
+      const grid=srcs.map((s,i)=>`<img src="${s}" alt="${block.caption||''}" loading="lazy" onclick="LM.openLightbox(${JSON.stringify(srcs)},${i})" style="cursor:zoom-in;"/>`).join('');
+      return `<div class="post-img-grid">${grid}</div>${block.caption?`<div class="post-img-caption">${block.caption}</div>`:''}`;
+    }
+    case 'quote':
+      return `<blockquote class="post-quote">"${block.text}"${block.author?`<div class="post-quote-author">— ${block.author}</div>`:''}</blockquote>`;
+    case 'divider':
+      return `<div class="post-divider"></div>`;
+    default:
+      return block.text?`<p>${block.text}</p>`:'';
+  }
+}
+
+if(!post){
+  root.innerHTML=`<div style="padding:120px 0;text-align:center;"><h1 class="section-title" style="font-size:2rem;margin-bottom:20px;">Post Not Found</h1><a href="blog.html" class="btn btn-ghost">← Blog</a></div>`;
+} else {
+  document.title=`${post.title} — LAMBOMODELS`;
+
+  // Render content: prefer blocks[], fall back to content string
+  let bodyHTML='';
+  if(post.blocks&&post.blocks.length){
+    bodyHTML=post.blocks.map(renderBlock).join('');
+  } else if(post.content){
+    bodyHTML=post.content.split('\n').filter(Boolean).map(p=>`<p>${p}</p>`).join('');
+  }
+
+  root.innerHTML=`
+    <div style="padding:56px 0 72px;">
+      <div class="breadcrumb"><a href="index.html">Home</a><sep>/</sep><a href="blog.html">Blog</a><sep>/</sep><span>${post.title}</span></div>
+      <div style="font-family:var(--fm);font-size:0.88rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:18px;">${post.date}</div>
+      <h1 style="font-family:var(--fd);font-weight:900;font-size:clamp(2rem,5vw,3.8rem);text-transform:uppercase;letter-spacing:-0.01em;color:var(--white);line-height:0.95;margin-bottom:44px;">${post.title}</h1>
+      <div class="post-body">${bodyHTML}</div>
+      <div style="margin-top:60px;padding-top:28px;border-top:1px solid var(--border);">
+        <a href="blog.html" class="btn btn-ghost">← All Posts</a>
+      </div>
+    </div>`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Memorabilia — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+<div class="container">
+  <div class="section-header">
+    <div class="eyebrow">LAMBOMODELS</div>
+    <h1 class="section-title">Lamborghini <span>Memorabilia</span></h1>
+  </div>
+  <p style="color:var(--text-dim);font-size:1.02rem;line-height:1.75;max-width:640px;margin-bottom:56px;">Beyond the scale models — books, branded items, art prints, clothing, and other Lamborghini collectibles from the empire.</p>
+  <div id="memo-root"><div class="loading">Loading…</div></div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+LM.initLightbox();
+
+async function init(){
+  const items=await LM.loadMemorabilia();
+  const root=document.getElementById('memo-root');
+  if(!items.length){root.innerHTML=`<div class="empty"><p>No memorabilia found — check data/memorabilia.csv</p></div>`;return;}
+
+  // Group by brand
+  const byBrand={};
+  items.forEach(i=>{(byBrand[i.brand]=byBrand[i.brand]||[]).push(i);});
+
+  // Brand display order
+  const brandOrder=['Automobili Lamborghini','Tonino Lamborghini','Museo Ferruccio Lamborghini','Lamborghini Polo Storico','Lamborghini Squadra Corse','Lamborghini Wine','Lamborghini Calor','Lamborghini Records LTD','Lamborghini Artimarca','Elettra Lamborghini','Misc'];
+
+  const sortedBrands=[
+    ...brandOrder.filter(b=>byBrand[b]),
+    ...Object.keys(byBrand).filter(b=>!brandOrder.includes(b)).sort(),
+  ];
+
+  root.innerHTML='';
+  for(const brand of sortedBrands){
+    const list=byBrand[brand];if(!list)continue;
+    const sec=document.createElement('div');sec.className='memo-section';
+    sec.innerHTML=`<div class="memo-section-title">${brand}</div>`;
+
+    const grid=document.createElement('div');grid.className='memo-grid';
+    for(const [idx,item] of list.entries()){
+      // Find global index in full items array
+      const globalIdx=items.indexOf(item);
+      const card=document.createElement('a');card.className='memo-card';
+      card.href=`memo-item.html?idx=${globalIdx}`;
+      const imgId='mimg-'+item.id;
+      card.innerHTML=`
+        <div class="memo-card-img-wrap" id="${imgId}">
+          <div class="memo-card-img-ph">📦</div>
+        </div>
+        <div class="memo-card-name">${item.name}</div>
+        <div class="memo-card-price">${item.price&&item.price!=='-'?item.price:''}</div>`;
+      grid.appendChild(card);
+
+      // Try loading image by slug of the item name
+      LM.resolveImage(LM.memoImage(item.name,'./')).then(src=>{
+        if(!src)return;
+        const w=document.getElementById(imgId);
+        if(w)w.innerHTML=`<img src="${src}" alt="${item.name}" loading="lazy" style="cursor:zoom-in;" onclick="LM.openLightbox(['${src}'],0)"/>`;
+      });
+    }
+    sec.appendChild(grid);
+    root.appendChild(sec);
+  }
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

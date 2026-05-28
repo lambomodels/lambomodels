@@ -1,0 +1,10 @@
+{
+  "_comment": "Edit this file to configure site-wide settings.",
+  "latestAddition": "DucatiSF-1",
+  "collectionMilestones": [
+    { "number": 100, "code": "Hur4",      "note": "100th model — Huracán LP610-4" },
+    { "number": 200, "code": "Genesis-1", "note": "200th model — Genesis by Yow Modellini" },
+    { "number": 299, "code": "Urus-3",    "note": "299th model — Urus, Sant'Agata" },
+    { "number": 300, "code": "UrusSE-1",  "note": "300th model — Urus SE, Sant'Agata" }
+  ]
+}

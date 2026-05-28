@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Memorabilia — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page"><div class="container-narrow"><div id="item-root"><div class="loading" style="padding:120px 0;">Loading…</div></div></div></main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script src="js/memorabilia-data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();LM.initLightbox();
+
+const params=new URLSearchParams(location.search);
+const itemIdx=parseInt(params.get('idx')||'0');
+
+async function init(){
+  const items=await LM.loadMemorabilia();
+  const item=items[itemIdx];
+  if(!item){
+    document.getElementById('item-root').innerHTML=`<div style="padding:100px 0;text-align:center;"><h1 style="font-family:var(--fd);font-size:2rem;color:var(--white);">Not Found</h1><a href="memorabilia.html" class="btn btn-ghost" style="margin-top:24px;display:inline-flex;">← Back</a></div>`;
+    return;
+  }
+  document.title=`${item.name} — LAMBOMODELS`;
+
+  // Look up description by slug
+  const slug=LM.slug(item.name);
+  const descs=window.MEMO_DESCRIPTIONS||{};
+  const desc=descs[slug]||{};
+  const shortDesc=desc.short||'';
+  const longDesc=desc.long||'';
+
+  const root=document.getElementById('item-root');
+  root.innerHTML=`
+    <div style="padding:52px 0 36px;border-bottom:1px solid var(--border);margin-bottom:44px;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><sep>/</sep>
+        <a href="memorabilia.html">Memorabilia</a><sep>/</sep>
+        <span>${item.brand}</span><sep>/</sep>
+        <span>${item.name}</span>
+      </div>
+      <h1 class="model-title">${item.name}</h1>
+      <div style="font-family:var(--fm);font-size:0.88rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;">${item.brand}</div>
+      ${shortDesc?`<div class="model-short-desc" style="margin-bottom:20px;">${shortDesc}</div>`:''}
+      ${item.price&&item.price!=='-'?`<div class="specs-row" style="margin-bottom:0;max-width:300px;"><div class="spec"><div class="spec-label">Price</div><div class="spec-val">${item.price}</div></div></div>`:''}
+    </div>
+
+    <div id="gallery-section" style="margin-bottom:52px;">
+      <div class="inline-label" style="margin-bottom:16px;">Photos</div>
+      <div id="gallery-main-wrap" style="display:none;">
+        <div class="gallery-hero" id="gallery-main"></div>
+        <div class="gallery-thumbs" id="gallery-thumbs"></div>
+      </div>
+      <div id="gallery-none"></div>
+    </div>
+
+    ${longDesc?`<div style="margin-bottom:48px;"><div class="divider"></div><div class="model-long-desc"><h2>About This Item</h2><div class="model-long-body">${longDesc.split('\n\n').filter(Boolean).map(p=>`<p>${p.replace(/\n/g,' ')}</p>`).join('')}</div></div></div>`:''}
+
+    <div style="padding:32px 0 80px;border-top:1px solid var(--border);">
+      <a href="memorabilia.html" class="btn btn-ghost">← All Memorabilia</a>
+    </div>`;
+
+  // Try loading: first check for numbered gallery images (memo-SLUG_1.jpg etc.)
+  const base='./';
+  const memoSlug=LM.slug(item.name);
+  const found=[];let i=1,misses=0;
+  while(misses<2&&i<=20){
+    const hit=await LM.resolveImage(['jpg','png','webp'].map(e=>`${base}images/memo-${memoSlug}_${i}.${e}`));
+    if(hit){found.push(hit);misses=0;}else misses++;
+    i++;
+  }
+  // Also check for single main image (memo-SLUG.jpg)
+  const single=await LM.resolveImage(LM.memoImage(item.name,base));
+  if(single&&!found.includes(single)) found.unshift(single);
+
+  if(!found.length){
+    // keep placeholder visible
+  } else {
+    document.getElementById('gallery-none').style.display='none';
+    const mainWrap=document.getElementById('gallery-main-wrap');mainWrap.style.display='block';
+    const mainEl=document.getElementById('gallery-main');
+    const thumbEl=document.getElementById('gallery-thumbs');
+    mainEl.innerHTML=`<img src="${found[0]}" alt="${item.name}" id="gal-main-img"/>`;
+    mainEl.onclick=()=>LM.openLightbox(found,0);
+    if(found.length>1){
+      found.forEach((src,i)=>{
+        const img=document.createElement('img');
+        img.className='gallery-thumb'+(i===0?' active':'');
+        img.src=src;img.alt=`Photo ${i+1}`;img.loading='lazy';
+        img.onclick=()=>{document.getElementById('gal-main-img').src=src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));img.classList.add('active');mainEl.onclick=()=>LM.openLightbox(found,i);};
+        thumbEl.appendChild(img);
+      });
+    } else {thumbEl.style.display='none';}
+  }
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

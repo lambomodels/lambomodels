@@ -1,0 +1,1683 @@
+{
+  "_instructions": {
+    "Keys": "Code column from your CSV",
+    "Fields": {
+      "short": "1-3 sentences shown above specs on model page",
+      "long": "Detailed text after gallery. Use \\n for paragraph breaks. Supports basic HTML: <a href='url'>link</a>, <strong>bold</strong>",
+      "funny": "true = Funny Lambo tag",
+      "showNote": "true = show Notes field as badge on model page",
+      "autographed": "true = gold Autographed tag",
+      "special": "true = purple Special tag",
+      "concept": "true = Concept info tag",
+      "oneoff": "true = One-Off info tag",
+      "fewoff": "true = Few-Off info tag",
+      "milestone": "One of: '1st' '2nd' '3rd' '100th' '200th' '300th' '400th'",
+      "blocks": "Array of rich content blocks for article-style pages (see README)"
+    }
+  },
+  "350GTV-1": {
+    "_model": "1963 Lamborghini 350 GTV | 1:43 | Green | Hachette",
+    "short": "First ever Lamborghini Concept car!",
+    "long": "The Lamborghini 350 GTV was the very first prototype built in 1963 and served as the precursor to the production 350 GT. It was finished in a bright metallic light blue when it was unveiled to the public at the Turin Motor Show in 1963, though it was still unfinished and didn't yet have a running engine. After decades in storage, the prototype was sold in the mid-1980s to a private enthusiast who had it made road-worthy and repainted in a deep metallic green at his request. Because that green was applied long after the original debut and was not the show color, it is considered historically incorrect compared with the original light blue finish.",
+    "concept": true
+  },
+  "350GT-1": {
+    "_model": "1964 Lamborghini 350 GT | 1:43 | Red | Minichamps",
+    "short": "First ever Lamborghini Production car. Similar spec to the Lamborghini Museo one!",
+    "long": "The Lamborghini 350 GT was the company's first production car, introduced in 1964 as the refined evolution of the earlier 350 GTV prototype. Unlike the unfinished show car, the 350 GT was fully engineered for the road, powered by a 3.5-liter V12 designed by Giotto Bizzarrini and tuned for smooth grand touring performance. With its elegant aluminum body by Carrozzeria Touring and relatively limited production of just over 100 examples, the 350 GT marked the true beginning of Lamborghini as a serious competitor to Ferrari in the mid-1960s grand touring world."
+  },
+  "3500GTZ-1": {
+    "_model": "1965 Lamborghini 3500 GTZ | 1:43 | White | Edicola",
+    "short": "The Lamborghini 3500 GTZ was built by Zagato, it used a shortened Lamborghini 350 GT chassis.",
+    "long": "The Lamborghini 3500 GTZ was a rare and short-lived experiment from 1965, created as a more aggressively styled alternative to the 350 GT. Built by Carrozzeria Zagato, only two examples were produced. Compared to the elegant Touring-bodied 350 GT, the 3500 GTZ featured sharper lines, a more compact fastback profile, and Zagato's distinctive lightweight approach. Despite its striking design and exclusivity, it never entered series production, making it one of the earliest and most unusual coachbuilt Lamborghinis.",
+    "oneoff": true
+  },
+  "400GT2+2-1": {
+    "_model": "1966 Lamborghini 400 GT 2+2 | 1:43 | Black | Minichamps",
+    "short": "Second generation of the Lamborghini V12 GT car.",
+    "long": "The Lamborghini 400 GT 2+2 was introduced in 1966 as the more practical evolution of the earlier 400 GT. While it kept the 4.0-liter V12, enlarged from the original 3.5-liter unit, the biggest change was the addition of two small rear seats, turning it into a true grand tourer rather than a strict two-seater. It also featured Lamborghini's own in-house five-speed gearbox, replacing the earlier ZF unit.\n\nWith its refined Touring body and improved comfort, the 400 GT 2+2 helped establish Lamborghini as a serious manufacturer rather than just a newcomer. Around 224 examples were built, making it significantly more common than the earlier 400 GT interim model, yet still rare by modern standards."
+  },
+  "400GTMonza-1": {
+    "_model": "1966 Lamborghini 400 GT Monza | 1:43 | Red | Hachette",
+    "short": "This beautiful one-off Lamborghini was hidden away from the public for more than 30 years. It even has the windscreen from a Ferrari!",
+    "long": "The Lamborghini 400 GT Monza was a one-off prototype built in 1966 on a 400 GT chassis. It was styled by Neri and Bonacini, the Modena-based coachbuilders who had previously worked with Lamborghini on early projects. The car featured a lightweight aluminum body with a long fastback profile and distinctive covered headlights, giving it a more competition-inspired appearance compared to the standard Touring-bodied 400 GT.\n\nInterestingly, the script on the car reads \"400 GT Monza\" but also includes the name \"Jarama.\" This has caused confusion over the years. The name was used informally on the prototype long before the production Lamborghini Jarama was introduced in 1970. However, the Monza prototype itself was never put into production and remained a unique experimental design, separate from the later Jarama model.",
+    "oneoff": true
+  },
+  "400GTFlstar-1": {
+    "_model": "1966 Lamborghini 4000 GT Flying Star II | 1:43 | Gray | Leo Models",
+    "short": "One of the very first Lamborghini concept cars, nice model by Leo Models.",
+    "long": "The Lamborghini 4000 GT Flying Star II was a one-off shooting brake concept unveiled in 1966 at the Turin Motor Show. It was built on a 400 GT chassis and designed by Carrozzeria Touring, who gave it a distinctive two-door estate profile with a long roofline and a large rear hatch. Under the hood was Lamborghini's 4.0-liter V12, but the real focus of the car was its bold attempt to combine grand touring performance with added practicality.\n\nDespite its elegant proportions and the novelty of a V12 Lamborghini shooting brake in the 1960s, the Flying Star II remained a unique prototype and never entered production. Today it stands as one of the most unusual and unexpected designs from Lamborghini's early years.",
+    "concept": true
+  },
+  "Miu-1": {
+    "_model": "1966 Lamborghini Miura P400 | 1:100 | Black | Suntory Car Graphic",
+    "short": "Nice little Miura P400 in 1:100 scale.",
+    "long": "The Lamborghini Miura P400 was introduced in 1966 and is widely regarded as the world's first true supercar. Designed by Marcello Gandini at Bertone, the Miura completely changed the high-performance car world with its dramatic styling and revolutionary transverse mid-mounted 4.0-liter V12 layout, a configuration previously seen mainly in racing cars. Producing around 350 horsepower, the P400 combined breathtaking performance with one of the most beautiful automotive designs of the 1960s. Its low stance, flowing bodywork, distinctive “eyelash” headlight surrounds, and rear engine louvers made it instantly recognizable. The Miura was developed by a young engineering team that included Gian Paolo Dallara, Paolo Stanzani, and Bob Wallace, with Ferruccio Lamborghini ultimately approving the ambitious project after seeing its potential. The name “Miura” came from the famous Spanish fighting bulls bred by Don Eduardo Miura, beginning Lamborghini’s long tradition of bull-related model names. Between 1966 and 1969, around 275 P400 examples were built, establishing the Miura as one of the most influential and iconic Lamborghinis ever created."
+  },
+  "Miu-2": {
+    "_model": "1966 Lamborghini Miura P400 | 1:43 | Yellow | Del Prado",
+    "short": "A nice budget 1:43 model of the first ever Miura, the Miura P400!",
+    "long": "The Lamborghini Miura P400 was introduced in 1966 and is widely regarded as the world's first true supercar. Designed by Marcello Gandini at Bertone, the Miura completely changed the high-performance car world with its dramatic styling and revolutionary transverse mid-mounted 4.0-liter V12 layout, a configuration previously seen mainly in racing cars. Producing around 350 horsepower, the P400 combined breathtaking performance with one of the most beautiful automotive designs of the 1960s. Its low stance, flowing bodywork, distinctive “eyelash” headlight surrounds, and rear engine louvers made it instantly recognizable. The Miura was developed by a young engineering team that included Gian Paolo Dallara, Paolo Stanzani, and Bob Wallace, with Ferruccio Lamborghini ultimately approving the ambitious project after seeing its potential. The name “Miura” came from the famous Spanish fighting bulls bred by Don Eduardo Miura, beginning Lamborghini’s long tradition of bull-related model names. Between 1966 and 1969, around 275 P400 examples were built, establishing the Miura as one of the most influential and iconic Lamborghinis ever created."
+  },
+  "350GTS-1": {
+    "_model": "1967 Lamborghini 350 GTS | 1:43 | Blue | Small Wheels",
+    "short": "The Lamborghini 350 GTS was a convertible-roof spider version of the 350 GT, first shown at the November 1965 Turin Auto Show.",
+    "long": "The Lamborghini 350 GTS was the open-top version of the 350 GT, first shown in 1965. It retained the same 3.5-liter V12 and overall mechanical layout as the coupe, but featured a removable roof panel, giving it a more relaxed grand touring character. Only two examples were built, making it one of the rarest early production Lamborghinis. Despite the appeal of a convertible V12 Lamborghini in the mid-1960s, the model never went into full production, likely due to limited demand and the company's focus on developing newer models like the upcoming Miura.",
+    "oneoff": true
+  },
+  "Marzal-1": {
+    "_model": "1967 Lamborghini Marzal | 1:64 | Pink | Matchbox",
+    "short": "",
+    "long": ""
+  },
+  "EspS1-1": {
+    "_model": "1968 Lamborghini Espada Series I | 1:55 | Gold | Siku",
+    "short": "Nice vintage model of the Espada 400 GT (Series 1) by Siku.",
+    "long": "The Lamborghini Espada Series 1 was introduced in 1968 as the company's first true four-seat grand tourer. Designed by Marcello Gandini at Bertone, it translated the sharp lines of the earlier Marzal concept into a production car, with its low nose, large glass area, and distinctive rear hatch giving it a futuristic look for the late 1960s.\n\nPowered by a 3.9-liter V12 producing around 325 horsepower, the Series 1 combined high-speed performance with genuine space for four adults, something very few exotic cars could offer at the time. Around 186 Series 1 examples were built before the updated Series 2 arrived in 1970, making the earliest Espadas the rarest and purest version of the model."
+  },
+  "Isl-1": {
+    "_model": "1968 Lamborghini Islero | 1:43 | Yellow | Minichamps",
+    "short": "The first generation of the Islero in yellow by Minichamps… looks fantastic!",
+    "long": "The Lamborghini Islero 400 GT was introduced in 1968 as the understated successor to the 400 GT 2+2. Built by Carrozzeria Marazzi, it featured clean, conservative lines compared to some of Lamborghini's more dramatic designs, but stayed true to the brand's front-engined grand touring formula.\n\nIt was powered by a 4.0-liter V12 producing around 325 horsepower, paired with a five-speed manual gearbox. Designed as a refined and comfortable GT rather than a showpiece, the Islero focused on usability and performance in a more subtle package. Only 125 examples of the 400 GT version were built before the updated Islero S arrived in 1969, making it one of the rarer production Lamborghinis of the late 1960s."
+  },
+  "MiuAMS-1": {
+    "_model": "1968 Lamborghini Miura AMS | 1:43 | Blue | Yow Modellini",
+    "short": "Japanese kit by YowModellini, which was built by LAMBOMODELS. I've had so much fun building it, but it was also my most challenging custom to date. Just look at those engine details! I've had to do so much research about the car when building it. It turned out incredible. Thanks Jasper Van Toorenburg (Collexhi) for your help with references!",
+    "long": "The Lamborghini AMS was a little-known one-off prototype created in **1972** as a special customer project linked to American enthusiast Doug Call of Salt Lake City. It was not a factory Lamborghini model in the traditional sense, but a small independent engineering and coachbuilding effort based in Bologna, which used Lamborghini mechanicals.\nThe car was built around a **Miura V12 engine**, mounted in a lightweight tubular racing chassis with a wheelbase of just over 2 meters and a total weight of only around **680 kg**, making it dramatically lighter and more race-focused than a standard Miura. The project was directed by Ing. Tancredi Simonetti, and the car was tested extensively at Modena with evolving bodywork and different nose configurations during its development phase.\nDespite its Lamborghini heart, the AMS was essentially a prototype racing experiment rather than a road car or official Lamborghini development model. It reportedly underwent multiple aerodynamic revisions during 1972–73 and even saw test driving involvement from Lamborghini personnel, including test driver Valentino Balboni in period references.\nBefore it was even finished, it was reportedly stolen, and its whereabouts are still unknown to this day."
+  },
+  "MiuBarch-1": {
+    "_model": "1968 Lamborghini Miura AMS Barchetta | 1:43 | Orange | Yow Modellini",
+    "short": "Japanese kit by YowModellini, which was built by LAMBOMODELS. It was incredible to build it, about 2+ weeks of focused work. Lots of reference images were required, and some decals were remade. The rear of this model is super accurate too, a lot of work has been put into it. Other builders don't put much effort in making the rear as accurate.",
+    "long": "The Lamborghini Miura Barchetta is a French-built, one-off open-top racing conversion created in 1971 by French rally driver Thierry Gore and his partner Edmond Ciclet, based on a heavily damaged Miura P400 chassis #3441. Rather than being a factory Lamborghini project, it was an independent rebuild that transformed the wrecked Miura into a lightweight competition spider intended for racing use. The car was significantly reworked in France with a stripped interior, reduced bodywork, and an open barchetta-style configuration that removed the fixed roof entirely. It was prepared specifically for competition and entered into events such as the 1971 Tour de France Automobile, where it was driven in period racing conditions as a privateer entry rather than any official Lamborghini effort. Because it was built from a damaged road car and heavily modified outside the factory, it sits in a very different category from Lamborghini’s own prototypes like the Jota or SVJ. It represents more of a French grassroots endurance-racing interpretation of the Miura rather than an official development branch of the model. This particular car became well known in enthusiast circles because of its unusual origin story and its transformation from wrecked road car into a competition spider, making it one of the most extreme non-factory Miura derivatives of the early 1970s."
+  },
+  "MiuS-1": {
+    "_model": "1968 Lamborghini Miura P400 S | 1:43 | Green | Mondo Motors",
+    "short": "The second generation of the Miura, this is the Miura S, and this is a custom by LAMBOMODELS. It's been given a detail job as it originally was just fully green.",
+    "long": "The Lamborghini Miura P400 S was introduced in 1968 as the updated and improved version of the original Miura P400. It refined the groundbreaking mid-engine V12 formula into a more usable and better-equipped road car while keeping the dramatic styling that made the Miura famous.\n\nMechanically, the 3.9-liter transverse V12 was upgraded to produce around 370 horsepower, with improvements to engine tuning and drivability. The chassis also received subtle reinforcement, making the car more stable and refined at higher speeds compared to the earlier P400.\n\nVisually, the Miura S remained almost identical to the original design by Marcello Gandini at Bertone. The most noticeable differences were small details such as revised window surrounds, updated badging, and the addition of electric window switches and improved trim inside the cabin. Optional features like air conditioning and better sound insulation also made it more comfortable for road use.\n\nAround 338 examples were built between 1968 and 1971, making the Miura S the most numerous early Miura variant and an important step between the original P400 and the ultimate Miura SV."
+  },
+  "MiuS-2": {
+    "_model": "1968 Lamborghini Miura P400 S | 1:43 | Green | Mondo Motors",
+    "short": "I bought a second Miura S from Mondo Motors as a wheel donor for my custom Islero S project. The current wheels had to come from the Polistil Islero.",
+    "long": "The Lamborghini Miura P400 S was introduced in 1968 as the updated and improved version of the original Miura P400. It refined the groundbreaking mid-engine V12 formula into a more usable and better-equipped road car while keeping the dramatic styling that made the Miura famous.\n\nMechanically, the 3.9-liter transverse V12 was upgraded to produce around 370 horsepower, with improvements to engine tuning and drivability. The chassis also received subtle reinforcement, making the car more stable and refined at higher speeds compared to the earlier P400.\n\nVisually, the Miura S remained almost identical to the original design by Marcello Gandini at Bertone. The most noticeable differences were small details such as revised window surrounds, updated badging, and the addition of electric window switches and improved trim inside the cabin. Optional features like air conditioning and better sound insulation also made it more comfortable for road use.\n\nAround 338 examples were built between 1968 and 1971, making the Miura S the most numerous early Miura variant and an important step between the original P400 and the ultimate Miura SV."
+  },
+  "MiuRoad-1": {
+    "_model": "1968 Lamborghini Miura Roadster | 1:43 | Blue | Rio Models",
+    "short": "The very first one-off Lamborghini, which was also a prototype originally. Second ever Lamborghini without a roof (after 350GTS)",
+    "long": "The Lamborghini Miura Roadster was a unique one-off concept unveiled at the 1968 Brussels Motor Show, created by Bertone and designed by Marcello Gandini as an open-top interpretation of the Miura P400. Unlike later Miura Spider conversions, this was a true factory-backed prototype and featured extensive redesign work rather than simply removing the roof. The windshield angle was changed, the rear section was completely reshaped, the side air intakes were enlarged, and the chassis was reinforced to compensate for the lack of a roof. Interestingly, the car never actually had a removable roof panel despite often being described as a roadster or targa. Chassis number was #3498.\n\nThe concept was originally finished in a bright metallic azure blue with a light interior, and it attracted enormous attention at both the Brussels and Geneva shows. However, Lamborghini never intended to produce it, despite strong public interest. In 1969, the car was sold to the International Lead Zinc Research Organization (ILZRO), which transformed it into the “Zn75” concept by rebuilding many components using zinc-based materials and repainting it in a dark metallic green finish.\n\nAfter remaining in Zn75 form for decades, the car was purchased in 2006 and fully restored back to its original 1968 Bertone specification. Today, the Miura Roadster is considered one of the most important and beautiful Lamborghini concept cars ever created. It is owned by Albert Spiess, who also happens to own the Aventador Ultimae Roadster Miura Roadster AdPersonam edition, which was the very last Aventador model ever made.",
+    "oneoff": true
+  },
+  "Faena-1": {
+    "_model": "1969 Lamborghini Espada Faena | 1:43 | Blue | Yow Modellini/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "IslLM-1": {
+    "_model": "1969 Lamborghini Islero 'LeMans 24 Hours' | 1:43 | Red | Ixo",
+    "short": "A very interesting Islero — originally one of the first Islero 400 GTs built in 1968, before being turned into a race car in 1975. The side exhausts look incredible!",
+    "long": "The Lamborghini Islero Le Mans was a one-off racing-modified Islero entered for the 1975 24 Hours of Le Mans by French privateer Paul Rilly, based on a standard Lamborghini Islero 400 GT with chassis number 6009.\n\nInstead of being built by the factory, this Islero was prepared by Rilly and his team with a roll cage, racing brakes and suspension, a larger fuel tank, harnesses, special exhaust and other modifications aimed at endurance competition. During qualifying the car suffered a crash and its best lap time of around 5:28 wasn't enough to make the grid, so it never actually started the race.\n\nThe car was later tracked down in France near Clermont-Ferrand in the 2000s and has been in the process of being restored back toward its Le Mans configuration. Last picture credit: Olivier Nameche"
+  },
+  "IslS-1": {
+    "_model": "1969 Lamborghini Islero S | 1:43 | Silver | Polistil/LAMBOMODELS",
+    "short": "Custom model based on a Politoys Islero 400 GT. The only true Lamborghini Islero S in 1/43 scale.",
+    "long": "The Lamborghini Islero 400 GTS, more commonly known as the Islero S, was introduced in 1969 as the updated and more powerful version of the original Islero 400 GT. While the overall shape by Carrozzeria Marazzi remained familiar, the GTS received a series of subtle but noticeable refinements. The front grille was revised, the hood gained a more pronounced central air scoop, the side air vents were reshaped and enlarged, and various trim details were updated, giving the car a slightly more assertive presence.\n\nIts 4.0-liter V12 was tuned to produce around 350 horsepower, up from the earlier 325, along with improvements to cooling and overall drivability. Inside, the GTS featured upgraded materials, improved sound insulation, and small dashboard refinements to enhance comfort. A total of 100 examples were built, making it slightly less rare than the earlier 400 GT version, but still one of the more understated and uncommon classic Lamborghinis from the late 1960s.",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "How it was made"
+      },
+      {
+        "type": "text",
+        "text": "The donor was a 1/43 Politoys Islero 400GT from the late 60s, with opening doors, headlights, and a hood. I didn't use a Minichamps Islero since I lacked experience modifying expensive models, and the Politoys was a bargain. Plus, I loved having opening parts on this rare bull!"
+      },
+      {
+        "type": "text",
+        "text": "After disassembly, I stripped the paint and ground down the old tear-drop side markers to replace them with the later-style round ones. Then I added small fender flares — my first time! I used super glue mixed with corn starch for putty, which dries in minutes. Each flare took hours… but that's the fun part. I also enlarged the hood scoop with the same DIY putty."
+      },
+      {
+        "type": "text",
+        "text": "I needed proper Miura-style wheels, but the Politoys had basic toy wheels. So I got a cheap Mondo Motors Miura as a donor. After a few fitting attempts, it worked surprisingly well."
+      },
+      {
+        "type": "text",
+        "text": "The Islero S had a redone interior and dashboard — meaning research, sanding, putty, sanding… procrastinating. In September 2024 I primed it, then in January 2025 I fixed defects, reprimed, and painted it silver metallic with a black interior using spray cans. Everything fit… until I realized the doors touched the paint when opening. I glued them shut, but the hood and headlights still open!"
+      },
+      {
+        "type": "text",
+        "text": "Final steps: lots of detail work. The engine turned out great. The windows were remade from thin plastic. Other mods: new side markers, fog lights, vents, custom logos, a metal tube under the doors, wipers… Now, after months of work — the only true 1/43 Islero S. Not perfect, but I'm proud. It now sits next to the other two Isleros in my collection."
+      }
+    ],
+    "special": true
+  },
+  "Jar-1": {
+    "_model": "1970 Lamborghini Jarama 400GT | 1:43 | Silver | Polistil",
+    "short": "Vintage toy of the first edition of the Lamborghini Jarama — Ferruccio's favourite model. Everything opens too!",
+    "long": "The Lamborghini Jarama 400 GT was introduced in 1970 as a more compact front-engined V12 grand tourer, effectively replacing the Islero in Lamborghini's lineup. Designed by Marcello Gandini at Bertone, the Jarama featured sharp, angular lines with distinctive partially covered headlights that gave it a purposeful and slightly aggressive look.\n\nIt was powered by a 3.9-liter V12 producing around 350 horsepower, paired with a five-speed manual gearbox, with an automatic available as an option. Although it shared its basic mechanical layout with the Espada, the Jarama had a shorter wheelbase and a tighter 2+2 cabin, giving it a sportier character. A total of 177 400 GT examples were built before the updated Jarama S was introduced in 1973, making the original version one of the rarer V12 Lamborghinis of the 1970s."
+  },
+  "JarBob-1": {
+    "_model": "1970 Lamborghini Jarama Bob | 1:43 | Orange | Leo Models",
+    "short": "Special based on the Jarama S, modified by Bob Wallace. Only one of these exists in real life.",
+    "long": "The Lamborghini Jarama Rally was a unique experimental version developed in the early 1970s by Lamborghini test driver and development engineer Bob Wallace. Built on a Jarama S, it was never a factory production model but rather a personal performance project aimed at exploring the car's sporting potential beyond its grand touring role.\n\nWallace reduced weight wherever possible and modified the car with wider wheels, flared arches, a more aggressive suspension setup, and engine tuning to extract additional performance from the 3.9-liter V12. The result was a far more focused and purposeful machine compared to the standard Jarama. Despite its name, it was not an official rally entry but more of a development special that showcased what the platform could become in a more competition-oriented form.",
+    "oneoff": true
+  },
+  "MiuJota-1": {
+    "_model": "1970 Lamborghini Miura Jota | 1:64 | Gray | Kyosho",
+    "short": "The later version of the Miura Jota, which features two extra air intakes on the roof... Wrong color unfortunately, there was only one of these made and only in red..",
+    "long": "The Lamborghini Miura Jota was a unique experimental version of the Miura created in 1970 by legendary Lamborghini test driver and engineer Bob Wallace. Built on Miura S chassis #5084, the car was developed as a lightweight competition-oriented machine designed around FIA Appendix J racing regulations, which is where the name “Jota” originated from. Compared to a standard Miura, the Jota was radically transformed. Large amounts of weight were removed through the use of lightweight Avional aluminum alloy panels, plexiglass side windows, stripped interior components, and a heavily modified chassis. The 3.9-liter V12 was extensively upgraded with higher compression, revised camshafts, dry-sump lubrication, electronic ignition, and a freer exhaust system, increasing output to around 440 horsepower. Suspension geometry was reworked, ultra-wide Campagnolo magnesium wheels were fitted, and the car received fixed headlights, a front spoiler, widened arches, and numerous cooling vents and air extractors throughout the bodywork. Interestingly, the famous roof-mounted air intakes often associated with the Jota were not present in the earliest original photographs of the car. These roof scoops were added slightly later during the Jota’s development, meaning the appearance of the car evolved over time. Many replicas and recreations, including the well-known Piet Pulford recreation, include these later roof intakes as part of the car’s most recognized configuration. Despite its legendary status, the original Jota never officially raced. In 1971 it was sold to InterAuto in Brescia, but not long afterward the car crashed and caught fire, destroying it almost completely. Only the engine reportedly survived. The destruction of the Jota directly inspired the creation of several factory-modified Miura SVJ models, which borrowed styling and engineering ideas from the original car. Decades later, British enthusiast Piet Pulford commissioned an extremely accurate recreation of the Jota using Miura chassis #3033, with assistance from Bob Wallace himself during the engine development. That recreation became one of the most famous Miura replicas ever built.",
+    "oneoff": true
+  },
+  "MiuJota-2": {
+    "_model": "1970 Lamborghini Miura Jota | 1:64 | Green | Unbranded",
+    "short": "An extremely funny bootleg Lamborghini Miura Jota, a very rare car to be used as a bootleg, but it's really hilarious. We can tell it's the 1970 version of this car by the fact that there's no extra air intakes on the roof, which were added later on. This model came in a pack of 6 cars, some of which were Lamborghini's (<a href=\"model.html?id=Gal-3\">Gallardo</a>, <a href=\"model.html?id=Count400-3\">Countach LP400</a>)",
+    "long": "The Lamborghini Miura Jota was a unique experimental version of the Miura created in 1970 by legendary Lamborghini test driver and engineer Bob Wallace. Built on Miura S chassis #5084, the car was developed as a lightweight competition-oriented machine designed around FIA Appendix J racing regulations, which is where the name “Jota” originated from. Compared to a standard Miura, the Jota was radically transformed. Large amounts of weight were removed through the use of lightweight Avional aluminum alloy panels, plexiglass side windows, stripped interior components, and a heavily modified chassis. The 3.9-liter V12 was extensively upgraded with higher compression, revised camshafts, dry-sump lubrication, electronic ignition, and a freer exhaust system, increasing output to around 440 horsepower. Suspension geometry was reworked, ultra-wide Campagnolo magnesium wheels were fitted, and the car received fixed headlights, a front spoiler, widened arches, and numerous cooling vents and air extractors throughout the bodywork. Interestingly, the famous roof-mounted air intakes often associated with the Jota were not present in the earliest original photographs of the car. These roof scoops were added slightly later during the Jota’s development, meaning the appearance of the car evolved over time. Many replicas and recreations, including the well-known Piet Pulford recreation, include these later roof intakes as part of the car’s most recognized configuration. Despite its legendary status, the original Jota never officially raced. In 1971 it was sold to InterAuto in Brescia, but not long afterward the car crashed and caught fire, destroying it almost completely. Only the engine reportedly survived. The destruction of the Jota directly inspired the creation of several factory-modified Miura SVJ models, which borrowed styling and engineering ideas from the original car. Decades later, British enthusiast Piet Pulford commissioned an extremely accurate recreation of the Jota using Miura chassis #3033, with assistance from Bob Wallace himself during the engine development. That recreation became one of the most famous Miura replicas ever built.",
+    "oneoff": true
+  },
+  "CountProto-1": {
+    "_model": "1971 Lamborghini Countach LP500 | 1:64 | Yellow | Matchbox",
+    "short": "A nice vintage model of the 1971 Countach LP 500 Prototype, which was sadly destoyed during crash testing. The car has been recreated by Lamborghini Polo Storico in 2021 for a wealthy collector.",
+    "long": "The Lamborghini Countach LP 500 Prototype was unveiled at the 1971 Geneva Motor Show as the dramatic successor to the Miura and instantly became one of the most influential concept cars ever created. Designed by Marcello Gandini at Bertone, the LP 500 introduced the sharp wedge-shaped styling, scissor doors, and futuristic proportions that would define the Countach and much of supercar design throughout the 1970s and 1980s. Unlike later production Countachs, the prototype used a unique platform chassis and originally featured a 5.0-liter V12, which is where the “LP 500” name came from.\n\nDuring development, the prototype was heavily modified with additional cooling vents and mechanical changes before ultimately being destroyed in a crash test at the MIRA facility in England in 1974, ending the life of the original car. Despite this, the LP 500 became legendary through photographs and magazine covers, often considered the purest and most elegant version of the Countach design.\n\nIn 2017, wealthy Swiss Lamborghini collector Albert Spiess commissioned Lamborghini Polo Storico to faithfully recreate the lost LP 500 from scratch using original drawings, period photographs, factory documents, and surviving engineering references. The recreation took more than 25,000 hours to complete and debuted in 2021 during the Countach’s 50th anniversary celebrations, alongside the unveiling of the modern Countach LPI 800-4.\n\nThe recreated LP 500 was later displayed at the Lamborghini Museum in Sant’Agata Bolognese, allowing visitors to finally see in person a car that had previously existed only in period photographs for nearly five decades."
+  },
+  "MiuSV-1": {
+    "_model": "1971 Lamborghini Miura P400 SV | 1:34 | Orange | Kinsmart",
+    "short": "A pretty cool model of the Miura SV from Kinsmart, and the doors even open! If you look at the Miura from the front with the doors open - those look like bull horns!",
+    "long": "The Lamborghini Miura P400 SV, introduced in 1971, was the final and most developed production version of the Miura, representing the ultimate evolution of Lamborghini’s original V12 supercar. “SV” stood for Spinto Veloce (“pushed fast” - debated), and the model featured extensive mechanical and visual improvements over the earlier P400 and P400 S. Powered by an upgraded 3.9-liter V12 producing around 385 horsepower, the SV received revised cam timing, reworked Weber carburetors, chassis reinforcements, and significant suspension improvements that made the car more stable and predictable at high speeds. Later SVs also introduced a split lubrication system separating the engine and gearbox oils, solving one of the Miura’s long-standing engineering compromises. Visually, the SV can be identified by its widened rear track and flared rear arches to accommodate much larger rear tires, revised rear lights, and the removal of the famous “eyelash” trim around the headlights. The front end was subtly redesigned, and interior refinements improved usability and comfort compared to earlier Miuras. Around 150 Miura SVs were built between 1971 and 1973, making it the rarest standard production Miura variant and one of the most desirable classic Lamborghinis ever produced. It also served as the foundation for even more extreme specials such as the SVJ and SVR."
+  },
+  "MiuSV-2": {
+    "_model": "1971 Lamborghini Miura P400 SV | 1:64 | Orange | Hot Wheels",
+    "short": "I bought this model when I was on holiday in Greece, I remember hunting for the Super Treasure hunt version of this car, but I unfortunately didn't find one, so a regular will do.",
+    "long": "The Lamborghini Miura P400 SV, introduced in 1971, was the final and most developed production version of the Miura, representing the ultimate evolution of Lamborghini’s original V12 supercar. “SV” stood for Spinto Veloce (“pushed fast” - debated), and the model featured extensive mechanical and visual improvements over the earlier P400 and P400 S. Powered by an upgraded 3.9-liter V12 producing around 385 horsepower, the SV received revised cam timing, reworked Weber carburetors, chassis reinforcements, and significant suspension improvements that made the car more stable and predictable at high speeds. Later SVs also introduced a split lubrication system separating the engine and gearbox oils, solving one of the Miura’s long-standing engineering compromises. Visually, the SV can be identified by its widened rear track and flared rear arches to accommodate much larger rear tires, revised rear lights, and the removal of the famous “eyelash” trim around the headlights. The front end was subtly redesigned, and interior refinements improved usability and comfort compared to earlier Miuras. Around 150 Miura SVs were built between 1971 and 1973, making it the rarest standard production Miura variant and one of the most desirable classic Lamborghinis ever produced. It also served as the foundation for even more extreme specials such as the SVJ and SVR."
+  },
+  "MiuSV-3": {
+    "_model": "1971 Lamborghini Miura P400 SV | 1:64 | Red | Hot Wheels",
+    "short": "I bought this Miura SV to match the Aventador Miura Homage Edition, as they're both in the exact same colors, from the same manufacturer!",
+    "long": "The Lamborghini Miura P400 SV, introduced in 1971, was the final and most developed production version of the Miura, representing the ultimate evolution of Lamborghini’s original V12 supercar. “SV” stood for Spinto Veloce (“pushed fast” - debated), and the model featured extensive mechanical and visual improvements over the earlier P400 and P400 S. Powered by an upgraded 3.9-liter V12 producing around 385 horsepower, the SV received revised cam timing, reworked Weber carburetors, chassis reinforcements, and significant suspension improvements that made the car more stable and predictable at high speeds. Later SVs also introduced a split lubrication system separating the engine and gearbox oils, solving one of the Miura’s long-standing engineering compromises. Visually, the SV can be identified by its widened rear track and flared rear arches to accommodate much larger rear tires, revised rear lights, and the removal of the famous “eyelash” trim around the headlights. The front end was subtly redesigned, and interior refinements improved usability and comfort compared to earlier Miuras. Around 150 Miura SVs were built between 1971 and 1973, making it the rarest standard production Miura variant and one of the most desirable classic Lamborghinis ever produced. It also served as the foundation for even more extreme specials such as the SVJ and SVR."
+  },
+  "EspS3-1": {
+    "_model": "1972 Lamborghini Espada Series III | 1:43 | Blue | Hachette",
+    "short": "Great model of one of the coolest vintage Lamborghinis. This was the final series of the Lamborghini Espada.",
+    "long": "The Lamborghini Espada Series 3 was introduced in 1972 as the final and most developed version of the Espada. Visually similar to the earlier cars, it featured subtle refinements such as a revised grille design and updated wheels, but the biggest changes were inside. The interior was significantly redesigned with a more conventional dashboard layout, improved ergonomics, and better overall comfort.\n\nIt retained the 3.9-liter V12, now producing around 350 horsepower in its later form, paired with either a five-speed manual or an optional automatic transmission. Production of the Series 3 continued until 1978, and with roughly 456 examples built, it became the most numerous version of the Espada, closing the chapter on Lamborghini's original V12 four-seat grand tourer of the 1960s and 70s."
+  },
+  "JarS-1": {
+    "_model": "1972 Lamborghini Jarama 400GTS | 1:43 | White | Hachette",
+    "short": "Second edition of the Lamborghini Jarama, often referred to as Jarama S. A pretty good model of this V12 Lambo!",
+    "long": "The Lamborghini Jarama 400 GTS, introduced in 1972, was the updated and more powerful evolution of the original Jarama 400 GT. While the overall Bertone design remained largely the same, the GTS received subtle refinements including revised hood vents, updated interior trim, and detail changes that sharpened its appearance.\n\nThe 3.9-liter V12 was tuned to produce around 365 horsepower, giving the car stronger performance and a more responsive character. Buyers could choose between a five-speed manual or a three-speed automatic transmission. Production of the GTS continued until 1976, with 150 examples built, making it slightly rarer than the earlier 400 GT and marking the final development of Lamborghini's front-engined V12 2+2 lineage before the company shifted focus toward newer mid-engine models."
+  },
+  "Urr250-1": {
+    "_model": "1972 Lamborghini Urraco P250 | 1:100 | Red | Suntory Car Graphic",
+    "short": "A very small, 1/100th scale model of the first ever Urraco to come out of Sant'Agata!",
+    "long": "The Lamborghini Urraco P250 was introduced in 1970 as a smaller, more accessible alternative to the Miura, marking Lamborghini's entry into the V8 segment. Designed by Marcello Gandini at Bertone, it featured sharp, clean lines with a distinctive low wedge profile and a compact 2+2 layout.\n\nPowered by a 2.5-liter V8 producing around 220 horsepower, the P250 was positioned as a balanced and usable sports car rather than an all-out supercar. Despite its more modest performance, it retained the high-revving character typical of Lamborghini engines. The Urraco laid the foundation for later V8 models like the Silhouette and Jalpa, making it an important step in the brand's evolution."
+  },
+  "JarSVR-1": {
+    "_model": "1973 Lamborghini Jarama SVR | 1:43 | Yellow | Leo Models",
+    "short": "Another Jarama special based on chassis #10364. Very radical car, part of the Ferruccio Lamborghini Museum collection. One of the most special Lamborghinis in my whole collection — signed by Tonino Lamborghini.",
+    "long": "The Jarama SVR is a unique factory special created in 1973, based on a Jarama 400 GTS chassis #10364. It was conceived as a far more extreme, track-focused interpretation of Lamborghini's front-engined V12 2+2, and is often associated with the experimental work of test driver Bob Wallace.\n\nCompared to a standard Jarama GTS, the SVR received dramatic body modifications including widened wheel arches, a completely redesigned front end with large air intakes and fixed headlights, lightweight panels, plexiglass side windows, and a massive adjustable rear wing. The interior was stripped and simplified, with the rear seats removed and weight reduced wherever possible. The 3.9-liter V12 was retained but tuned for stronger performance, while suspension and chassis components were upgraded to suit more aggressive driving.\n\nUnlike Wallace's separate Jarama Rally experiment, the SVR was a distinct one-off build and never entered series production. Today, the bright yellow example is preserved at the Museo Ferruccio Lamborghini in Italy.",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "The Story Behind This Model"
+      },
+      {
+        "type": "text",
+        "text": "I got this model back in 2020 with the vision of bringing it to the Museo Ferruccio Lamborghini one day. When I finally made it to Italy, I brought it with me to Sant'Agata, Cento, Renazzo, and Pieve di Cento. I stopped at the old closed museum in Dosso — which existed from 1995 to 2014 — and made photographs with the model there, knowing I'd see the real car in a couple of hours."
+      },
+      {
+        "type": "text",
+        "text": "About 15 minutes after entering the current Museo Ferruccio Lamborghini in Funo di Argelato, I spotted Tonino Lamborghini. After a once-in-a-lifetime photo with him, I asked him to sign my Jarama SVR model with a pen I had brought just in case. He agreed, took the model, put it on the roof of the real car, and very carefully signed it. It's hard to believe it actually happened."
+      }
+    ],
+    "oneoff": true,
+    "special": true,
+    "autographed": true
+  },
+  "Bravo-1": {
+    "_model": "1974 Lamborghini Bravo | 1:43 | Tan | Hachette",
+    "short": "",
+    "long": ""
+  },
+  "Count400-1": {
+    "_model": "1974 Lamborghini Countach LP400 | 1:100 | Black | Suntory Car Graphic",
+    "short": "Another really cool 1/100th scale Lamborghini, this time a black Countach LP400 'Periscopio.'",
+    "long": "The Lamborghini Countach LP400 was introduced in 1974 as the first production version of the Countach and became one of the most influential supercars ever created. Designed by Marcello Gandini at Bertone, it carried over much of the dramatic wedge-shaped styling from the earlier LP500 prototype, including the signature scissor doors and futuristic low-slung proportions that would define Lamborghini for decades.\n\nPowered by a 3.9-liter longitudinally mounted V12 producing around 375 horsepower, the LP400 combined extreme performance with an uncompromising driving experience. Compared to later Countach models, the LP400 featured clean and uncluttered bodywork without wide arches or massive spoilers, giving it what many enthusiasts consider the purest version of the Countach design. Its narrow tires and smooth body also made it the most aerodynamically efficient production Countach.\n\nOne of its most distinctive features was the roof-mounted “periscopio” channel running through the roof, designed to improve rear visibility using an internal rear-view mirror system. Because of this feature, early LP400s are often nicknamed the “Periscopio” Countach.\n\nOnly around 150–157 LP400 examples were produced between 1974 and 1978, making it one of the rarest production Countach variants and widely regarded as the most elegant and historically significant version of Lamborghini’s legendary supercar."
+  },
+  "Count400-2": {
+    "_model": "1974 Lamborghini Countach LP400 | 1:100 | Yellow | Suntory Car Graphic",
+    "short": "A very small, yellow Countach LP400 in 1/100th scale.",
+    "long": "The Lamborghini Countach LP400 was introduced in 1974 as the first production version of the Countach and became one of the most influential supercars ever created. Designed by Marcello Gandini at Bertone, it carried over much of the dramatic wedge-shaped styling from the earlier LP500 prototype, including the signature scissor doors and futuristic low-slung proportions that would define Lamborghini for decades.\n\nPowered by a 3.9-liter longitudinally mounted V12 producing around 375 horsepower, the LP400 combined extreme performance with an uncompromising driving experience. Compared to later Countach models, the LP400 featured clean and uncluttered bodywork without wide arches or massive spoilers, giving it what many enthusiasts consider the purest version of the Countach design. Its narrow tires and smooth body also made it the most aerodynamically efficient production Countach.\n\nOne of its most distinctive features was the roof-mounted “periscopio” channel running through the roof, designed to improve rear visibility using an internal rear-view mirror system. Because of this feature, early LP400s are often nicknamed the “Periscopio” Countach.\n\nOnly around 150–157 LP400 examples were produced between 1974 and 1978, making it one of the rarest production Countach variants and widely regarded as the most elegant and historically significant version of Lamborghini’s legendary supercar."
+  },
+  "Count400-3": {
+    "_model": "1974 Lamborghini Countach LP400 | 1:64 | Orange | Unbranded",
+    "short": "Very funny toy of the Countach LP400, this one came in a set with the <a href=\"model.html?id=MiuJota-2\">Miura Jota</a> and <a href=\"model.html?id=Gal-3\">Gallardo</a>.",
+    "long": "The Lamborghini Countach LP400 was introduced in 1974 as the first production version of the Countach and became one of the most influential supercars ever created. Designed by Marcello Gandini at Bertone, it carried over much of the dramatic wedge-shaped styling from the earlier LP500 prototype, including the signature scissor doors and futuristic low-slung proportions that would define Lamborghini for decades.\n\nPowered by a 3.9-liter longitudinally mounted V12 producing around 375 horsepower, the LP400 combined extreme performance with an uncompromising driving experience. Compared to later Countach models, the LP400 featured clean and uncluttered bodywork without wide arches or massive spoilers, giving it what many enthusiasts consider the purest version of the Countach design. Its narrow tires and smooth body also made it the most aerodynamically efficient production Countach.\n\nOne of its most distinctive features was the roof-mounted “periscopio” channel running through the roof, designed to improve rear visibility using an internal rear-view mirror system. Because of this feature, early LP400s are often nicknamed the “Periscopio” Countach.\n\nOnly around 150–157 LP400 examples were produced between 1974 and 1978, making it one of the rarest production Countach variants and widely regarded as the most elegant and historically significant version of Lamborghini’s legendary supercar."
+  },
+  "Count500R-1": {
+    "_model": "1974 Lamborghini Countach LP500R | 1:32 | Black | Double Horses",
+    "short": "A mid model of the Japanese Countach LP500R, a very unique car in real life. This one is by Double Horses and is unlicensed...",
+    "long": "The Lamborghini Countach LP500R was a unique Japanese-built Countach special created in 1977, based on an early “Periscopio” Countach LP400 with chassis #1120144. The car became one of the most famous custom Countachs in Japan and is often associated with the Tokyo Supercar Show period, where its dramatic appearance helped cement its cult status among Japanese exotic car enthusiasts.\n\nOriginally, chassis #1120144 was a standard LP400, part of the pure early Countach generation with the narrow body and roof-mounted periscope rear-view channel. In Japan, however, the car was heavily modified into the LP500R configuration, inspired by the aggressive Walter Wolf Countachs and the still-unreleased widebody Countach developments happening at Lamborghini during the late 1970s.\n\nThe transformation included dramatically widened wheel arches, deep front spoilers, a large rear wing, wider wheels and tires, and various styling details intended to imitate the appearance of a future high-performance Countach long before the LP400 S officially arrived. Despite the “LP500R” name, the car did not originate as a true factory LP500 prototype or production LP500 S, but rather remained fundamentally an LP400 underneath its extensive modifications.\n\nOver time, the LP500R became one of the most recognizable custom Countachs in Japan and survived far longer than many other period-modified supercars. Unlike many replicas or temporary show builds, the car still exists today and has become an important piece of Japanese Lamborghini enthusiast history, representing the era when Countach customization culture exploded in Japan during the late 1970s and early 1980s."
+  },
+  "MiuSVR-1": {
+    "_model": "1974 Lamborghini Miura Jota SVR | 1:62 | Red | Tomica",
+    "short": "Incredible one-off Miura, and the model by Tomica is also quite nice. The rear area even opens!",
+    "long": "The Lamborghini Miura SVR was a one-off, factory-developed evolution of the Miura built in 1974–1976, and it represents the most extreme interpretation of the Miura platform ever completed by Lamborghini. It was based on a Miura S chassis (#3781) and transformed into a high-performance, race-inspired special after being commissioned by German Lamborghini importer Herbert Hahne and later developed at the factory. The project drew heavily from Bob Wallace’s Miura Jota philosophy, focusing on weight reduction, aerodynamics, and track capability rather than road comfort. Mechanically, the SVR retained the 3.9-liter V12 but received extensive upgrades including a dry-sump lubrication system, revised camshafts, open intake trumpets, and a freer-flowing exhaust. The chassis was strengthened and lightened, while suspension geometry was reworked for competition use. Braking and wheel equipment were also upgraded, including wide BBS wheels and high-performance racing-style components. Visually, it was radically different from a standard Miura. The body was widened significantly to accommodate much larger rear tires, with deep flared arches, additional cooling vents, and a pronounced aerodynamic package including a front splitter and a large rear wing. The interior was stripped down and fitted with racing-style seats and safety equipment, reinforcing its focus on track performance rather than luxury. Only a single Miura SVR was ever built, making it one of the rarest Lamborghini Miura derivatives in existence. After completion in the mid-1970s, it was sold to Japan, where it remained for decades before being fully restored by Lamborghini’s Polo Storico division and returned to its original SVR specification.",
+    "oneoff": true
+  },
+  "MiuSVJ-1": {
+    "_model": "1974 Lamborghini Miura SVJ | 1:64 | Red | Kyosho",
+    "short": "A very nice model of the incredibly rare Miura SVJ by Kyosho!",
+    "long": "The Lamborghini Miura SVJ was an ultra-rare factory special developed in the early 1970s as a road-going interpretation of Bob Wallace’s legendary Miura Jota experimental race car. After the original Jota was destroyed in a crash in 1971, several wealthy customers requested similar modifications for their own Miuras, leading Lamborghini to create a very small number of official SVJ models and conversions. Unlike a standard Miura SV, the SVJ featured aggressive competition-inspired upgrades such as fixed plexiglass-covered headlights, additional cooling vents, lightweight components, riveted body panels, wider wheels, revised suspension, and various aerodynamic modifications directly inspired by the Jota. Some examples also received dry-sump lubrication systems and heavily modified V12 engines producing significantly more power than the normal SV. The exact number of genuine factory SVJs remains debated, but generally only a handful are recognized as authentic period-built cars by historians and collectors. Some were converted from existing Miura SVs, while others were built to SVJ specification directly by the factory. Chassis such as #4934, built for the Shah of Iran, became especially famous due to their unique specifications and later celebrity ownership history. Today, the Miura SVJ is considered one of the most extreme and desirable variations of the Miura ever created, representing Lamborghini’s closest attempt at turning the already radical Miura into a true road-legal competition machine."
+  },
+  "MiuSVJRoad-1": {
+    "_model": "1974 Lamborghini Miura SVJ Roadster | 1:43 | White | Leo Models",
+    "short": "A nice model of the Miura SVJ Roadster that was shown at the 1981 Geneva Motor Show. It has a very interesting history, see below.",
+    "long": "The 1981 Lamborghini Miura SVJ Roadster, also known as the Miura P400S Spider or Targa Special, was a unique open-top Miura based on chassis **#4808**, originally a yellow Miura S delivered in 1971 and shown at that year’s Geneva Motor Show. Around 1980, the car was heavily transformed into a dramatic SVJ-style roadster for the Swiss Lamborghini importer Lambo-Motor AG, during the early Patrick Mimran era when Lamborghini was attempting to revive the brand’s image. Unlike the original Bertone Miura Roadster prototype from 1968, this car began life as a normal production Miura S before being converted into a removable-roof targa-style special. The transformation included widened rear bodywork, aggressive SVJ-inspired air intakes, deep front spoilers, wide wheels, lowered suspension, plexiglass-style details, and a large rear wing. It was finished in a striking pearl white color and displayed on the Lamborghini stand at the 1981 Geneva Motor Show alongside the new Jalpa and LM001/LM002-era projects. Although many people assumed it was a factory prototype for a production Miura Spider, it was never an official Lamborghini production project. It remained a one-off show car closely tied to the Swiss importer rather than a true factory-developed model. Later owners altered the car further, at one point repainting it silver and removing some of the more extreme aerodynamic elements."
+  },
+  "Tractor-2": {
+    "_model": "1975 Lamborghini DL30C Tractor | 1:43 | Yellow | Hachette",
+    "short": "",
+    "long": ""
+  },
+  "Urr300-1": {
+    "_model": "1975 Lamborghini Urraco P300 | 1:43 | Orange | DeAgostini",
+    "short": "A very cheap model — the bottom part isn't painted in orange — but overall I quite like it.",
+    "long": "The Lamborghini Urraco P300 was introduced in 1974 as the most powerful version of the Urraco lineup. It featured an enlarged 3.0-liter V8 producing around 250 horsepower, giving the car noticeably stronger performance compared to the earlier P250.\n\nVisually, the P300 remained very close to the original Gandini-designed shape, but it received subtle updates such as a revised front hood with six cooling slats instead of the earlier two, headlights positioned slightly further forward, and minor detail changes to the bodywork. With its 2+2 layout, mid-engine configuration, and higher-revving V8, the P300 represented the most refined and capable evolution of the Urraco, before it was eventually succeeded by the Silhouette and later the Jalpa."
+  },
+  "UrrRally-1": {
+    "_model": "1975 Lamborghini Urraco Rally | 1:43 | Orange | Leo Models",
+    "short": "A pretty good and accurate model of the special Urraco Rally — I rather like it.",
+    "long": "The Lamborghini Urraco Rally was an experimental competition-focused version of the Urraco developed around 1974 by test driver and engineer Bob Wallace. Based on the Urraco P250, it was part of Wallace's series of unofficial high-performance projects aimed at exploring Lamborghini's potential in motorsport.\n\nThe car was heavily modified with reduced weight, stripped interior, wider wheels, flared arches, and a more aggressive suspension setup. The 2.5-liter V8 was also tuned for improved performance, making it far more focused than the standard road-going Urraco. Despite its name, it was never entered in an official rally program and remained a one-off development car, similar in spirit to Wallace's other experimental builds.",
+    "oneoff": true
+  },
+  "CountWolf-1": {
+    "_model": "1976 Lamborghini Countach Walter Wolf | 1:64 | Blue | Tomica",
+    "short": "I really like this Walter Wolf Countach model by Tomica in this blue color! This is from their 'premium' series.",
+    "long": "The 1976 Lamborghini Countach Walter Wolf specials were a small series of highly modified Countachs commissioned by wealthy Canadian businessman and Formula 1 team owner Walter Wolf during Lamborghini’s financial struggles in the mid-1970s. Unsatisfied with the standard LP400, Wolf worked directly with Giampaolo Dallara and Lamborghini engineers to create more powerful and aggressive versions of the Countach, and these cars ultimately shaped the design of future production Countachs. The first and most famous Wolf Countach was chassis #1120148, finished in bright red with black wheel arch extensions. It used a special 5.0-liter V12 derived from the original LP500 prototype engine and produced around 440 horsepower, far more than a standard LP400. The car also introduced many styling elements that later became iconic Countach features, including wide Pirelli P7 tires, flared arches, deep spoilers, and the now-famous rear wing. A second Wolf Countach, chassis #1120202, was completed in Bugatti blue with gold wheels and a natural leather interior. It initially used a more standard engine configuration before receiving the special 5.0-liter V12 transplanted from the red car. This blue example became one of the direct development cars for what would later evolve into the production LP400 S. The third Wolf Countach, chassis #1121210, was finished in dark navy blue and became especially important historically because it was effectively the prototype for the production LP400 S shown at the 1978 Geneva Motor Show. By this point, many Wolf-inspired modifications had become integrated into Lamborghini’s official production design language. Several additional Countach “Speciale” cars related to the Wolf program were also built around the same period for other wealthy clients, each customized differently, but the three Walter Wolf cars remain the most famous. Their influence permanently changed the Countach’s appearance and directly led to the wider, more aggressive styling associated with later Countach models throughout the 1980s."
+  },
+  "Silho-1": {
+    "_model": "1976 Lamborghini Silhouette 3000 | 1:43 | White | Hachette",
+    "short": "I like the Lamborghini Silhouette much more than the Urraco. It's a very rare car in real life too — only 54 units were produced.",
+    "long": "The Lamborghini Silhouette P300 was introduced in 1976 as a redesigned and more distinctive evolution of the Urraco P300, aimed at revitalizing Lamborghini's V8 lineup. Designed by Marcello Gandini at Bertone, it featured sharper, more angular styling and became the brand's first open-top production model with a removable targa roof.\n\nPowered by a 3.0-liter V8 producing around 250–260 horsepower, the Silhouette retained the mid-engine layout of the Urraco but focused more on style and driving character. It stood apart with widened wheel arches to accommodate larger low-profile tires, a prominent front spoiler with integrated air ducts, a redesigned rear section with a distinctive roll-over hoop behind the cabin, and the targa roof which also meant the removal of the rear seats.\n\nProduced until 1979 with only 54 examples built, the Silhouette remains one of the rarest production Lamborghinis and an important step toward the later Jalpa."
+  },
+  "Cheetah-1": {
+    "_model": "1977 Lamborghini Cheetah | 1:62 | White | Tomica",
+    "short": "",
+    "long": ""
+  },
+  "RelBMWM1-1": {
+    "_model": "1978 Lamborghini BMW M1 | 1:64 | Silver | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Count400S-1": {
+    "_model": "1978 Lamborghini Countach LP400S | 1:43 | Red | Unbranded",
+    "short": "I added this model to my collection so many years ago when I was little... hence the condition. I quite like it. It can count both as a LP400S or a LP500S. I included it as a late LP400S.",
+    "long": "The Lamborghini Countach LP400 S was introduced in 1978 as a far more aggressive evolution of the original LP400, heavily influenced by the earlier Walter Wolf Countach specials developed during the mid-1970s. While the clean “Periscopio” LP400 focused on purity and aerodynamics, the LP400 S transformed the Countach into the dramatic widebody supercar image that became iconic throughout the 1980s.\n\nThe biggest visual changes were the dramatically widened wheel arches, huge Pirelli P7 tires, deeper front spoiler, revised suspension geometry, and optional massive rear wing. These elements were directly inspired by the Wolf Countach cars commissioned by Walter Wolf, whose custom widebody Countachs effectively previewed the LP400 S years earlier. The wider stance and aggressive proportions became permanently associated with the Countach name afterward.\n\nThe LP400 S is generally divided into three main series versions. Series I cars, built from 1978 to 1979, are the rarest and featured distinctive “telephone dial” Campagnolo wheels, low-profile Pirelli tires, and the cleanest early widebody appearance. Around 50 Series I examples were produced.\n\nSeries II cars arrived around 1980 and introduced revised suspension tuning, minor interior improvements, and slightly different wheel and trim details. These cars also began standardizing many features that had varied on the earlier production examples.\n\nSeries III cars, introduced around 1981–1982, received another round of updates including redesigned interior equipment, revised ride height and suspension refinements, improved reliability changes, and different wheel designs depending on specification. Some late cars also previewed details that would appear on the later LP500 S.\n\nMechanically, all LP400 S versions retained the 3.9-liter V12, though power output was slightly reduced compared to the earlier LP400 due to emissions tuning and the wider tire setup affecting performance. However, the LP400 S compensated with dramatically improved grip, road presence, and stability.\n\nToday, the LP400 S is considered one of the most historically important Countach variants because it established the iconic exaggerated Countach styling formula that defined Lamborghini for the next decade."
+  },
+  "Count400S-2": {
+    "_model": "1978 Lamborghini Countach LP400S | 1:32 | White | Lego",
+    "short": "Technically impossible to tell if it's supposed to be a late LP400S, LP500S or a QV as shown on the box... so I just decided to add it as a LP 400S.",
+    "long": "The Lamborghini Countach LP400 S was introduced in 1978 as a far more aggressive evolution of the original LP400, heavily influenced by the earlier Walter Wolf Countach specials developed during the mid-1970s. While the clean “Periscopio” LP400 focused on purity and aerodynamics, the LP400 S transformed the Countach into the dramatic widebody supercar image that became iconic throughout the 1980s.\n\nThe biggest visual changes were the dramatically widened wheel arches, huge Pirelli P7 tires, deeper front spoiler, revised suspension geometry, and optional massive rear wing. These elements were directly inspired by the Wolf Countach cars commissioned by Walter Wolf, whose custom widebody Countachs effectively previewed the LP400 S years earlier. The wider stance and aggressive proportions became permanently associated with the Countach name afterward.\n\nThe LP400 S is generally divided into three main series versions. Series I cars, built from 1978 to 1979, are the rarest and featured distinctive “telephone dial” Campagnolo wheels, low-profile Pirelli tires, and the cleanest early widebody appearance. Around 50 Series I examples were produced.\n\nSeries II cars arrived around 1980 and introduced revised suspension tuning, minor interior improvements, and slightly different wheel and trim details. These cars also began standardizing many features that had varied on the earlier production examples.\n\nSeries III cars, introduced around 1981–1982, received another round of updates including redesigned interior equipment, revised ride height and suspension refinements, improved reliability changes, and different wheel designs depending on specification. Some late cars also previewed details that would appear on the later LP500 S.\n\nMechanically, all LP400 S versions retained the 3.9-liter V12, though power output was slightly reduced compared to the earlier LP400 due to emissions tuning and the wider tire setup affecting performance. However, the LP400 S compensated with dramatically improved grip, road presence, and stability.\n\nToday, the LP400 S is considered one of the most historically important Countach variants because it established the iconic exaggerated Countach styling formula that defined Lamborghini for the next decade."
+  },
+  "RelBMWM1-2": {
+    "_model": "1979 Lamborghini BMW M1 Procar | 1:64 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Athon-1": {
+    "_model": "1980 Lamborghini Athon | 1:43 | Gray | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "Jal-1": {
+    "_model": "1981 Lamborghini Jalpa P3500 | 1:43 | Black | Greenlight",
+    "short": "This specific Jalpa is from the Rocky IV series from Greenlight, but the actual version in the movie was a 1984 model, rather than this 1982.",
+    "long": "The Lamborghini Jalpa 3500 was introduced in 1981 as the final evolution of Lamborghini's V8 mid-engine line, debuting at the Geneva Motor Show. Designed by Marc Deschamps at Bertone with input under Giulio Alfieri's direction, it served as the successor to the Silhouette.\n\nMechanically, it used a 3.5-liter V8 derived from the earlier Urraco and Silhouette engines, producing around 255 horsepower, making it the most powerful production V8 Lamborghini of its time. Visually, the Jalpa kept the overall silhouette of the Silhouette but introduced a cleaner, more modernized design with revised bumpers, integrated air intakes, and updated rear lighting. Later production cars from 1984 onward received body-colored bumpers for a more cohesive look.\n\nProduced until 1988 with around 410–420 examples built, the Jalpa marked the end of Lamborghini's classic V8 era before the brand shifted fully toward V12 flagships and, much later, the Gallardo.",
+    "special": true
+  },
+  "CountPaceCar-1": {
+    "_model": "1982 Lamborghini Countach LP5000S | 1:64 | White | Hot Wheels",
+    "short": "A little Hot Wheel Countach Pace car in white based on the Monaco 1982 Pace car...",
+    "long": "The Lamborghini Countach LP5000 S Pace Car is best known as one of the Monaco Grand Prix course/safety-style cars used in the early 1980s, part of a small group of Countachs provided for official duties around the circuit rather than being a single unique specification model.\n\nMost famously, a Countach LP400 S Series III was used as the Monaco Grand Prix intervention/safety car in 1981 (and again in 1982), finished in white with emergency light equipment and official markings. It was provided through Lamborghini’s then-owners and local connections and used to lead or control laps in non-racing conditions rather than acting as a modern FIA safety car.\n\nAlongside it, there were also LP500 S / LP5000 S-era Countachs associated with Monaco demonstrations and promotional pace duties in the early–mid 1980s. These cars were visually similar to production LP500 S models but fitted with temporary equipment such as light bars, radios, and event-specific markings. Unlike the LP400 S intervention car, these LP5000 S examples were more promotional in nature, often appearing during parade laps, manufacturer showcases, or event openings rather than structured “safety intervention” roles.\n\nAcross Monaco GP history, Countachs in general became symbolic pace/intervention cars because they represented the extreme image of 1980s supercars. Different variants (LP400 S and LP500 S/5000 S) were used at different times depending on availability, often provided by Lamborghini importers or private owners rather than a single dedicated factory fleet.\n\nIn short, there wasn’t one fixed “LP5000 S Monaco pace car spec,” but rather a small group of Countach LP400 S and LP500 S/5000 S cars rotated into Monaco GP ceremonial and intervention roles during the early 1980s, with the 1981 LP400 S intervention car being the most historically documented example."
+  },
+  "Count5000S-1": {
+    "_model": "1982 Lamborghini Countach LP5000S | 1:64 | Blue | Hot Wheels",
+    "short": "A cool Countach fantasy Police car by Hot Wheels, based on the Monaco Countach Pace car.",
+    "long": "The Lamborghini Countach LP500 S was introduced in 1982 as an evolution of the LP400 S and marked the first major step in increasing the Countach’s engine displacement. Despite the name, the car is not related to the original LP500 prototype, and in most markets it was later badged as the LP5000 S. The change in naming was mainly for marketing and to reflect the larger engine rather than a completely new model.\n\nMechanically, it used a 4.8-liter V12 (officially 4754 cc) derived from the earlier 3.9-liter unit, producing around 375 horsepower. The increase in displacement improved torque and mid-range performance, making the car more flexible in road use, although overall peak power remained similar to the late LP400 S cars due to tightening emissions requirements.\n\nVisually, the LP500 S remained almost identical to the late LP400 S Series III. The most recognizable features carried over, including the wide wheel arches, Pirelli P7 tires, and the overall wedge-shaped body. Changes were extremely subtle, mainly limited to interior refinements, small trim updates, and minor wheel variations depending on production year and supplier.\n\nProduction ran from 1982 to 1985, with roughly 320–323 cars built, making it a relatively rare transitional model between the early Countach generation and the later, more powerful LP5000 QV."
+  },
+  "CountTooned-1": {
+    "_model": "1982 Lamborghini Countach LP5000S 'Tooned' | 1:64 | Black | Hot Wheels",
+    "short": "Cool 'Tooned' Countach made by Hot Wheels. I think this might be based on the Countach Drag Kit cars that do 0-60 mph in less than 2 seconds...",
+    "long": "The Lamborghini Countach LP500 S was introduced in 1982 as an evolution of the LP400 S and marked the first major step in increasing the Countach’s engine displacement. Despite the name, the car is not related to the original LP500 prototype, and in most markets it was later badged as the LP5000 S. The change in naming was mainly for marketing and to reflect the larger engine rather than a completely new model.\n\nMechanically, it used a 4.8-liter V12 (officially 4754 cc) derived from the earlier 3.9-liter unit, producing around 375 horsepower. The increase in displacement improved torque and mid-range performance, making the car more flexible in road use, although overall peak power remained similar to the late LP400 S cars due to tightening emissions requirements.\n\nVisually, the LP500 S remained almost identical to the late LP400 S Series III. The most recognizable features carried over, including the wide wheel arches, Pirelli P7 tires, and the overall wedge-shaped body. Changes were extremely subtle, mainly limited to interior refinements, small trim updates, and minor wheel variations depending on production year and supplier.\n\nProduction ran from 1982 to 1985, with roughly 320–323 cars built, making it a relatively rare transitional model between the early Countach generation and the later, more powerful LP5000 QV.\n\nThe Lamborghini Countach drag car seen in Australia is a heavily modified, tube-frame racing machine with a fiberglass Countach-style body, not a production Lamborghini. Built by Alf Sciacca Racing, it competes in drag racing classes and uses a supercharged V8 engine mounted in a purpose-built chassis rather than the original V12 layout.\n\nDespite its Countach shape, it is essentially a full dragster underneath, designed purely for straight-line performance, with extreme power levels and drag racing aerodynamics such as oversized hood scoops and blower setups typical of supercharged V8 builds."
+  },
+  "MarcoPolo-1": {
+    "_model": "1982 Lamborghini Marco Polo | 1:43 | Gray | Yow Modellini/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Portofino-1": {
+    "_model": "1982 Lamborghini Portofino | 1:55 | Gray | Chiyono",
+    "short": "",
+    "long": ""
+  },
+  "Portofino-2": {
+    "_model": "1982 Lamborghini Portofino | 1:43 | Gray | Alezan",
+    "short": "",
+    "long": ""
+  },
+  "CountQV-1": {
+    "_model": "1985 Lamborghini Countach LP5000 Quattrovalvole | 1:140 | Green | Unbranded",
+    "short": "This is a really funny but meaningful model for me. I got this model around 2014 when I was at school and traded a Kinder Porsche for this Countach QVX, which also came out of a surprise egg (not Kinder).",
+    "long": "The Lamborghini Countach LP5000 Quattrovalvole (QV) was introduced in 1985 as the most powerful and technically advanced evolution of the Countach before the final 25th Anniversary model. The “QV” name stands for quattrovalvole, meaning four valves per cylinder, marking a major engine upgrade.\n\nIt used an enlarged 5.2-liter V12 (around 5167 cc) replacing the earlier 4.8-liter unit, and for the first time on a Countach, the cylinder heads featured four valves per cylinder, improving breathing and high-rpm performance. Depending on specification, it produced around 455 hp in European carbureted form, while U.S. fuel-injected versions were slightly lower in output due to emissions equipment.\n\nVisually, the QV looks very similar to the late LP500 S and early 25th Anniversary cars, but with one of the most noticeable technical changes being the engine cover bulge created by repositioned carburetors on top of the V12 for improved cooling and airflow. This also contributed to even worse rear visibility, which was already a known Countach trait.\n\nThe QV is often considered the “final performance peak” of the classic Countach era, combining the widebody stance of the LP400 S lineage with the most developed version of the V12 engine before the final aesthetic-heavy 25th Anniversary redesign arrived in 1988."
+  },
+  "CountRainX-1": {
+    "_model": "1986 Lamborghini Countach Rain-X | 1:43 | Yellow | Leo Models",
+    "short": "Ever since I added this model back in 2020, it was among my favourite Lamborghini model cars in my collection, I just love the crazy race car look with all of the decals and modifications. The successor to this car was the <a href=\"model.html?id=DiabloValv-1\">Diablo SE Jota</a>, which had a few liveries over the years, including the Rain-X one.",
+    "long": "The Lamborghini Countach “Rain-X” (JLOC #88) was a privateer Japanese racing Countach that competed in the 1994 All Japan GT Championship (JGTC) under the JLOC (Japan Lamborghini Owners Club) entry, often supported by Art Sports and Rain-X sponsorship.\n\nThe project started when JLOC member Teruaki Terai acquired a damaged Countach chassis in 1993 with the intention of turning it into a GT1-style race car for the newly formed JGTC series. The original plan was a heavily rebuilt race machine, but development delays meant the car was not ready for the opening round of the 1994 season. As a result, the team sourced a Countach quickly and adapted it to meet race regulations so it could still compete that year.\n\nThe car used was still fundamentally a Countach (often referenced as a 25th Anniversary / late Countach platform in documentation), but it was modified with racing safety equipment, suspension and tire changes, a large rear wing, and minor aerodynamic adjustments. It was not a full factory racing prototype, but rather a lightly converted endurance-style entry built under time pressure to enter the championship.\n\nThe Rain-X Countach raced in all five rounds of the 1994 JGTC season, making it one of the very few instances where a Countach officially competed in top-level Japanese GT racing. After that season, the project ended in its Countach form and was replaced by the Lamborghini Diablo*, which became the next JLOC platform and marked the transition into a more competitive era for the team.\n\nIn short, the Rain-X Countach represents the final competitive chapter of the Countach in motorsport, bridging the gap between the classic Countach era and the Diablo-based JGTC programs that followed."
+  },
+  "LM002-1": {
+    "_model": "1986 Lamborghini LM002 | 1:64 | Yellow | Matchbox",
+    "short": "Often nicknamed the \"Rambo Lambo\" — Lamborghini's first production SUV, which came out much earlier than the Urus.",
+    "long": "The Lamborghini LM002 was introduced in 1986 as the brand's first production off-road vehicle and one of the most extreme utility vehicles ever built. Developed after a series of military prototype attempts in the late 1970s and early 1980s (LM001 and Cheetah projects), the LM002 marked Lamborghini's unexpected entry into the luxury off-road segment.\n\nIt was powered by a 5.2-liter V12 derived from the Countach, producing around 450 horsepower, paired with a five-speed manual gearbox and permanent four-wheel drive. Despite its size and weight, it was capable of impressive performance for an off-roader, with a top speed of over 200 km/h depending on configuration.\n\nVisually, the LM002 was massive and boxy, with wide fender flares, a tall stance, large air intakes, and military-inspired proportions softened by luxury detailing. It was often fitted with massive Pirelli Scorpion tires specifically designed for it, emphasizing its dual role as both a high-end luxury SUV and a desert-capable machine.\n\nProduced until 1993 with around 300 examples built, the LM002 remains one of Lamborghini's most unconventional creations, bridging the gap between military prototype origins and the modern luxury SUV segment that would later define the brand with the Urus."
+  },
+  "CountEVO-1": {
+    "_model": "1987 Lamborghini Countach Evoluzione | 1:43 | Gray | Leo Models",
+    "short": "Neat model of the Countach Evoluzione one-off prototype, that serverd as a mobile test-bed concept in 1/43 scale by Leo Models. I rather like this car and model.",
+    "long": "The Lamborghini Countach Evoluzione was a one-off experimental prototype built in 1987 by Lamborghini as a radical technology testbed for the future of the brand, developed under the direction of Horacio Pagani within the newly formed composites department.\n\nUnlike a normal Countach, it was not a styling update or special edition, but a full engineering prototype used to test lightweight construction methods and future supercar technologies. The entire structure was heavily reworked, replacing the traditional steel spaceframe with a composite-based monocoque using carbon fibre, Kevlar, and aluminum honeycomb materials. Large parts of the cockpit, chassis sections, and body panels were integrated into a single lightweight structure, and the car was left completely unpainted so the raw materials and riveted construction remained visible.\n\nMechanically, it used a heavily tuned version of the Countach 5.2-liter V12 (based on the Quattrovalvole unit), producing around 490 horsepower. Thanks to the extreme weight reduction, the car weighed under 1,000 kg, which was roughly 500 kg lighter than a production Countach of the time, resulting in dramatically improved performance including a reported 0–60 mph time of around 4 seconds and a top speed of over 320 km/h.\n\nThe Evoluzione also served as a rolling laboratory for concepts like composite chassis design, weight-saving electrical systems, and even early experimentation with technologies such as ABS and all-wheel drive layouts, many of which would later influence the Diablo and other Lamborghini models.\n\nOnly one Evoluzione was ever built, and it was eventually destroyed by Lamborghini during crash testing, meaning it no longer exists today.",
+    "concept": true
+  },
+  "Count25th-1": {
+    "_model": "1988 Lamborghini Countach 25th anniversary | 1:64 | Yellow | Hot Wheels",
+    "short": "A vintage Hot Wheels model from the 90s of the latest generation of the Lamborghini Countach. This 25th Anniversario was redesigned by Horacio Pagani!",
+    "long": "The Lamborghini Countach 25th Anniversary was introduced in 1988 as the final and most developed evolution of the Countach, created to celebrate 25 years of Automobili Lamborghini. It was the last major update before the Diablo replaced the model in 1990.\n\nAlthough it was based on the Countach Quattrovalvole platform, it was heavily revised visually and functionally. The bodywork was reworked with redesigned front and rear bumpers, larger and reshaped air intakes, updated side skirts with cooling ducts, and improved engine bay ventilation. Many of these changes were influenced by Horacio Pagani, who was working at Lamborghini at the time.\n\nMechanically, it retained the 5.2-liter V12 from the QV, producing around 455 hp, but with improvements to drivability, cooling, and stability. Wider Pirelli P Zero tires, revised suspension geometry, and new multi-piece wheels made it the most road-usable Countach up to that point.\n\nInside, the 25th Anniversary received the most comfort-focused interior of any Countach, with better seats, improved ergonomics, electric windows, and standard air conditioning, making it noticeably less raw than earlier versions.\n\nDespite initial mixed reactions to its styling changes, it became the best-selling Countach variant, with around 650–670 units produced, and today is seen as the most refined and “final form” version of the Countach before the Diablo era."
+  },
+  "Genesis-1": {
+    "_model": "1988 Lamborghini Genesis | 1:43 | Red | Yow Modellini/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "JalSpy-1": {
+    "_model": "1988 Lamborghini Jalpa Spyder Prototipo | 1:43 | Blue | Leo Models",
+    "short": "Another very special model in my collection. There's only one of each left — both at the Museo Ferruccio Lamborghini. I brought it with me during my visit.",
+    "long": "The Lamborghini Jalpa Spyder Prototipo was a one-off factory prototype built in 1987, based on a standard Jalpa 3500 chassis. The project came from Lamborghini's late attempt to evaluate a fully open-top version of the Jalpa, beyond the standard targa configuration. It is commonly linked to the final development phase of the Jalpa program, when Chrysler ownership was already preparing to end the model's production.\n\nThe prototype used at least one late-production chassis and incorporated structural changes to allow a full convertible layout. Period documentation shows that at least two prototype chassis were involved in testing around 1986–1987 at the factory, before the project was abandoned.\n\nThe main reason it never reached production was a combination of poor proportions after roof removal, lack of commercial justification, and the fact that Lamborghini was already transitioning away from the Jalpa entirely by 1988. One of the prototypes survived and is now preserved at the Museo Ferruccio Lamborghini in Italy.",
+    "oneoff": true,
+    "special": true
+  },
+  "CountQVX-1": {
+    "_model": "1989 Lamborghini Countach QVX | 1:43 | Black | Edicola",
+    "short": "Nice budget model of a very cool race car with a Countach V12 engine, hence the name!",
+    "long": "The Lamborghini Countach QVX was a one-off Group C prototype from 1985–1986 that used a Lamborghini-derived V12 but was not built by Lamborghini itself as a factory racing car. Instead, it was commissioned through Lamborghini’s British importer and developed with Spice Engineering as a full endurance racing prototype.\n\nDespite the Countach name, it shared almost nothing structurally with the road car. It used a purpose-built lightweight Group C chassis, with a 5.7-liter naturally aspirated V12 based on the Countach engine, tuned for endurance racing and producing roughly 450–700 horsepower depending on configuration. The car was designed for the World Sportscar Championship and tested against major works prototypes of the era.\n\nIt only raced once in 1986 at Kyalami in South Africa, where it qualified and finished respectably in a highly competitive field, but funding issues prevented any further entries at Le Mans or other major events. After that, the project collapsed and the car was retired.\n\nIn simple terms, the Countach QVX is not a Countach road car variant, but a rare Lamborghini-powered Group C prototype that used the engine lineage rather than the actual Countach chassis or design."
+  },
+  "Konrad-1": {
+    "_model": "1989 Lamborghini Konrad WSC KM-011 | 1:43 | Blue | Hachette",
+    "short": "",
+    "long": ""
+  },
+  "LC89-1": {
+    "_model": "1989 Lamborghini Lola LC89 F1 | 1:43 | Blue | Onyx",
+    "short": "",
+    "long": ""
+  },
+  "Diablo-1": {
+    "_model": "1990 Lamborghini Diablo | 1:24 | Yellow | SS 7702",
+    "short": "My first every Lamborghini. I received it as a gift from a neighbor when I was around 5 years old. It had already been played with and was missing one door (now both are gone...), but the car fascinated me from the start. My first game was also the 2002 Need For Speed Hot Pursuit 2, where I always loved driving the Murcielago and Diablo. I have very fond memories of playing with it. The model itself is made by the manufacturer ’SS 7702’ presumably in the 90s. The most special model to me.",
+    "long": "The 1990 Lamborghini Diablo was introduced as the long-awaited successor to the Countach and immediately became one of the defining supercars of the 1990s. Developed under the internal name “Project 132,” the Diablo combined the dramatic styling language of Marcello Gandini with a much more modern and usable platform than the aging Countach. Although Chrysler softened some of Gandini’s original sharp design elements before production, the final result still looked futuristic and unmistakably Lamborghini.\n\nThe original 1990 Diablo was rear-wheel drive only, years before the VT introduced all-wheel drive in 1993. It used a 5.7-liter fuel-injected V12 producing around 492 hp, allowing a top speed of over 325 km/h (202 mph), making it the fastest production Lamborghini ever built at the time. Unlike the Countach, it also introduced more comfort and usability features such as adjustable seats, electric windows, improved ergonomics, and a more refined interior.\n\nVisually, the early 2WD Diablo is recognizable by its clean bodywork, pop-up headlights, and lack of the later VT air intakes and revisions. Many enthusiasts consider the original rear-wheel-drive Diablo to be the purest version of the model due to its lighter feel, more aggressive driving characteristics, and cleaner design before the later updates and facelifts arrived.",
+    "special": true,
+    "milestone": "1st"
+  },
+  "Diablo-2": {
+    "_model": "1990 Lamborghini Diablo | 1:40 | Orange | Maisto",
+    "short": "Cool Maisto toy in a non-traditional 1:40th scale, I actually really like the paint it. It was also a gift from my father, so that's always nice!",
+    "long": "The 1990 Lamborghini Diablo was introduced as the long-awaited successor to the Countach and immediately became one of the defining supercars of the 1990s. Developed under the internal name “Project 132,” the Diablo combined the dramatic styling language of Marcello Gandini with a much more modern and usable platform than the aging Countach. Although Chrysler softened some of Gandini’s original sharp design elements before production, the final result still looked futuristic and unmistakably Lamborghini.\n\nThe original 1990 Diablo was rear-wheel drive only, years before the VT introduced all-wheel drive in 1993. It used a 5.7-liter fuel-injected V12 producing around 492 hp, allowing a top speed of over 325 km/h (202 mph), making it the fastest production Lamborghini ever built at the time. Unlike the Countach, it also introduced more comfort and usability features such as adjustable seats, electric windows, improved ergonomics, and a more refined interior.\n\nVisually, the early 2WD Diablo is recognizable by its clean bodywork, pop-up headlights, and lack of the later VT air intakes and revisions. Many enthusiasts consider the original rear-wheel-drive Diablo to be the purest version of the model due to its lighter feel, more aggressive driving characteristics, and cleaner design before the later updates and facelifts arrived."
+  },
+  "Diablo-3": {
+    "_model": "1990 Lamborghini Diablo | 1:40 | Red | Unbranded",
+    "short": "A very old model car, probably one of my first 20-30 models. Wouldn't say it was very high quality, even for being a toy. It looks nearly identical to my <a href=\"model.html?id=Diablo-2\">Maisto Diablo</a>, same scale, proportions and construction interestingly enough.",
+    "long": "The 1990 Lamborghini Diablo was introduced as the long-awaited successor to the Countach and immediately became one of the defining supercars of the 1990s. Developed under the internal name “Project 132,” the Diablo combined the dramatic styling language of Marcello Gandini with a much more modern and usable platform than the aging Countach. Although Chrysler softened some of Gandini’s original sharp design elements before production, the final result still looked futuristic and unmistakably Lamborghini.\n\nThe original 1990 Diablo was rear-wheel drive only, years before the VT introduced all-wheel drive in 1993. It used a 5.7-liter fuel-injected V12 producing around 492 hp, allowing a top speed of over 325 km/h (202 mph), making it the fastest production Lamborghini ever built at the time. Unlike the Countach, it also introduced more comfort and usability features such as adjustable seats, electric windows, improved ergonomics, and a more refined interior.\n\nVisually, the early 2WD Diablo is recognizable by its clean bodywork, pop-up headlights, and lack of the later VT air intakes and revisions. Many enthusiasts consider the original rear-wheel-drive Diablo to be the purest version of the model due to its lighter feel, more aggressive driving characteristics, and cleaner design before the later updates and facelifts arrived."
+  },
+  "LC90-1": {
+    "_model": "1990 Lamborghini Lola LC90 F1 | 1:43 | Blue | Onyx",
+    "short": "",
+    "long": ""
+  },
+  "DiabloP132-1": {
+    "_model": "1991 Lamborghini Diablo P132 | 1:43 | Blue | Leo Models",
+    "short": "Another model that was fully based off the Lamborghini Museum P132 car. There were many different development versions for the Diablo P132, and this is the last one! I rather like it.",
+    "long": "The Lamborghini Diablo P132 Prototype was the internal development designation for the very first Diablo project, created in the late 1980s as the successor to the Countach. It refers to the early Gandini-designed prototype phase before Chrysler restyled the car into the production Diablo we know today. These P132 cars were used for testing aerodynamics, cooling, and chassis behavior, and several different prototypes existed, including early rolling mules with partially finished bodywork and experimental engine cover concepts. Some early versions experimented with glass engine covers and extreme cooling layouts, but these ideas were later abandoned due to overheating issues. The surviving prototypes remain at Lamborghini’s factory collection and were crucial in shaping the final 1990 Diablo design."
+  },
+  "Lambo291-1": {
+    "_model": "1991 Lamborghini Lambo 291 F1 | 1:43 | Blue | Ixo",
+    "short": "",
+    "long": ""
+  },
+  "DiabloRoad-1": {
+    "_model": "1992 Lamborghini Diablo Roadster Prototype | 1:43 | Yellow | Leo Models",
+    "short": "An accurate model of the Diablo Roadster Prototype, this model is based on the car that was sitting in the Lamborghini Museum before 2016.",
+    "long": "The 1992 Lamborghini Diablo Roadster Prototype was the first official open-top study of the Diablo, unveiled at the Geneva Motor Show in 1992. It was designed to explore how a mid-engined V12 supercar could be adapted into a roadster without losing structural rigidity, which required significant chassis reinforcement. The prototype featured a redesigned rear engine cover with a central tunnel section to allow proper airflow and roof storage integration, along with larger side air intakes and revised rear deck ventilation. It also introduced interior and mirror design changes that would later influence production Diablos. Although it was never initially intended for production, it directly led to the Diablo VT Roadster that arrived in 1995."
+  },
+  "RelDodVip-1": {
+    "_model": "1992 Lamborghini Dodge Viper RT/10 | 1:64 | Red | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "P140-1": {
+    "_model": "1992 Lamborghini P140 | 1:43 | White | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "DiabloSE30-1": {
+    "_model": "1993 Lamborghini Diablo SE30 | 1:32 | Red | Unbranded",
+    "short": "Not an impressive model, more of a toy, currently not 'fully' SE30, because the engine cover isn't accurate. That will be changed in the future, otherwise it's clearly an SE30. It's cool that the doors and headlights open. Let's also not forget that it's a vintage 90s model most likely.",
+    "long": "The Lamborghini Diablo SE30 was introduced in 1993 to celebrate Lamborghini’s 30th anniversary and became one of the most hardcore road-going Diablos of the era. The car was lighter, more powerful, and far more aggressive than the standard VT, using extensive weight reduction measures including thinner glass, manual windows on some cars, carbon fiber components, and a stripped-down interior. Its 5.7-liter V12 produced around 525 hp, and visually the SE30 introduced unique rear engine-cover intakes, special wheels, and distinctive purple launch colors that became closely associated with the model."
+  },
+  "DiabloVT-1": {
+    "_model": "1993 Lamborghini Diablo VT | 1:43 | Metallic Red | AUTOart",
+    "short": "One of the best models in my collection for sure, it's an AUTOart diecast Diablo VT in this copper metallic color. After my resin models this is hands down the best 1:43 I have, it's just so detailed. Even the bottom is detailed and the front wheels (mostly) rotate! I love it, but it had arrived broken initially, that's why I had to reglue the side mirrors, twice!",
+    "long": "The Lamborghini Diablo VT was introduced in 1993 and became the first production Lamborghini with all-wheel drive. “VT” stood for “Viscous Traction,” referring to the viscous center differential capable of sending torque to the front wheels when needed. Alongside the new drivetrain system, the VT introduced power steering for the first time on a Diablo, making the car far easier to drive than the original rear-wheel-drive 1990 version. The VT established the all-wheel-drive layout that would later define most flagship Lamborghini V12 models."
+  },
+  "DiabloSE30J-1": {
+    "_model": "1994 Lamborghini Diablo SE30 Jota | 1:43 | Purple | Ixo",
+    "short": "An okay model of the insane SE30 Jota, it looks great on my shelf next to my other Diablos. But if we're being honest, Ixo didn't do the best job on this one. For starters, this is clearly supposed to be the Viola SE30 paint, but it's much darker, and the front proportions aren't the greatest...",
+    "long": "The Lamborghini Diablo SE30 Jota was an unofficial but factory-supported upgrade package created for SE30 owners seeking a more extreme racing-style configuration. The Jota conversion added open racing-style exhausts, revised engine management, larger roof-mounted intake scoops, freer-flowing induction systems, and significant performance upgrades that pushed output to around 595 hp. Unlike the normal SE30, the Jota was intended primarily for track use and sacrificed much of the remaining comfort equipment. The SE30 Jota became one of the wildest and most desirable Diablos ever built, directly inspiring later GT and GTR models."
+  },
+  "Cala-1": {
+    "_model": "1995 Lamborghini Cala | 1:43 | Yellow | Hachette",
+    "short": "",
+    "long": ""
+  },
+  "DiabloSV-1": {
+    "_model": "1995 Lamborghini Diablo SV | 1:38 | Yellow | Welly",
+    "short": "I honestly really like this Diablo SV toy by Welly in 1:38 scale. The model is actually really well detailed and I like the proportions. The doors open, and the rear is actually very detailed. Just look at that massive SV logo! A bargain for $8 shipped.",
+    "long": "The Lamborghini Diablo SV (“Super Veloce”) debuted in 1995 as a more aggressive, rear-wheel-drive alternative to the all-wheel-drive VT. It used an upgraded version of the 5.7-liter V12 producing around 510 hp and focused on lighter weight, sharper handling, and a more raw driving experience. Visually, the SV introduced larger intakes, revised bumpers, an adjustable rear wing, and optional oversized “SV” side decals that became iconic. The SV also previewed styling cues later seen on the GT and GTR models."
+  },
+  "DiabloValv-1": {
+    "_model": "1996 Lamborghini Diablo SE Jota Valvoline | 1:43 | White | Hachette",
+    "short": "Incredible model of the crazy Diablo SE Jota, also known as Diablo P.01 GT Jota, presented in the Valvoline livery here. Would've wished it was Rain-X, so it would match my <a href='model.html?id=CountRainX-1'>Countach Rain-X</a>, but oh well, it still looks cool, especially side by side!",
+    "long": "The Lamborghini Diablo SE Jota, often referred to as the “P.01,” was a highly modified racing-oriented development based on the Diablo SE30 platform and created during Lamborghini’s mid-1990s GT racing ambitions. The car became closely associated with Japanese racing and appeared in striking Rain-X and Valvoline liveries. Valvoline is the livery showed off here. Developed with endurance racing and GT1-style competition in mind, it featured extreme aerodynamic modifications, lightweight construction, enlarged cooling systems, racing suspension, and heavily upgraded V12 specifications. Although Lamborghini explored racing programs around the SE Jota concept, including Le Mans and GT-style projects, the programs remained limited and fragmented, making the P.01 one of the most obscure and mythical Diablo competition derivatives."
+  },
+  "RelDodVip-2": {
+    "_model": "1996 Lamborghini Dodge Viper GTS | 1:64 | Yellow | Matchbox",
+    "short": "",
+    "long": ""
+  },
+  "Raptor-1": {
+    "_model": "1996 Lamborghini Raptor Zagato | 1:43 | Blue | Ixo",
+    "short": "",
+    "long": ""
+  },
+  "RelDodVip-3": {
+    "_model": "1997 Lamborghini Dodge Viper GT2 | 1:64 | White | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "RelDodVip-4": {
+    "_model": "1998 Lamborghini Dodge Viper GTS-R Concept | 1:64 | Red | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Tractor-1": {
+    "_model": "1998 Lamborghini Traction 265 Tractor | 1:55 | White | Siku",
+    "short": "",
+    "long": ""
+  },
+  "DiabloGT-1": {
+    "_model": "1999 Lamborghini Diablo GT | 1:64 | Yellow | Stance Hunters",
+    "short": "Incredible model of the Diablo GT from Stance Hunters. The proportions, paint finish, interior look fantastic, and even the engine cover opens to reveal the magnificent V12. Limited Edition, 1 of 399",
+    "long": "The Lamborghini Diablo GT was introduced in 1999 as the most extreme road-going Diablo ever built and represented Lamborghini’s closest attempt at turning the Diablo into a street-legal race car. Developed from lessons learned through the Diablo GT2 and motorsport programs, the GT combined aggressive aerodynamics, major weight reduction, and a significantly upgraded V12 into a far more hardcore machine than the standard Diablo models. Only around 80 examples were officially produced for the European market.\n\nVisually, the Diablo GT was dramatically different from a normal Diablo. It featured widened bodywork, a completely redesigned front bumper with large cooling ducts, NACA-style side intakes, a huge rear diffuser, center-mounted exhausts, and a large roof-mounted ram-air scoop feeding the engine. Much of the body used carbon fiber, and the car rode on special three-piece OZ wheels with an extremely aggressive stance.\n\nThe biggest upgrade was the engine. Lamborghini enlarged the V12 to 6.0 liters for the first time in a production Diablo, producing around 575 hp in European specification. Unlike the VT models, the GT remained rear-wheel drive to reduce weight and deliver a more raw driving experience. Inside, the cabin was stripped down with carbon fiber panels, racing bucket seats, harnesses, and reduced luxury equipment, although air conditioning remained standard.\n\nThe Diablo GT also directly led to the creation of the track-only Diablo GTR, which evolved the concept even further into a dedicated race car for Lamborghini’s Supertrophy series. Today, the GT is widely considered one of the most iconic and desirable Diablos ever built, combining classic Marcello Gandini proportions with some of the wildest factory styling Lamborghini ever put on a road car."
+  },
+  "DiabloGT2": {
+    "_model": "1999 Lamborghini Diablo GT2 | 1:43 | Orange | Ixo",
+    "short": "I, for one, really like this orange Diablo GT2 Prototype car, it's just so radical. This here is the '2002' modification version, and the model is based on the exact modification that was sitting in the Lamborghini Museum!",
+    "long": "The Lamborghini Diablo GT2 was a factory-developed racing prototype created in 1997–1998 as Lamborghini’s attempt to bring the Diablo into international GT competition, particularly the FIA GT Championship and potentially even Le Mans. Unlike the road-going Diablo GT that appeared later, the GT2 was a pure competition machine and one of the most extreme Diablos ever built.\n\nThe car was based on the Diablo SV/SV-R platform but heavily reworked with lightweight carbon fiber body panels, plexiglass side windows, a stripped racing interior, integrated roll cage, center-lock wheels, and aggressive aerodynamic modifications including a huge rear wing and redesigned front cooling ducts. It also became the first Lamborghini-developed Diablo to use a 6.0-liter V12, producing well over 600 horsepower in racing specification. This engine later directly influenced the production Diablo GT and Diablo VT 6.0. The prototype was first shown publicly at the 1997 Bologna Motor Show and later tested at circuits such as Varano and Monza in 1998. Lamborghini originally intended the GT2 to compete internationally, with some sources linking the project to possible Le Mans ambitions, but the program was ultimately canceled after Audi acquired Lamborghini in 1998. As a result, the GT2 never properly entered major FIA GT competition despite extensive development work.\n\nOnly a tiny number of Diablo GT2 cars were built, making it one of the rarest factory Lamborghini race projects ever created. Many of its design ideas and engineering solutions later evolved into the road-going Diablo GT and the track-only Diablo GTR.\n\nIt was kept in the Lamborghini Museum from 2002 until 2015."
+  },
+  "DiabloVTRoad-1": {
+    "_model": "1999 Lamborghini Diablo VT Roadster | 1:43 | Orange | Edicola",
+    "short": "I quite like this model, the proportions are mostly nice, but I'm not a big fan of the headlights. They don't feel realistic enough, but hey, it's just a $10-15 model, so can one really complain?",
+    "long": "The 1999 Lamborghini Diablo VT Roadster was the updated open-top version of the Diablo introduced after Lamborghini’s Audi-era facelift of the model line. While the original VT Roadster had debuted in 1995, the 1999 version received major visual and technical updates that modernized the Diablo for the end of the 1990s.\n\nThe most noticeable change was the replacement of the classic pop-up headlights with fixed units sourced from the Nissan 300ZX, improving aerodynamics and bringing the design more in line with contemporary supercars. The car also received redesigned bumpers, larger 18-inch wheels, bigger brakes with ABS, a revised dashboard, integrated airbags, and updated interior ergonomics influenced by Audi’s early involvement with Lamborghini.\n\nMechanically, it retained the 5.7-liter V12 with all-wheel drive (“VT” standing for Viscous Traction), but power increased to around 530 hp thanks to the addition of variable valve timing. Performance improved accordingly, with top speed rising to approximately 335 km/h (208 mph).\n\nLike earlier VT Roadsters, it featured a removable carbon-fiber targa roof panel stored above the engine cover rather than a folding soft top. The large side intakes, exposed rear deck design, and aggressive proportions gave the VT Roadster a very different appearance from the coupe, making it one of the most recognizable Diablos ever produced."
+  },
+  "DiabloVTRRoad-1": {
+    "_model": "1999 Lamborghini Diablo VT-R Roadster | 1:43 | White | Leo Models",
+    "short": "I really like this VT-R Roadster (often called the Diablo Roadster-R), it's basically an open top version of the Diablo SVR, but only one of these were ever built!",
+    "long": "The Lamborghini Diablo VT-R Roadster was a unique one-off factory special built in 1997 as an open-top racing-oriented version of the Diablo, created mainly to promote Lamborghini’s single-make racing activities and the Diablo SV-R program. It was based on the early Diablo VT Roadster platform but heavily modified into a much more extreme machine.\n\nUnlike the standard all-wheel-drive VT Roadster, the VT-R Roadster surprisingly used rear-wheel drive only and featured a heavily tuned 5.7-liter V12 producing nearly 600 hp in full race specification. The car also received major visual changes including headlight-delete air intakes, racing bucket seats with harnesses, lightweight body modifications, slick tires, and competition-style aerodynamic components.\n\nOnly a single Diablo VT-R Roadster was ever built, making it one of the rarest factory Diablo specials. It effectively combined the open-top styling of the VT Roadster with the aggressive motorsport direction of the SV-R and GT racing Diablos developed during the late 1990s."
+  },
+  "RelMCACent-1": {
+    "_model": "1999 Lamborghini MCA Centenaire | 1:43 | Blue | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "DiabloGTR-1": {
+    "_model": "2000 Lamborghini Diablo GT-R | 1:72 | White | UCC",
+    "short": "An unusual 1/72 scale Lamborghini Diablo GT-R. It was used when I bought it.",
+    "long": "The Lamborghini Diablo GTR was introduced in 1999 as the ultimate track-only evolution of the Diablo and the true successor to the Diablo SV-R race cars used in the Lamborghini Supertrophy series. Based on the road-going Diablo GT, the GTR was transformed into a full competition machine with a stripped interior, integrated roll cage, center-lock magnesium wheels, racing brakes, pneumatic air jacks, and a massive rear wing mounted directly to the chassis.\n\nIts 6.0-liter V12 was heavily upgraded with individual throttle bodies, titanium connecting rods, revised engine management, variable valve timing, and a dynamic intake system, producing around 590 hp. Unlike most later Diablos, the GTR remained rear-wheel drive and was designed purely for circuit use, never being road legal. Around 40 examples were ultimately produced between 1999 and 2000, and the model competed successfully in the Lamborghini Supertrophy and Australian Nations Cup racing."
+  },
+  "DiabloGTRS-1": {
+    "_model": "2000 Lamborghini Diablo GTR-S | 1:43 | Black | Edicola",
+    "short": "The Diablo GTR-S was built by Reiter Engineering, and it just looks so incredible with that large Lamborghini Logo on the front food. An even more radical version of the GT-R.",
+    "long": "The Lamborghini Diablo GTR-S by Reiter Engineering refers to an unofficial but well-known evolution of Diablo GT-style race conversions carried out by Reiter Engineering, the German motorsport specialist closely tied to Lamborghini GT racing programs. Building on the Diablo GT and GTR race platforms of the late 1990s, Reiter developed further track-focused modifications for customer and racing use, refining aerodynamics, suspension setups, and weight reduction strategies for GT competition. These cars were not factory production variants but competition evolutions based on Diablo race chassis used in Supertrophy and GT racing contexts, often adapted for specific series requirements or private teams. In practice, the GTR-S designation is used to describe these upgraded Reiter-built race evolutions rather than a single official Lamborghini model."
+  },
+  "Diablo6.0-1": {
+    "_model": "2000 Lamborghini Diablo VT 6.0 | 1:43 | Yellow | Ixo",
+    "short": "One of my favourite Lamborghini models ever. The 6.0 Diablo just hits different. It's my favorite version of the Diablo and that's almost certantly because I used to always use it as a child in Need For Speed: Hot Pursuit 2, and always wanted a model of it. The model itself is nice, besides the front, sorry. The front proportions are off, the headlights are poor, but otherwise it's incredible for the price.",
+    "long": "The Lamborghini Diablo VT 6.0 arrived in 2000 as the final major production evolution of the Diablo and the first version heavily revised under Audi ownership. While it retained the classic Diablo silhouette, the car received redesigned front and rear bumpers, updated air intakes, improved cooling, modernized interior quality, and major mechanical refinements. The 6.0-liter V12 produced around 543 hp, and Audi’s involvement dramatically improved reliability, build quality, and drivability compared to earlier Diablos. Many enthusiasts consider the VT 6.0 the best-balanced and most usable Diablo ever built."
+  },
+  "Diablo6.0SE-1": {
+    "_model": "2000 Lamborghini Diablo VT 6.0 SE | 1:64 | Gold | F-Toys",
+    "short": "This model started off as an Orange Diablo VT 6.0 by F-Toys, but I decided to repaint it in gold, for it to represent the incredible Diablo 6.0 SE, which I have actually seen in the Lamborghini Museum during my first visit in 2016! It turned out very well, you can see the interior in more detail below, as well as it, before it was modified. I had only gotten it for just $8, but not in perfect condition.",
+    "long": "The Lamborghini Diablo VT 6.0 SE was introduced in 2001 as the final special edition of the Diablo before production ended in favor of the Murciélago. Only 42 examples were built, split between two exclusive colors: Oro Elios (gold) representing sunrise and Marrone Eklipsis (brown metallic) representing sunset. Mechanically identical to the standard VT 6.0, the SE mainly focused on exclusivity, unique trim details, special badging, and upgraded interiors, marking the end of the Diablo era after more than a decade of production."
+  },
+  "Tractor-3": {
+    "_model": "2000 Lamborghini Traction 240 Tractor | 1:55 | White | Siku",
+    "short": "",
+    "long": ""
+  },
+  "Murcie-1": {
+    "_model": "2001 Lamborghini Murcielago 6.2 | 1:32 | Yellow | RoadBot",
+    "short": "This is actually a very cool Transformer by RoadBot, it can turn into a Robot or a Gorilla even!",
+    "long": "The Lamborghini Murciélago 6.2 was introduced in 2001 as the successor to the Diablo and became the first new Lamborghini developed under Audi ownership. It retained the dramatic V12 flagship formula of earlier Lamborghinis but combined it with significantly improved reliability, build quality, and usability. Powered by a 6.2-liter naturally aspirated V12 producing around 580 hp, the Murciélago featured all-wheel drive, active rear air intakes, and a design by Luc Donckerwolke that modernized Lamborghini styling while still referencing the Countach and Diablo. The car quickly became one of the defining supercars of the 2000s and the final Lamborghini V12 available with a traditional gated manual transmission."
+  },
+  "Murcie-2": {
+    "_model": "2001 Lamborghini Murcielago 6.2 | 1:32 | Orange | RoadBot",
+    "short": "My first Murcielago 6.2 in my collection and it's actually this cool transformer by RoadBot, which I was gifted for my birthday!",
+    "long": "The Lamborghini Murciélago 6.2 was introduced in 2001 as the successor to the Diablo and became the first new Lamborghini developed under Audi ownership. It retained the dramatic V12 flagship formula of earlier Lamborghinis but combined it with significantly improved reliability, build quality, and usability. Powered by a 6.2-liter naturally aspirated V12 producing around 580 hp, the Murciélago featured all-wheel drive, active rear air intakes, and a design by Luc Donckerwolke that modernized Lamborghini styling while still referencing the Countach and Diablo. The car quickly became one of the defining supercars of the 2000s and the final Lamborghini V12 available with a traditional gated manual transmission."
+  },
+  "Murcie-3": {
+    "_model": "2001 Lamborghini Murcielago 6.2 | 1:32 | Green | Welly",
+    "short": "I really like the Murcielago 6.2, the first generation, and I feel like this Welly has pretty good proportions for what it is.",
+    "long": "The Lamborghini Murciélago 6.2 was introduced in 2001 as the successor to the Diablo and became the first new Lamborghini developed under Audi ownership. It retained the dramatic V12 flagship formula of earlier Lamborghinis but combined it with significantly improved reliability, build quality, and usability. Powered by a 6.2-liter naturally aspirated V12 producing around 580 hp, the Murciélago featured all-wheel drive, active rear air intakes, and a design by Luc Donckerwolke that modernized Lamborghini styling while still referencing the Countach and Diablo. The car quickly became one of the defining supercars of the 2000s and the final Lamborghini V12 available with a traditional gated manual transmission."
+  },
+  "Murcie-4": {
+    "_model": "2001 Lamborghini Murcielago 6.2 | 1:256 | White | Editura Puisor (paper)",
+    "short": "Custom made paper Lamborghini, which was made with an online template in 1:256 scale. It looks hilarious on my shelf next to its siblings: <a href=model.html?id=Murcie-5>1:460 Scale Murcielago</a> and <a href=model.html?id=Murcie-6>1:1150 Scale Murcielago</a>",
+    "long": "The Lamborghini Murciélago 6.2 was introduced in 2001 as the successor to the Diablo and became the first new Lamborghini developed under Audi ownership. It retained the dramatic V12 flagship formula of earlier Lamborghinis but combined it with significantly improved reliability, build quality, and usability. Powered by a 6.2-liter naturally aspirated V12 producing around 580 hp, the Murciélago featured all-wheel drive, active rear air intakes, and a design by Luc Donckerwolke that modernized Lamborghini styling while still referencing the Countach and Diablo. The car quickly became one of the defining supercars of the 2000s and the final Lamborghini V12 available with a traditional gated manual transmission."
+  },
+  "Murcie-5": {
+    "_model": "2001 Lamborghini Murcielago 6.2 | 1:460 | White | Editura Puisor (paper)",
+    "short": "Another custom made little Murcielago with paper. It's hilarious looking on my shelf, sitting next to the <a href=model.html?id=Murcie-4>1:256 Scale Murcielago</a> and <a href=model.html?id=Murcie-6>1:1150 Scale Murcielago.</a>",
+    "long": "The Lamborghini Murciélago 6.2 was introduced in 2001 as the successor to the Diablo and became the first new Lamborghini developed under Audi ownership. It retained the dramatic V12 flagship formula of earlier Lamborghinis but combined it with significantly improved reliability, build quality, and usability. Powered by a 6.2-liter naturally aspirated V12 producing around 580 hp, the Murciélago featured all-wheel drive, active rear air intakes, and a design by Luc Donckerwolke that modernized Lamborghini styling while still referencing the Countach and Diablo. The car quickly became one of the defining supercars of the 2000s and the final Lamborghini V12 available with a traditional gated manual transmission."
+  },
+  "Murcie-6": {
+    "_model": "2001 Lamborghini Murcielago 6.2 | 1:1150 | White | Editura Puisor (paper)",
+    "short": "This is probably my most hilarious model, because it's tiny; about 4 mm. And it was custom made with paper! It looks hilarious next to the <a href=model.html?id=Murcie-4>1:256 Scale Murcielago</a> and <a href=model.html?id=Murcie-5>1:460 Scale Murcielago</a>, which I've also made from paper.",
+    "long": "The Lamborghini Murciélago 6.2 was introduced in 2001 as the successor to the Diablo and became the first new Lamborghini developed under Audi ownership. It retained the dramatic V12 flagship formula of earlier Lamborghinis but combined it with significantly improved reliability, build quality, and usability. Powered by a 6.2-liter naturally aspirated V12 producing around 580 hp, the Murciélago featured all-wheel drive, active rear air intakes, and a design by Luc Donckerwolke that modernized Lamborghini styling while still referencing the Countach and Diablo. The car quickly became one of the defining supercars of the 2000s and the final Lamborghini V12 available with a traditional gated manual transmission."
+  },
+  "Gal-1": {
+    "_model": "2003 Lamborghini Gallardo 5.0 | 1:32 | Orange | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Gal-2": {
+    "_model": "2003 Lamborghini Gallardo 5.0 | 1:32 | Yellow | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Gal-3": {
+    "_model": "2003 Lamborghini Gallardo 5.0 | 1:64 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "MurcieAnni-1": {
+    "_model": "2003 Lamborghini Murcielago 40th Anniversary | 1:64 | Turquoise | Hot Wheels",
+    "short": "This little Murcielago by Hot Wheels is actually quite nice, the Verde Artemis color is somewhat accurate enough, surprisingly enough.",
+    "long": "The Lamborghini Murciélago 40th Anniversary was introduced in 2003 to celebrate 40 years of Automobili Lamborghini. Only 50 examples were built, all finished in the exclusive Verde Artemis pearl paint with carbon fiber exterior trim, anthracite wheels, silver brake calipers, and a uniquely styled asymmetric interior. The special edition also featured revised exhaust components, numbered plaques, and special anniversary details throughout the cabin. Today it is considered one of the rarest and most collectible early Murciélagos."
+  },
+  "GalPoliz-1": {
+    "_model": "2004 Lamborghini Gallardo Polizia Special | 1:43 | Blue | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "MurcieRGT-1": {
+    "_model": "2004 Lamborghini Murcielago R-GT | 1:43 | Black | Bburago",
+    "short": "A pretty old Murcielago R-GT model I treated as a toy long time ago. I've always loved the livery, though.",
+    "long": "The Lamborghini Murciélago R-GT entered competition in 2004 as Lamborghini’s first serious factory-backed GT race car of the modern era. Developed with Reiter Engineering, it competed in FIA GT, the American Le Mans Series, and other endurance championships. The car used a racing version of the 6.0-liter V12 producing around 600 hp and featured extensive lightweight construction, race aerodynamics, and rear-wheel drive. Although reliability issues initially limited its success, the R-GT eventually achieved race victories and podiums, becoming the foundation for Lamborghini’s future GT racing programs."
+  },
+  "MurcieRGTPr-1": {
+    "_model": "2004 Lamborghini Murcielago R-GT Presentation | 1:64 | Black | Top Mark/LAMBOMODELS",
+    "short": "This is a quick custom model I've made of the 2003 R-GT Presentation car, which had a few differences compared to the actual race cars. I quite like it for what it is!",
+    "long": "The Lamborghini Murciélago R-GT Presentation Car was unveiled in 2003 as Lamborghini’s official return to international GT racing. Developed together with Reiter Engineering and Audi Sport, the presentation car previewed Lamborghini’s FIA GT and Le Mans ambitions. It featured a heavily widened body, massive aerodynamic modifications, racing suspension, stripped interior, and a rear-wheel-drive layout replacing the standard AWD system to comply with GT racing regulations. The presentation car directly evolved into the actual competition R-GT racers that entered FIA GT competition the following year."
+  },
+  "MurcieRoad-1": {
+    "_model": "2004 Lamborghini Murcielago Roadster | 1:64 | Yellow | Maisto",
+    "short": "A weird tuned Murcielago Roadster by Maisto, though, it's quite heavy and looks good from certain angles. Just not a fan of the wheels...",
+    "long": "The Lamborghini Murciélago Roadster debuted in 2004 and transformed the coupe into a dramatic open-top supercar. Unlike a traditional convertible, it used a removable fabric roof panel intended only for occasional use at low speeds. The Roadster featured revised rear bodywork, asymmetrical engine-cover vents, and a redesigned rear deck optimized for cooling and structural rigidity. Powered by the same 6.2-liter V12 as the coupe, it became one of the most visually recognizable Murciélago variants ever produced."
+  },
+  "Canto-1": {
+    "_model": "2005 Lamborghini Canto | 1:43 | Orange | Hachette",
+    "short": "",
+    "long": ""
+  },
+  "GalConceptS-1": {
+    "_model": "2005 Lamborghini Concept S | 1:32 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Acosta-1": {
+    "_model": "2006 Lamborghini Acosta | 1:43 | Red | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "GalSE-1": {
+    "_model": "2006 Lamborghini Gallardo SE | 1:43 | Yellow | Kyosho",
+    "short": "",
+    "long": ""
+  },
+  "GalSpy-1": {
+    "_model": "2006 Lamborghini Gallardo Spyder | 1:43 | Blue | NewRay",
+    "short": "",
+    "long": ""
+  },
+  "MiuConcept-1": {
+    "_model": "2006 Lamborghini Miura Concept | 1:43 | Yellow | Mondo Motors",
+    "short": "This Miura concept model car by Mondo Motors actually features an interior, which the real car doesn't have!",
+    "long": "The 2006 Lamborghini Miura Concept was created to celebrate the 40th anniversary of the original Miura, reimagining one of Lamborghini’s most iconic designs for the modern era. Designed by Walter de Silva, then head of Lamborghini and Audi Group design, it became the first Lamborghini developed under his direction and was internally known as “Concept M.” Although heavily inspired by the original 1966 Miura designed by Marcello Gandini, the concept was actually based on the mechanical platform of the Murciélago, using a modern V12 layout and contemporary engineering underneath its retro-inspired bodywork. The design carefully preserved classic Miura elements such as the flowing proportions, side air intakes, louvered rear section, and distinctive “eyelash” headlight details, while subtly integrating modern Lamborghini styling cues. The car debuted in early 2006 and immediately generated enormous interest among enthusiasts, many hoping it would enter production. However, Lamborghini CEO Stephan Winkelmann made it clear that the Miura Concept would remain a one-off design study, stating that Lamborghini was focused on the future rather than retro production models. Despite never reaching production, the Miura Concept remains one of the most celebrated modern Lamborghini concepts and is now preserved in the Lamborghini Museum in Sant’Agata Bolognese."
+  },
+  "MurcieBarchConc-1": {
+    "_model": "2006 Lamborghini Murcielago Barchetta Concept | 1:43 | Orange | AUTOart",
+    "short": "An absolutely incredible model of the Murcielago Concept car by AUTOart. Though the original car was finished in Giallo paint, this one is finished in a very nice Orange color. Very detailed and realistic.",
+    "long": "The Lamborghini Murciélago Barchetta Concept was unveiled in 2002 as an early open-top design study previewing the future Murciélago Roadster. Unlike the later production Roadster, the Barchetta concept featured a far more aggressive and experimental design, including a chopped windshield, redesigned engine cover, special wheels, lightweight interior elements, and additional chassis reinforcement visible beneath the rear bodywork. Lamborghini also hinted that some of the styling details could influence the brand’s future design language under Luc Donckerwolke.\n\nMechanically, the concept retained the standard Murciélago’s 6.2-liter V12 producing around 580 hp with all-wheel drive and a 6-speed manual transmission. Although the Barchetta itself never entered production in this exact form, it directly previewed the production Murciélago Roadster that arrived shortly afterward."
+  },
+  "Murcie640-1": {
+    "_model": "2006 Lamborghini Murcielago LP640 | 1:36 | Black | Kinsmart",
+    "short": "My third ever Lamborghini model. I've always wanted a model of the Murcielago, ever since I got <a href=model.html?id=Diablo-1>my first Lamborghini, the Diablo</a> and the <a href=model.html?id=Ave-1>second one, which was the Aventador by Maisto</a>. When I saw this model locally at a toy kiosk, I immediately wanted it. Safe to say I managed to convice my parents to get it for me. Great memories. I prefer the design of the original Murcielago over this LP640, though.",
+    "long": "The Lamborghini Murciélago LP640 arrived in 2006 as a major facelift and mechanical upgrade of the original Murciélago. The “LP640” name referred to the longitudinal rear engine layout and its new output of 640 metric horsepower. The enlarged 6.5-liter V12 dramatically improved performance, while the car also received redesigned bumpers, revised headlights, larger air intakes, improved cooling, and a significantly upgraded interior. The LP640 is widely considered the definitive standard Murciélago and one of the greatest manual V12 Lamborghinis ever built.",
+    "milestone": "3rd",
+    "special": true
+  },
+  "Murcie640-2": {
+    "_model": "2006 Lamborghini Murcielago LP640 | 1:36 | Orange | Kinsmart",
+    "short": "This was a gift from my father when I was a child... it held up surprisingly well to be honest! ",
+    "long": "The Lamborghini Murciélago LP640 arrived in 2006 as a major facelift and mechanical upgrade of the original Murciélago. The “LP640” name referred to the longitudinal rear engine layout and its new output of 640 metric horsepower. The enlarged 6.5-liter V12 dramatically improved performance, while the car also received redesigned bumpers, revised headlights, larger air intakes, improved cooling, and a significantly upgraded interior. The LP640 is widely considered the definitive standard Murciélago and one of the greatest manual V12 Lamborghinis ever built.",
+  },
+  "Murcie640-3": {
+    "_model": "2006 Lamborghini Murcielago LP640 | 1:36 | Black \"Police\" | Kinsmart",
+    "short": "Another Kinsmart Murcielago LP640, this time in a fictional Police livery. I actually really like it!",
+    "long": "The Lamborghini Murciélago LP640 arrived in 2006 as a major facelift and mechanical upgrade of the original Murciélago. The “LP640” name referred to the longitudinal rear engine layout and its new output of 640 metric horsepower. The enlarged 6.5-liter V12 dramatically improved performance, while the car also received redesigned bumpers, revised headlights, larger air intakes, improved cooling, and a significantly upgraded interior. The LP640 is widely considered the definitive standard Murciélago and one of the greatest manual V12 Lamborghinis ever built.",
+  },
+  "Murcie640-4": {
+    "_model": "2006 Lamborghini Murcielago LP640 | 1:64 | Green | Unbranded",
+    "short": "This one is really funny, it came as a part of local cotton candy package, so I just had to get it.",
+    "long": "The Lamborghini Murciélago LP640 arrived in 2006 as a major facelift and mechanical upgrade of the original Murciélago. The “LP640” name referred to the longitudinal rear engine layout and its new output of 640 metric horsepower. The enlarged 6.5-liter V12 dramatically improved performance, while the car also received redesigned bumpers, revised headlights, larger air intakes, improved cooling, and a significantly upgraded interior. The LP640 is widely considered the definitive standard Murciélago and one of the greatest manual V12 Lamborghinis ever built.",
+  },
+  "Murcie640Road-1": {
+    "_model": "2006 Lamborghini Murcielago LP640 Roadster | 1:55 | White | Siku",
+    "short": "This Murcielago LP640 Roadster by Siku is pretty cool, and I've had it for a long time.",
+    "long": "The Lamborghini Murciélago LP640 Roadster combined the updated LP640 platform with the dramatic open-top design of the earlier Roadster. Introduced in 2006, it featured the upgraded 640 hp 6.5-liter V12 along with revised styling, improved interior quality, and enhanced performance. The removable soft roof remained extremely minimalistic, reinforcing the Roadster’s raw and theatrical character. The LP640 Roadster became one of the most iconic convertible Lamborghinis of the 2000s."
+  },
+  "Murcie640Road-2": {
+    "_model": "2006 Lamborghini Murcielago LP640 Roadster | 1:10 | Orange | Unbranded",
+    "short": "The largest Lamborghini in my collection, coming in at 1:10th scale... even though it's a cheap toy, I love it. Had trouble taking pictures of this one haha.",
+    "long": "The Lamborghini Murciélago LP640 Roadster combined the updated LP640 platform with the dramatic open-top design of the earlier Roadster. Introduced in 2006, it featured the upgraded 640 hp 6.5-liter V12 along with revised styling, improved interior quality, and enhanced performance. The removable soft roof remained extremely minimalistic, reinforcing the Roadster’s raw and theatrical character. The LP640 Roadster became one of the most iconic convertible Lamborghinis of the 2000s."
+  },
+  "GalNera-1": {
+    "_model": "2007 Lamborghini Gallardo Nera | 1:32 | Black | Kinsmart/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "GalSuper-1": {
+    "_model": "2007 Lamborghini Gallardo Superleggera | 1:14 | Yellow | Rastar",
+    "short": "",
+    "long": ""
+  },
+  "GalSuper-2": {
+    "_model": "2007 Lamborghini Gallardo Superleggera | 1:43 | Orange | Mondo Motors",
+    "short": "",
+    "long": ""
+  },
+  "Reve-1": {
+    "_model": "2007 Lamborghini Reventon | 1:24 | Gray | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "Reve-2": {
+    "_model": "2007 Lamborghini Reventon | 1:64 | Gray | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "Reve-3": {
+    "_model": "2007 Lamborghini Reventon | 1:43 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Reve-4": {
+    "_model": "2007 Lamborghini Reventon | 1:43 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Reve-5": {
+    "_model": "2007 Lamborghini Reventon | 1:40 | Black | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Estoque-1": {
+    "_model": "2008 Lamborghini Estoque | 1:64 | Red | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Estoque-2": {
+    "_model": "2008 Lamborghini Estoque | 1:43 | Gray | Rastar",
+    "short": "",
+    "long": ""
+  },
+  "Gal560-1": {
+    "_model": "2008 Lamborghini Gallardo LP560-4 | 1:64 | Yellow | Siku",
+    "short": "",
+    "long": ""
+  },
+  "Gal560-2": {
+    "_model": "2008 Lamborghini Gallardo LP560-4 | 1:64 | Orange | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "Gal550Val-1": {
+    "_model": "2009 Lamborghini Gallardo  LP550-2 Valentino Balboni | 1:64 | Green | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "Gal560Poliz-1": {
+    "_model": "2009 Lamborghini Gallardo LP560-4 Polizia | 1:64 | Blue | Matchbox",
+    "short": "",
+    "long": ""
+  },
+  "Gal560Spy-1": {
+    "_model": "2009 Lamborghini Gallardo LP560-4 Spyder | 1:43 | Yellow | Norev",
+    "short": "",
+    "long": ""
+  },
+  "Gal560ST-1": {
+    "_model": "2009 Lamborghini Gallardo LP560-4 Super Trofeo | 1:43 | White | Mondo Motors",
+    "short": "",
+    "long": ""
+  },
+  "MurcieSV-1": {
+    "_model": "2009 Lamborghini Murcielago LP670-4 SV | 1:32 | Yellow | Rastar",
+    "short": "My first Murcielago SV, I actually got this Rastar model in Russia on my visit during the World Cup season in 2018! I quite like it...",
+    "long": "The Lamborghini Murciélago LP670-4 SuperVeloce, introduced in 2009, became the ultimate and final evolution of the Murciélago. The “SV” name returned for the first time since the Diablo era and focused on maximum performance through weight reduction and increased power. The 6.5-liter V12 was upgraded to 670 hp, while carbon fiber components, a stripped interior, revised aerodynamics, and a huge optional rear wing reduced weight by around 100 kg compared to the LP640. The LP670-4 SV became one of Lamborghini’s most legendary modern V12 cars and marked the end of the Murciélago generation before the Aventador replaced it."
+  },
+  "MurcieSV-2": {
+    "_model": "2009 Lamborghini Murcielago LP670-4 SV | 1:64 | Orange | RMZ City",
+    "short": "I bought thish Lamborghini on my trip in Montenegro at a tabaccheria shop as a souvenir. Look at the last photo featured on this page!",
+    "long": "The Lamborghini Murciélago LP670-4 SuperVeloce, introduced in 2009, became the ultimate and final evolution of the Murciélago. The “SV” name returned for the first time since the Diablo era and focused on maximum performance through weight reduction and increased power. The 6.5-liter V12 was upgraded to 670 hp, while carbon fiber components, a stripped interior, revised aerodynamics, and a huge optional rear wing reduced weight by around 100 kg compared to the LP640. The LP670-4 SV became one of Lamborghini’s most legendary modern V12 cars and marked the end of the Murciélago generation before the Aventador replaced it.",
+    "showNote": true
+  },
+  "MurcieSV-3": {
+    "_model": "2009 Lamborghini Murcielago LP670-4 SV | 1:64 | Yellow | Unbranded",
+    "short": "It's hard to call this one a Lamborghini, but it has the Murcielago SV engine, so I decided to add it anyways. This is definitely the Lamborghini of these rectangular cars.",
+    "long": "The Lamborghini Murciélago LP670-4 SuperVeloce, introduced in 2009, became the ultimate and final evolution of the Murciélago. The “SV” name returned for the first time since the Diablo era and focused on maximum performance through weight reduction and increased power. The 6.5-liter V12 was upgraded to 670 hp, while carbon fiber components, a stripped interior, revised aerodynamics, and a huge optional rear wing reduced weight by around 100 kg compared to the LP640. The LP670-4 SV became one of Lamborghini’s most legendary modern V12 cars and marked the end of the Murciélago generation before the Aventador replaced it."
+  },
+  "MurcieSVCN-1": {
+    "_model": "2009 Lamborghini Murcielago LP670-4 SV China Limited Edition | 1:36 | Gray | Unbranded",
+    "short": "An unlicensed model of the Murcielago SV China Limited Edition, I got this one a very long time ago and it's pretty cool as a toy.",
+    "long": "The Lamborghini Murciélago LP670-4 SV China Limited Edition was a special series of only 10 cars created exclusively for the Chinese market in 2010. Based on the standard LP670-4 SV, the cars featured a unique two-tone black and orange livery inspired by traditional Chinese colors, along with special badging and numbered plaques. The limited edition celebrated Lamborghini’s growing presence in China and remains one of the rarest Murciélago variants ever built."
+  },
+  "MurcieSVCN-2": {
+    "_model": "2009 Lamborghini Murcielago LP670-4 SV China Limited Edition | 1:43 | Gray | Rastar",
+    "short": "My first model of 2026, the Murcielago LP 670-4 SV China Limited Edition by Rastar in 1:43 scale. It's actually quite nice for the price.",
+    "long": "The Lamborghini Murciélago LP670-4 SV China Limited Edition was a special series of only 10 cars created exclusively for the Chinese market in 2010. Based on the standard LP670-4 SV, the cars featured a unique two-tone black and orange livery inspired by traditional Chinese colors, along with special badging and numbered plaques. The limited edition celebrated Lamborghini’s growing presence in China and remains one of the rarest Murciélago variants ever built.",
+    "showNote": true
+  },
+  "ReveRoad-1": {
+    "_model": "2009 Lamborghini Reventon Roadster | 1:43 | Black | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "ReveRoad-2": {
+    "_model": "2009 Lamborghini Reventon Roadster | 1:64 | Gray | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Gal570Super-2": {
+    "_model": "2010 Lamborghini Gallardo LP 570-4 Superleggera | 1:36 | White | RMZ City",
+    "short": "",
+    "long": ""
+  },
+  "Gal570Perf-1": {
+    "_model": "2010 Lamborghini Gallardo LP570-4 Spyder Performante | 1:14 | White | Rastar",
+    "short": "",
+    "long": ""
+  },
+  "Gal570Super-1": {
+    "_model": "2010 Lamborghini Gallardo LP570-4 Superleggera | 1:36 | Green | RMZ City",
+    "short": "",
+    "long": ""
+  },
+  "Murcie650Road-1": {
+    "_model": "2010 Lamborghini Murcielago LP650-4 Roadster | 1:43 | Gray | Edicola",
+    "short": "This is a pretty good model of the crazy limited Murcielago LP650-4 Roadster, and it has both the European and American turn signals at the same time for some reason...",
+    "long": "The Lamborghini Murciélago LP650-4 Roadster was unveiled in 2009 as a limited edition of only 50 cars. It used a slightly upgraded version of the LP640’s 6.5-liter V12 producing 650 hp and featured exclusive Grigio Telesto grey paint combined with bright orange accents throughout the exterior and interior. The LP650-4 also received unique wheels and trim details, making it one of the most visually distinctive Murciélago variants ever produced."
+  },
+  "Sesto-1": {
+    "_model": "2010 Lamborghini Sesto Elemento | 1:38 | Black | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Sesto-2": {
+    "_model": "2010 Lamborghini Sesto Elemento | 1:38 | White | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Sesto-3": {
+    "_model": "2010 Lamborghini Sesto Elemento | 1:38 | Yellow | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Sesto-4": {
+    "_model": "2010 Lamborghini Sesto Elemento | 1:38 | Blue | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Sesto-5": {
+    "_model": "2010 Lamborghini Sesto Elemento | 1:38 | Black \"Police\" | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Ave-1": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:24 | Orange | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "Ave-2": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:38 | White | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Ave-3": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:38 | Gray | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Ave-4": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:36 | Orange | Double Horses",
+    "short": "",
+    "long": ""
+  },
+  "Ave-5": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:55 | Orange | Siku",
+    "short": "",
+    "long": ""
+  },
+  "Ave-6": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:64 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ave-7": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:20 | Orange | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ave-8": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:87 | Black | Schuco",
+    "short": "",
+    "long": ""
+  },
+  "Ave-9": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:20 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ave-10": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:32 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ave-11": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:72 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ave-12": {
+    "_model": "2011 Lamborghini Aventador LP700-4 | 1:64 | Yellow | MSCHF/Majorette",
+    "short": "",
+    "long": ""
+  },
+  "Gal550GZ8-1": {
+    "_model": "2011 Lamborghini Gallardo LP550-2 GZ8 Edizione Limitata | 1:36 | White | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Gal550ID-1": {
+    "_model": "2011 Lamborghini Gallardo LP550-2 Indonesia Limited Edition | 1:64 | Green | RMZ City",
+    "short": "",
+    "long": ""
+  },
+  "Gal570Blanc-1": {
+    "_model": "2011 Lamborghini Gallardo LP570-4 Blancpain Edition | 1:64 | Black | Top Mark/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Gal570Tecnica-1": {
+    "_model": "2011 Lamborghini Gallardo LP570-4 Superleggera Edizione Tecnica | 1:32 | White | RMZ City",
+    "short": "",
+    "long": ""
+  },
+  "AveJ-1": {
+    "_model": "2012 Lamborghini Aventador J | 1:64 | Orange | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Gal570STAsia-1": {
+    "_model": "2012 Lamborghini Gallardo LP570-4 Super Trofeo Asia | 1:36 | Yellow | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Gal570STS-1": {
+    "_model": "2012 Lamborghini Gallardo LP570-4 Super Trofeo Stradale | 1:43 | Red | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "UrusConc-1": {
+    "_model": "2012 Lamborghini Urus Concept | 1:32 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "UrusConc-2": {
+    "_model": "2012 Lamborghini Urus Concept | 1:38 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "UrusConc-3": {
+    "_model": "2012 Lamborghini Urus Concept | 1:38 | Red | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "UrusConc-4": {
+    "_model": "2012 Lamborghini Urus Concept | 1:43 | Orange | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "AveRoad-1": {
+    "_model": "2013 Lamborghini Aventador LP700-4 Roadster | 1:32 | Yellow | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "AveRoad-2": {
+    "_model": "2013 Lamborghini Aventador LP700-4 Roadster | 1:43 | Blue | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "AveRoad-3": {
+    "_model": "2013 Lamborghini Aventador LP700-4 Roadster | 1:43 | Yellow | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "AveAnni-1": {
+    "_model": "2013 Lamborghini Aventador LP720-4 50th Anniversary | 1:16 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "AveAnni-2": {
+    "_model": "2013 Lamborghini Aventador LP720-4 50th Anniversary | 1:43 | Yellow | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "AveAnni-3": {
+    "_model": "2013 Lamborghini Aventador LP720-4 50th Anniversary Roadster | 1:55 | Yellow | Bburago/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "AvePolice-1": {
+    "_model": "2013 Lamborghini Aventador Police | 1:43 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Egoista-1": {
+    "_model": "2013 Lamborghini Egoista | 1:36 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Egoista-2": {
+    "_model": "2013 Lamborghini Egoista | 1:64 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Egoista-3": {
+    "_model": "2013 Lamborghini Egoista | 1:64 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Egoista-4": {
+    "_model": "2013 Lamborghini Egoista | 1:64 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Egoista-5": {
+    "_model": "2013 Lamborghini Egoista | 1:18 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Egoista-6": {
+    "_model": "2013 Lamborghini Egoista | 1:36 | Gray | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Gal570-4SC-1": {
+    "_model": "2013 Lamborghini Gallardo LP570-4 Squadra Corse | 1:43 | Gray | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "Gal600GT3-1": {
+    "_model": "2013 Lamborghini Gallardo LP600+ GT3 | 1:43 | White | Leo Models",
+    "short": "",
+    "long": ""
+  },
+  "Ven-1": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:32 | Gray | Double Horses",
+    "short": "",
+    "long": ""
+  },
+  "Ven-2": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:36 | Black | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Ven-3": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Gray | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-4": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Gray | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-5": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:32 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-6": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Orange | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Ven-7": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:24 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-8": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:20 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-9": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-10": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:38 | Orange | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-11": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:38 | Gray | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-12": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:38 | Green | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-13": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:43 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-14": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-15": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:50 | Green | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-16": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-17": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Green | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-18": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-19": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-20": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-21": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Silver | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-22": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-23": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Green | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-24": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:64 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Ven-25": {
+    "_model": "2013 Lamborghini Veneno LP750-4 | 1:34 | Gray | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Asterion-1": {
+    "_model": "2014 Lamborghini Asterion LPI910-4 | 1:43 | Blue | Panini",
+    "short": "",
+    "long": ""
+  },
+  "AveNaz-1": {
+    "_model": "2014 Lamborghini Aventador LP700-4 Nazionale | 1:38 | Yellow | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Hur1": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 | 1:36 | Yellow | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "Hur2": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 | 1:43 | Green | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "Hur3": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 | 1:64 | Orange | Unbranded (\"Hot Wheel\")",
+    "short": "",
+    "long": ""
+  },
+  "Hur4": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 | 1:64 | Green | Unbranded (\"Hot Wheel\")",
+    "short": "",
+    "long": ""
+  },
+  "Hur5": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 | 1:87 | Gray | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Hur6": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 | 1:222 | Red | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurPoliz-1": {
+    "_model": "2014 Lamborghini Huracan LP 610-4 Polizia | 1:36 | Blue | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "VenRoad-1": {
+    "_model": "2014 Lamborghini Veneno LP750-4 Roadster | 1:18 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "RelAudiR8-2": {
+    "_model": "2015 Lamborghini Audi R8 Spyder V10 performance quattro | 1:64 | Red | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "RelAudiR8-1": {
+    "_model": "2015 Lamborghini Audi R8 V10+ | 1:55 | Blue | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "AvePir-1": {
+    "_model": "2015 Lamborghini Aventador LP700-4 Pirelli Edition | 1:38 | White | Kinsmart/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "AveSV-1": {
+    "_model": "2015 Lamborghini Aventador LP750-4 SV | 1:38 | Yellow | RMZ City",
+    "short": "",
+    "long": ""
+  },
+  "HurGT3-1": {
+    "_model": "2015 Lamborghini Huracan GT3 | 1:43 | Green | Carrera",
+    "short": "",
+    "long": ""
+  },
+  "HurSafety-1": {
+    "_model": "2015 Lamborghini Huracan LP 610-4 Safety Car | 1:64 | White | Unifortune/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurSpy-1": {
+    "_model": "2015 Lamborghini Huracan LP 610-4 Spyder | 1:32 | Blue | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "HurST-1": {
+    "_model": "2015 Lamborghini Huracan LP 620-2 Super Trofeo | 1:36 | Green | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "HurST-2": {
+    "_model": "2015 Lamborghini Huracan LP 620-2 Super Trofeo | 1:64 | White | Unbranded (\"Hot Wheel\")",
+    "short": "",
+    "long": ""
+  },
+  "HurST-3": {
+    "_model": "2015 Lamborghini Huracan LP 620-2 Super Trofeo | 1:64 | White | Unbranded (\"Hot Wheel\")",
+    "short": "",
+    "long": ""
+  },
+  "HurZhong-1": {
+    "_model": "2015 Lamborghini Huracan Zhong | 1:64 | Yellow | Unifortune/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "AvePirRoadLB-1": {
+    "_model": "2015 Lamborghini LB-Works Aventador LP700-4 Roadster Pirelli Edition | 1:64 | Pink | Kami Garage",
+    "short": "",
+    "long": ""
+  },
+  "AveSV-2": {
+    "_model": "2016 Lamborghini Aventador LP750-4 SV Roadster | 1:32 | Orange | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "AveMiura-1": {
+    "_model": "2016 Lamborghini Aventador Miura Homage Edition | 1:64 | Red | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "AveMiura-2": {
+    "_model": "2016 Lamborghini Aventador Miura Homage Edition | 1:64 | Red | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "AveS-1": {
+    "_model": "2016 Lamborghini Aventador S | 1:87 | Yellow | Kinder Surprise",
+    "short": "",
+    "long": ""
+  },
+  "Cent-1": {
+    "_model": "2016 Lamborghini Centenario LP770-4 | 1:43 | Red | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "Cent-2": {
+    "_model": "2016 Lamborghini Centenario LP770-4 | 1:43 | Red | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "Cent-3": {
+    "_model": "2016 Lamborghini Centenario LP770-4 | 1:55 | Gold | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Hur580-1": {
+    "_model": "2016 Lamborghini Huracan LP 580-2 | 1:72 | Gray | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Hur580LB-1": {
+    "_model": "2016 Lamborghini Huracan LP 580-2 LB-Works | 1:64 | White | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "HurAir-1": {
+    "_model": "2016 Lamborghini Huracan LP 610-4 Airport | 1:64 | Yellow | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "AveSRoad-1": {
+    "_model": "2017 Lamborghini Aventador S Roadster | 1:43 | Blue | Panini",
+    "short": "",
+    "long": ""
+  },
+  "CentRoad-1": {
+    "_model": "2017 Lamborghini Centenario LP770-4 Roadster | 1:64 | Gray | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "CentRoad-2": {
+    "_model": "2017 Lamborghini Centenario LP770-4 Roadster | 1:64 | White | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "HurAvio-1": {
+    "_model": "2017 Lamborghini Huracan LP 610-4 Avio | 1:36 | Gray | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "HurPerf-1": {
+    "_model": "2017 Lamborghini Huracan LP640-4 Performante | 1:24 | Orange | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "HurPerf-2": {
+    "_model": "2017 Lamborghini Huracan LP640-4 Performante | 1:43 | Green | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "HurPerf-3": {
+    "_model": "2017 Lamborghini Huracan LP640-4 Performante | 1:64 | White | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "Terzo-1": {
+    "_model": "2017 Lamborghini Terzo Millennio | 1:24 | Gray | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "Terzo-2": {
+    "_model": "2017 Lamborghini Terzo Millennio | 1:12 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Terzo-3": {
+    "_model": "2017 Lamborghini Terzo Millennio | 1:64 | Blue | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "AveSVJ-1": {
+    "_model": "2018 Lamborghini Aventador SVJ | 1:43 | Yellow | Mondo Motors",
+    "short": "",
+    "long": ""
+  },
+  "AveSVJ-2": {
+    "_model": "2018 Lamborghini Aventador SVJ | 1:43 | Green | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "Ave63SVJ-1": {
+    "_model": "2018 Lamborghini Aventador SVJ 63 | 1:32 | White | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "Tractor-7": {
+    "_model": "2018 Lamborghini Deutz Fahr 6190 TTV Lamborghini Special Edition Tractor | 1:87 | White | Siku/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurPerfSpy-1": {
+    "_model": "2018 Lamborghini Huracan LP640-4 Performante Spyder | 1:64 | Green | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "Urus-1": {
+    "_model": "2018 Lamborghini Urus | 1:25 | Gray | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "Urus-2": {
+    "_model": "2018 Lamborghini Urus | 1:64 | Yellow | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "Urus-3": {
+    "_model": "2018 Lamborghini Urus | 1:43 | Blue | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "AveSVJRoad-1": {
+    "_model": "2019 Lamborghini Aventador SVJ Roadster | 1:64 | Gold | MiniGT",
+    "short": "",
+    "long": ""
+  },
+  "Ave63SVJRoad-1": {
+    "_model": "2019 Lamborghini Aventador SVJ Roadster 63 | 1:22 | Black | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "HurEVO1": {
+    "_model": "2019 Lamborghini Huracan EVO | 1:43 | Red | Airfix/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurEVOSpy-1": {
+    "_model": "2019 Lamborghini Huracan EVO Spyder | 1:50 | Green | LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurGT3EVO-1": {
+    "_model": "2019 Lamborghini Huracan GT3 EVO | 1:64 | Green | MiniGT",
+    "short": "",
+    "long": ""
+  },
+  "HurST-4": {
+    "_model": "2019 Lamborghini Huracan LP 620-2 Super Trofeo | 1:64 | White | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "HurSTEVO-1": {
+    "_model": "2019 Lamborghini Huracan LP 620-2 Super Trofeo EVO | 1:32 | Gray | CHIMEIMODEL",
+    "short": "",
+    "long": ""
+  },
+  "LamboV12VGT-1": {
+    "_model": "2019 Lamborghini Lambo V12 Vision Gran Turismo | 1:22 | Yellow | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "LamboV12VGT-2": {
+    "_model": "2019 Lamborghini Lambo V12 Vision Gran Turismo | 1:55 | Purple | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Tractor-4": {
+    "_model": "2019 Lamborghini R8.265 Tractor | 1:32 | Silver | Siku",
+    "short": "",
+    "long": ""
+  },
+  "SC18-1": {
+    "_model": "2019 Lamborghini SC18 Alston | 1:32 | Black | Double Horses",
+    "short": "",
+    "long": ""
+  },
+  "UrusRTX-1": {
+    "_model": "2019 Lamborghini Urus ST-X | 1:64 | Green | Majorette",
+    "short": "",
+    "long": ""
+  },
+  "Essenza-1": {
+    "_model": "2020 Lamborghini Essenza SCV12 | 1:22 | Green | Jinlifang",
+    "short": "",
+    "long": ""
+  },
+  "HurEVOAir-1": {
+    "_model": "2020 Lamborghini Huracan EVO Airport | 1:64 | Green | MiniGT",
+    "short": "",
+    "long": ""
+  },
+  "HurEVORWD-1": {
+    "_model": "2020 Lamborghini Huracan EVO RWD | 1:43 | Yellow | Airfix/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurEVORWDSpy-1": {
+    "_model": "2020 Lamborghini Huracan EVO RWD Spyder | 1:43 | Blue | Looksmart",
+    "short": "",
+    "long": ""
+  },
+  "SC20-1": {
+    "_model": "2020 Lamborghini SC20 | 1:43 | White | Looksmart",
+    "short": "",
+    "long": ""
+  },
+  "Sian-1": {
+    "_model": "2020 Lamborghini Sian FKP37 | 1:24 | Green | Maisto",
+    "short": "",
+    "long": ""
+  },
+  "Sian-2": {
+    "_model": "2020 Lamborghini Sian FKP37 | 1:64 | Orange | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Sian-3": {
+    "_model": "2020 Lamborghini Sian FKP37 | 1:64 | Green | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "Sian-4": {
+    "_model": "2020 Lamborghini Sian FKP37 | 1:55 | Blue | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Tractor-6": {
+    "_model": "2020 Lamborghini Spark 165 VRT Tractor | 1:87 | White | Siku/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "AveUlti-1": {
+    "_model": "2021 Lamborghini Aventador LP780-4 Ultimae | 1:64 | White | Hobby Fans",
+    "short": "",
+    "long": ""
+  },
+  "AveUltiRoad-1": {
+    "_model": "2021 Lamborghini Aventador LP780-4 Ultimae Roadster | 1:43 | Blue | Looksmart",
+    "short": "",
+    "long": ""
+  },
+  "CountLPI-1": {
+    "_model": "2021 Lamborghini Countach LPI800-4 | 1:24 | White | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "CountLPI-2": {
+    "_model": "2021 Lamborghini Countach LPI800-4 | 1:38 | Yellow | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "HurSTJ-1": {
+    "_model": "2021 Lamborghini Huracan STJ | 1:64 | Gray | CCA/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "HurSTO-1": {
+    "_model": "2021 Lamborghini Huracan STO | 1:22 | Blue | Jinlifang",
+    "short": "",
+    "long": ""
+  },
+  "HurSTO-2": {
+    "_model": "2021 Lamborghini Huracan STO | 1:40 | Green | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "SianRoad-1": {
+    "_model": "2021 Lamborghini Sian Roadster | 1:32 | Red | Double Horses",
+    "short": "",
+    "long": ""
+  },
+  "HurGT3EVO2-1": {
+    "_model": "2022 Lamborghini Huracan GT3 EVO2 | 1:64 | Green | MiniGT",
+    "short": "",
+    "long": ""
+  },
+  "HurSTEVO2-1": {
+    "_model": "2022 Lamborghini Huracan LP 620-2 Super Trofeo EVO2 | 1:43 | Green | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "HurSterConc-1": {
+    "_model": "2022 Lamborghini Huracan Sterrato | 1:64 | Orange | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "HurSter-2": {
+    "_model": "2022 Lamborghini Huracan Sterrato | 1:64 | Yellow | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "HurSter-1": {
+    "_model": "2022 Lamborghini Huracan Sterrato | 1:64 | White | MiniGT",
+    "short": "",
+    "long": ""
+  },
+  "HurTec-1": {
+    "_model": "2022 Lamborghini Huracan Tecnica | 1:43 | Green | Looksmart",
+    "short": "",
+    "long": ""
+  },
+  "Tractor-5": {
+    "_model": "2022 Lamborghini Mach 250 VRT Tractor | 1:87 | White | Siku/LAMBOMODELS",
+    "short": "",
+    "long": ""
+  },
+  "UrusMansory-1": {
+    "_model": "2022 Lamborghini Urus Mansory Venatus | 1:24 | Black | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "UrusPerf-1": {
+    "_model": "2022 Lamborghini Urus Performante | 1:40 | Yellow | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "UrusS-1": {
+    "_model": "2022 Lamborghini Urus S | 1:40 | Red | Kinsmart",
+    "short": "",
+    "long": ""
+  },
+  "UrusSafe-1": {
+    "_model": "2022 Lamborghini Urus Safety Car | 1:64 | White | MiniGT",
+    "short": "",
+    "long": ""
+  },
+  "Autent-1": {
+    "_model": "2023 Lamborghini Autentica | 1:22 | Green | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "DucatiSF-1": {
+    "_model": "2023 Lamborghini Ducati Streetfighter V4 Lamborghini | 1:12 | Green | Double Horses",
+    "short": "",
+    "long": ""
+  },
+  "Invec-1": {
+    "_model": "2023 Lamborghini Invencible | 1:22 | Red | Unbranded",
+    "short": "",
+    "long": ""
+  },
+  "Lanzad-01": {
+    "_model": "2023 Lamborghini Lanzador | 1:43 | Blue | Looksmart",
+    "short": "",
+    "long": ""
+  },
+  "Revu-1": {
+    "_model": "2023 Lamborghini Revuelto | 1:24 | Orange | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "SC63-1": {
+    "_model": "2023 Lamborghini SC63 | 1:43 | Green | Bburago",
+    "short": "",
+    "long": ""
+  },
+  "Tem-1": {
+    "_model": "2024 Lamborghini Temerario | 1:40 | Blue | MSZ",
+    "short": "",
+    "long": ""
+  },
+  "Tem-2": {
+    "_model": "2024 Lamborghini Temerario | 1:64 | Green | Hot Wheels",
+    "short": "",
+    "long": ""
+  },
+  "UrusSE-1": {
+    "_model": "2024 Lamborghini Urus SE | 1:43 | Orange | Looksmart",
+    "short": "",
+    "long": ""
+  }
+}

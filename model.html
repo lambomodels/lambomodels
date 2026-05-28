@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Model — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page"><div class="container-narrow"><div id="model-root"><div class="loading" style="padding:120px 0;">Loading…</div></div></div></main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();LM.initLightbox();
+const itemId=new URLSearchParams(location.search).get('id')||'';
+
+async function init(){
+  const [data,descs]=await Promise.all([LM.load(),LM.loadDescriptions()]);
+  const item=data.find(i=>i.id===itemId)||data.find(i=>i.code===itemId);
+  if(!item){
+    document.getElementById('model-root').innerHTML=`<div style="padding:120px 0;text-align:center;"><h1 style="font-family:var(--fd);font-weight:900;font-size:2.4rem;color:var(--white);margin-bottom:22px;">Not Found</h1><a href="collection.html" class="btn btn-ghost">← Collection</a></div>`;
+    return;
+  }
+
+  document.title=`${item.fullName||item.displayName} — LAMBOMODELS`;
+  const catMeta=LM.CAT_META[item.category]||{label:'Collection'};
+  const desc=descs[item.code]||descs[item.id]||{};
+  const shortDesc=desc.short||'';
+  const longDesc=desc.long||'';
+  const blocks=desc.blocks||null; // rich content blocks for article-style pages
+
+  // Render a content block (same format as blog)
+  function renderBlock(block){
+    switch(block.type){
+      case 'text':    return `<p>${block.text}</p>`;
+      case 'heading': return `<h3 style="font-family:var(--fd);font-weight:800;font-size:1.5rem;text-transform:uppercase;color:var(--white);margin:2em 0 0.8em;letter-spacing:0.04em;">${block.text}</h3>`;
+      case 'image':   return `<figure style="margin:2em 0;"><img src="${block.src}" alt="${block.caption||''}" style="width:100%;border:1px solid var(--border);cursor:zoom-in;" onclick="LM.openLightbox(['${block.src}'],0)"/>${block.caption?`<figcaption style="font-family:var(--fm);font-size:0.78rem;font-weight:700;color:var(--text-muted);text-align:center;margin-top:8px;letter-spacing:0.1em;">${block.caption}</figcaption>`:''}</figure>`;
+      case 'images':  {
+        const srcs=block.srcs||[];
+        return `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin:2em 0;">${srcs.map((s,i)=>`<img src="${s}" alt="${block.caption||''}" style="width:100%;height:220px;object-fit:cover;border:1px solid var(--border);cursor:zoom-in;" onclick="LM.openLightbox(${JSON.stringify(srcs)},${i})"/>`).join('')}</div>${block.caption?`<div style="font-family:var(--fm);font-size:0.78rem;font-weight:700;color:var(--text-muted);text-align:center;letter-spacing:0.1em;">${block.caption}</div>`:''}`;
+      }
+      case 'quote':   return `<blockquote style="border-left:3px solid var(--yellow);padding:18px 24px;margin:2em 0;background:var(--surface);font-size:1.08rem;font-style:italic;color:var(--text-dim);line-height:1.7;">"${block.text}"${block.author?`<div style="font-family:var(--fm);font-size:0.76rem;font-weight:700;color:var(--text-muted);margin-top:8px;font-style:normal;letter-spacing:0.12em;text-transform:uppercase;">— ${block.author}</div>`:''}</blockquote>`;
+      case 'divider': return `<hr style="border:none;border-top:1px solid var(--border);margin:2.5em 0;"/>`;
+      case 'link':    return `<p><a href="${block.href}" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700;">${block.text||block.href}</a></p>`;
+      default:        return block.text?`<p>${block.text}</p>`:'';
+    }
+  }
+
+  // Render long description or blocks
+  function renderLongContent(){
+    if(blocks&&blocks.length) return blocks.map(renderBlock).join('');
+    if(longDesc){
+      // Support basic HTML in longDesc (links, bold etc.) — render as-is
+      return longDesc.split('\n\n').filter(Boolean).map(para=>`<p>${para.replace(/\n/g,' ')}</p>`).join('');
+    }
+    return null;
+  }
+
+  const longContent=renderLongContent();
+
+  // Siblings for prev/next
+  const siblings=data.filter(i=>i.category===item.category&&i.family===item.family);
+  const idx=siblings.findIndex(i=>i.id===item.id);
+  const prev=siblings[idx-1],next=siblings[idx+1];
+
+  const showPrefix=['production','concepts','oneoffs','racing','trattori','motorcycles'].includes(item.category);
+  const displayFamName=showPrefix?`Lamborghini ${item.family}`:item.family;
+
+  function specLink(key,val){
+    if(!val)return'—';
+    return`<a href="search.html?q=${encodeURIComponent(val)}&filter=${key}">${val}</a>`;
+  }
+
+  const specsHTML=[
+    {l:'Car Year',v:item.carYear?`<a href="search.html?q=${encodeURIComponent(item.carYear)}&filter=carYear" class="spec-year-link">${item.carYear}</a>`:null},
+    {l:'Scale',v:item.scale?specLink('scale',item.scale):null},
+    {l:'Color',v:item.color?specLink('color',item.color):null},
+    {l:'Maker',v:item.manufacturer?specLink('manufacturer',item.manufacturer):null},
+    {l:'Year Added',v:item.year?`<a href="search.html?q=${encodeURIComponent(item.year)}&filter=yearAdded">${item.year}</a>`:null},
+    {l:'Price',v:item.price&&item.price!=='-'&&item.price!=='X'?item.price:null},
+    {l:'Code',v:item.code||null},
+    {l:'Category',v:`<a href="collection.html#${item.category}">${catMeta.label}</a>`},
+  ].filter(s=>s.v).map(s=>`<div class="spec"><div class="spec-label">${s.l}</div><div class="spec-val">${s.v}</div></div>`).join('');
+
+  // Tags — use shared helper
+  const tagsHTML = LM.renderTags(item, './');
+
+  const root=document.getElementById('model-root');
+  root.innerHTML=`
+    <div style="padding:52px 0 32px;">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><sep>/</sep>
+        <a href="collection.html">Collection</a><sep>/</sep>
+        <a href="collection.html#${item.category}">${catMeta.label}</a><sep>/</sep>
+        <a href="model-group.html?cat=${item.category}&fam=${encodeURIComponent(item.family)}">${displayFamName}</a><sep>/</sep>
+        <span>${item.fullName||item.displayName}</span>
+      </div>
+
+      <!-- Header row: text left, no-bg hero image right -->
+      <div class="model-header-row">
+        <div class="model-header-text">
+          ${item.carYear?`<div class="model-year-badge">${item.carYear}</div>`:''}
+          <h1 class="model-title">${item.fullName||item.displayName}</h1>
+          ${tagsHTML?`<div style="display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px;">${tagsHTML}</div>`:''}
+          ${item.showNote&&item.notes?`<div class="notes-pill">${item.notes}</div>`:''}
+        </div>
+        <div class="model-hero-thumb" id="hero-thumb-wrap" style="display:none;">
+          <!-- filled by JS with no-bg image -->
+        </div>
+      </div>
+
+      ${shortDesc?`<div class="model-short-desc">${shortDesc.split('\n').filter(Boolean).map(p=>`<p>${p}</p>`).join('')}</div>`:''}
+
+      <div class="specs-row">${specsHTML}</div>
+    </div>
+
+    <div id="gallery-section" style="margin-bottom:52px;">
+      <div class="inline-label" style="margin-bottom:16px;">Photos</div>
+      <div id="gallery-main-wrap" style="display:none;">
+        <div class="gallery-hero" id="gallery-main"></div>
+        <div class="gallery-thumbs" id="gallery-thumbs"></div>
+      </div>
+      <div id="gallery-none" style="display:none;"></div>
+    </div>
+
+    ${longContent?`<div class="divider"></div>
+    <div class="model-long-desc">
+      <h2>About the ${item.fullName||item.displayName}</h2>
+      <div class="model-long-body">${longContent}</div>
+    </div>`:''}
+
+    <div class="model-nav">
+      ${prev?`<a href="model.html?id=${encodeURIComponent(prev.id)}">← ${prev.fullName||prev.displayName}</a>`:'<span></span>'}
+      <a href="model-group.html?cat=${item.category}&fam=${encodeURIComponent(item.family)}">↑ All ${displayFamName}</a>
+      ${next?`<a href="model.html?id=${encodeURIComponent(next.id)}">${next.fullName||next.displayName} →</a>`:'<span></span>'}
+    </div>`;
+
+  // Header thumb: no-bg image (CODE.png) shown next to title only
+  const heroSrc=await LM.resolveImage(LM.heroImages(item.code,'./'));
+  if(heroSrc){
+    const wrap=document.getElementById('hero-thumb-wrap');
+    if(wrap){
+      wrap.style.display='flex';
+      const im=document.createElement('img');
+      im.src=heroSrc;im.alt=item.displayName;
+      im.style.cssText='max-width:100%;max-height:100%;object-fit:contain;padding:12px;';
+      // Force visible even if lazy observer hasn't run
+      im.onload=()=>im.style.opacity='1';
+      im.style.opacity='1';
+      wrap.appendChild(im);
+    }
+  }
+
+  // Gallery: ONLY numbered images (CODE_1.jpg, CODE_2.jpg, etc.) — NOT the no-bg
+  const galleryImgs=await LM.probeGallery(item.code,'./');
+
+  if(!galleryImgs.length){
+    document.getElementById('gallery-none').style.display='block';
+  } else {
+    const mainWrap=document.getElementById('gallery-main-wrap');mainWrap.style.display='block';
+    const mainEl=document.getElementById('gallery-main');
+    const thumbEl=document.getElementById('gallery-thumbs');
+
+    const mainImg=document.createElement('img');
+    mainImg.id='gal-main-img';mainImg.src=galleryImgs[0];mainImg.alt=item.displayName;
+    mainImg.style.opacity='1';
+    mainEl.appendChild(mainImg);
+    mainEl.onclick=()=>LM.openLightbox(galleryImgs,0);
+
+    if(galleryImgs.length>1){
+      galleryImgs.forEach((src,i)=>{
+        const img=document.createElement('img');
+        img.className='gallery-thumb'+(i===0?' active':'');
+        img.src=src;img.alt=`Photo ${i+1}`;
+        img.style.opacity='1'; // always visible
+        img.onclick=()=>{
+          document.getElementById('gal-main-img').src=src;
+          document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));
+          img.classList.add('active');
+          mainEl.onclick=()=>LM.openLightbox(galleryImgs,i);
+        };
+        thumbEl.appendChild(img);
+      });
+    } else {
+      thumbEl.style.display='none';
+    }
+  }
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

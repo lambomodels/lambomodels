@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>LAMBOMODELS — The Lamborghini Model Collection</title>
+<meta name="description" content="A dedicated catalogue of 320+ Lamborghini scale model cars spanning every era from 1963 to the present. Every model, every brand, every scale."/>
+<meta name="keywords" content="Lamborghini scale models, Lamborghini diecast, Lamborghini collection, Lamborghini model cars, Aventador model, Huracán model, Countach model, Lamborghini collector"/>
+<meta name="author" content="LAMBOMODELS"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.lambomodels.com/"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.lambomodels.com/"/>
+<meta property="og:title" content="LAMBOMODELS — The Lamborghini Model Collection"/>
+<meta property="og:description" content="A dedicated catalogue of 320+ Lamborghini scale model cars spanning every era from 1963 to the present."/>
+<meta property="og:image" content="https://www.lambomodels.com/images/lambomodels-logo.png"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@lambomodels"/>
+<meta name="twitter:title" content="LAMBOMODELS — The Lamborghini Model Collection"/>
+<meta name="twitter:description" content="320+ Lamborghini scale models. Every era from 1963 to present."/>
+<meta name="twitter:image" content="https://www.lambomodels.com/images/lambomodels-logo.png"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+
+<!-- HERO -->
+<section class="hero" id="hero-section">
+  <div class="hero-radial"></div>
+  <div class="hex-bg"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="hex" x="0" y="0" width="56" height="97" patternUnits="userSpaceOnUse"><polygon points="28,2 54,16 54,48 28,62 2,48 2,16" fill="none" stroke="#fdc30d" stroke-width="0.7"/><polygon points="28,35 54,49 54,81 28,95 2,81 2,49" fill="none" stroke="#fdc30d" stroke-width="0.7"/></pattern></defs><rect width="100%" height="100%" fill="url(#hex)"/></svg></div>
+  <div class="hero-watermark" id="hero-wm">320</div>
+
+  <!-- DESKTOP latest card: position:absolute inside hero, top-right, hidden on tablet/mobile via CSS -->
+  <a id="latest-card-desktop" href="#" style="display:none;position:absolute;right:0;top:80px;text-decoration:none;width:280px;z-index:5;">
+    <div class="latest-card-img" id="lcd-img" style="background:var(--dark);display:flex;align-items:center;justify-content:center;"></div>
+    <div class="latest-card-body">
+      <div class="latest-card-label">Latest Addition</div>
+      <div class="latest-card-name" id="lcd-name"></div>
+      <div class="latest-card-sub" id="lcd-sub"></div>
+      <div class="latest-card-link">View →</div>
+    </div>
+  </a>
+
+  <div class="container hero-content">
+    <div class="eyebrow fade-up" style="font-size:1.1rem;font-weight:800;">The Lamborghini Model Collection</div>
+
+    <div class="hero-logo-title fade-up d1">
+      <img src="images/lambomodels-logo.png" alt="LAMBOMODELS" class="hero-title-logo"
+        onload="this.style.opacity='1';document.getElementById('hero-title-text').style.display='none'"
+        onerror="this.style.display='none';document.getElementById('hero-title-text').style.display='block'"
+        style="opacity:0;transition:opacity 0.4s;display:block"/>
+      <h1 class="hero-title" id="hero-title-text" style="display:none">LAMBO<em>MODELS</em></h1>
+    </div>
+
+    <p class="hero-desc fade-up d2">Every scale. Every era. Every brand that ever carried the raging bull. <span id="hero-count">320</span> models and counting.</p>
+
+    <div class="hero-stats fade-up d2">
+      <div><div class="hstat-num" id="hs-total">–</div><div class="hstat-label">Total Models</div></div>
+      <div><div class="hstat-num" id="hs-unique">–</div><div class="hstat-label">Unique Models</div></div>
+      <div><div class="hstat-num" id="hs-mfr">–</div><div class="hstat-label">Manufacturers</div></div>
+      <div><div class="hstat-num" id="hs-scales">–</div><div class="hstat-label">Scales</div></div>
+    </div>
+
+    <div class="hero-cta fade-up d3">
+      <a class="btn btn-primary" href="collection.html">Browse Collection →</a>
+      <a class="btn btn-ghost" href="stats.html">Statistics</a>
+      <button class="btn btn-ghost" onclick="goRandom()">🎲 Random</button>
+    </div>
+  </div>
+</section>
+
+<!-- TABLET/MOBILE latest card: static block below hero, hidden on desktop via CSS -->
+<a id="latest-card-mobile" href="#" style="display:none;text-decoration:none;width:100%;flex-direction:row;border-bottom:1px solid var(--border);">
+  <div class="latest-card-img" id="lcm-img" style="width:130px;flex-shrink:0;background:var(--dark);display:flex;align-items:center;justify-content:center;"></div>
+  <div class="latest-card-body" style="flex:1;">
+    <div class="latest-card-label">Latest Addition</div>
+    <div class="latest-card-name" id="lcm-name"></div>
+    <div class="latest-card-sub" id="lcm-sub"></div>
+    <div class="latest-card-link">View →</div>
+  </div>
+</a>
+
+<!-- WALL PHOTO — click to expand, add images/lamborghini-wall.jpg -->
+<div class="wall-photo-section" id="wall-section">
+  <img src="images/lamborghini-wall.jpg" alt="The Lamborghini Collection — all shelves" loading="lazy"
+    onload="this.classList.add('loaded')"
+    onerror="document.getElementById('wall-section').style.display='none'"/>
+</div>
+
+<!-- CATEGORIES -->
+<section style="padding:80px 0 88px;">
+  <div class="container">
+    <div class="section-header" style="padding-top:0;">
+      <div class="eyebrow">Browse by Category</div>
+      <h2 class="section-title">The <span>Collection</span></h2>
+    </div>
+    <div class="cat-grid" id="cat-grid"><div class="loading">Loading…</div></div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:56px 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" id="about-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;">About the Collection</div>
+        <p style="color:var(--text-dim);line-height:1.78;font-size:1.08rem;margin-bottom:16px;">What started as a childhood fascination became something considerably more serious. This collection spans everything connected to the Lamborghini name — production cars, concepts, tractors, motorcycles, race cars, and the brands that share the Lamborghini DNA.</p>
+        <a href="about.html" class="btn btn-ghost" style="margin-top:10px;">About →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);" id="about-nums"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section style="padding:80px 0 88px;">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px;">
+      <div><div class="eyebrow">From the Blog</div><h2 class="section-title" style="font-size:clamp(2rem,4vw,3.4rem);">Latest <span>Posts</span></h2></div>
+      <a href="blog.html" class="btn btn-ghost">All Posts →</a>
+    </div>
+    <div class="blog-grid" id="blog-preview"></div>
+  </div>
+</section>
+</main>
+
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script src="js/blog-data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();LM.initLightbox();
+
+function goRandom(){
+  const d=window._LM_DATA||(LM._data||[]);
+  if(!d.length)return;
+  const item=d[Math.floor(Math.random()*d.length)];
+  location.href='model.html?id='+encodeURIComponent(item.id);
+}
+
+async function init(){
+  const [data,cfg]=await Promise.all([LM.load(),LM.loadConfig()]);
+  window._LM_DATA=data;
+  const s=LM.stats();
+  document.getElementById('hero-wm').textContent=s.total;
+  document.getElementById('hero-count').textContent=s.total;
+  document.getElementById('hs-total').textContent=s.total;
+  document.getElementById('hs-unique').textContent=s.byModel.length;
+  document.getElementById('hs-mfr').textContent=s.uniqueManufacturers;
+  document.getElementById('hs-scales').textContent=s.uniqueScales;
+
+  // Latest addition — populate both the desktop card (inside hero) and mobile card (below hero)
+  const latest=cfg.latestAddition?LM.byCode(cfg.latestAddition):null;
+  if(latest){
+    const href='model.html?id='+encodeURIComponent(latest.id);
+    const name=latest.fullName||latest.displayName;
+    const sub=[latest.manufacturer,latest.scale,latest.year].filter(Boolean).join(' · ');
+
+    // Desktop card
+    const dCard=document.getElementById('latest-card-desktop');
+    dCard.href=href; dCard.style.display='flex';
+    document.getElementById('lcd-name').textContent=name;
+    document.getElementById('lcd-sub').textContent=sub;
+
+    // Mobile card
+    const mCard=document.getElementById('latest-card-mobile');
+    mCard.href=href;
+    document.getElementById('lcm-name').textContent=name;
+    document.getElementById('lcm-sub').textContent=sub;
+
+    // Load image into both
+    LM.resolveImage(LM.heroImages(latest.code,'./')).then(src=>{
+      if(!src)return;
+      ['lcd-img','lcm-img'].forEach(id=>{
+        const w=document.getElementById(id);
+        if(!w)return;
+        const im=document.createElement('img');
+        im.src=src;im.alt=name;
+        im.style.cssText='max-width:100%;max-height:100%;object-fit:contain;padding:10px;opacity:1;';
+        w.appendChild(im);
+      });
+    });
+  }
+
+  // Category cards
+  const catCnt={};data.forEach(i=>{catCnt[i.category]=(catCnt[i.category]||0)+1;});
+  const grid=document.getElementById('cat-grid');grid.innerHTML='';
+  for(const catId of LM.CAT_ORDER){
+    const meta=LM.CAT_META[catId],cnt=catCnt[catId]||0;if(!cnt)continue;
+    const card=document.createElement('a');card.className='cat-card';card.href='collection.html#'+catId;
+    card.innerHTML=`<div class="cat-card-img" id="catimg-${catId}"><div class="cat-card-img-ph">${meta.label}</div></div>
+      <div class="cat-card-body">
+        <div class="cat-card-count">${cnt} model${cnt!==1?'s':''}</div>
+        <div class="cat-card-title">${meta.label}</div>
+        <div class="cat-card-desc">${meta.desc}</div>
+      </div>`;
+    grid.appendChild(card);
+    LM.resolveImage(LM.previewImages(catId,'./')).then(src=>{
+      if(!src)return;const w=document.getElementById('catimg-'+catId);
+      if(w)w.innerHTML=`<img src="${src}" alt="${meta.label}" loading="lazy"/>`;
+    });
+  }
+
+  // About numbers
+  document.getElementById('about-nums').innerHTML=[
+    {n:s.total,l:'Scale Models'},{n:s.byModel.length,l:'Unique Models'},
+    {n:s.uniqueManufacturers,l:'Manufacturers'},{n:s.uniqueScales,l:'Scales'},
+  ].map(i=>`<div style="background:var(--dark);padding:28px;">
+    <div style="font-family:var(--fd);font-weight:900;font-size:2.6rem;color:var(--yellow);line-height:1;">${i.n}</div>
+    <div style="font-family:var(--fm);font-size:0.86rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-top:6px;">${i.l}</div>
+  </div>`).join('');
+
+  // Blog preview - auto-load images by post ID
+  const posts=(window.BLOG_POSTS||[]).slice(0,3);
+  const blogEl=document.getElementById('blog-preview');
+  if(!posts.length){
+    blogEl.innerHTML=`<div style="color:var(--text-muted);font-family:var(--fm);font-size:0.9rem;letter-spacing:0.1em;">No posts yet — edit js/blog-data.js to add articles.</div>`;
+  } else {
+    blogEl.innerHTML='';
+    for(const p of posts){
+      const card=document.createElement('a');card.className='blog-card';card.href=`blog-post.html?id=${p.id}`;
+      const imgSrc=await LM.resolveImage(['png','jpg','webp'].map(e=>`images/blog-${p.id}.${e}`));
+      card.innerHTML=`<div class="blog-card-img">${imgSrc?`<img src="${imgSrc}" alt="${p.title}" loading="lazy"/>`:`<div class="blog-card-img-ph">${p.emoji||'📝'}</div>`}</div>
+        <div class="blog-card-body"><div class="blog-card-date">${p.date}</div><div class="blog-card-title">${p.title}</div><div class="blog-card-excerpt">${p.excerpt}</div><div class="blog-card-link">Read More →</div></div>`;
+      blogEl.appendChild(card);
+    }
+  }
+  // Init lazy images and wall photo
+  setTimeout(()=>{ LM.initLazyImages(); LM.initWallPhoto(); }, 100);
+}
+init().catch(console.error);
+</script>
+</body>
+</html>

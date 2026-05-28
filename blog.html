@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Blog — LAMBOMODELS</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<main class="page">
+<div class="container">
+  <div class="section-header"><div class="eyebrow">LAMBOMODELS</div><h1 class="section-title">The <span>Blog</span></h1></div>
+  <div class="blog-grid" id="blog-root"><div class="loading">Loading…</div></div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="js/data.js"></script>
+<script src="js/blog-data.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML=LM.navHTML('./');
+document.getElementById('footer-root').innerHTML=LM.footerHTML('./');
+LM.markActiveNav();LM.initHamburger();LM.initSearch();
+const posts=window.BLOG_POSTS||[];
+const root=document.getElementById('blog-root');
+async function renderBlog(){
+  if(!posts.length){root.innerHTML=`<div class="empty"><p>No posts yet. Edit js/blog-data.js to add articles.</p></div>`;return;}
+  root.innerHTML='';
+  for(const p of posts){
+    const card=document.createElement('a');card.className='blog-card';card.href=`blog-post.html?id=${p.id}`;
+    const imgSrc=await LM.resolveImage(['png','jpg','webp'].map(e=>`images/blog-${p.id}.${e}`));
+    card.innerHTML=`
+      <div class="blog-card-img">${imgSrc?`<img src="${imgSrc}" alt="${p.title}" loading="lazy"/>`:`<div class="blog-card-img-ph">${p.emoji||'📝'}</div>`}</div>
+      <div class="blog-card-body"><div class="blog-card-date">${p.date}</div><div class="blog-card-title">${p.title}</div><div class="blog-card-excerpt">${p.excerpt}</div><div class="blog-card-link">Read More →</div></div>`;
+    root.appendChild(card);
+  }
+}
+renderBlog();
+</script>
+</body>
+</html>
