@@ -480,12 +480,6 @@ LM.renderTags = function(item, base) {
   return tags.join('');
 };
 
-    const lbl = LM.milestoneLabel[item.milestone] || item.milestone;
-    tags.push(`<a class="tag ${cls}" href="${base}search.html?q=${encodeURIComponent(item.milestone)}&filter=milestone">${lbl}</a>`);
-  }
-  return tags.join('');
-};
-
 // ── IMAGES ───────────────────────────────────────────────────
 LM.heroImages    = (code,base)=>{ if(!code)return[]; base=base||LM.basePath(); return ['png','jpg','webp'].map(e=>base+'images/'+code+'.'+e); };
 LM.previewImages = (key,base) =>{ base=base||LM.basePath(); const s=slug(key); return ['png','jpg','webp'].map(e=>base+'images/preview-'+s+'.'+e); };
