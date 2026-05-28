@@ -564,6 +564,10 @@ function getBase(){
   return path.substring(0,path.lastIndexOf('/')+1);
 }
 
+
+LM.initSearch=function(){ document.querySelectorAll('.search-input').forEach(inp=>inp.addEventListener('keydown',e=>{ if(e.key==='Enter'){const q=inp.value.trim();if(q)location.href=LM.basePath()+'search.html?q='+encodeURIComponent(q);} })); document.querySelectorAll('.search-submit').forEach(b=>b.addEventListener('click',()=>{ const inp=b.closest('.nav-search,.mobile-search')?.querySelector('input'); const q=inp?.value?.trim(); if(q)location.href=LM.basePath()+'search.html?q='+encodeURIComponent(q); })); };
+
+LM.basePath=getBase;
 // ── LIGHTBOX ──────────────────────────────────────────────────
 LM.initLightbox=function(){ if(document.getElementById('lm-lb'))return; const el=document.createElement('div');el.id='lm-lb';el.innerHTML=`<button class="lb-close">✕</button><button class="lb-prev">‹</button><div class="lb-img-wrap"><img id="lb-img" src="" alt=""/></div><button class="lb-next">›</button><div class="lb-counter" id="lb-counter"></div>`; document.body.appendChild(el); el.addEventListener('click',e=>{if(e.target===el)LM.closeLightbox();}); el.querySelector('.lb-close').onclick=LM.closeLightbox; el.querySelector('.lb-prev').onclick=()=>LM.lightboxStep(-1); el.querySelector('.lb-next').onclick=()=>LM.lightboxStep(1); document.addEventListener('keydown',e=>{if(!document.getElementById('lm-lb').classList.contains('open'))return;if(e.key==='Escape')LM.closeLightbox();if(e.key==='ArrowLeft')LM.lightboxStep(-1);if(e.key==='ArrowRight')LM.lightboxStep(1);}); };
 LM._lbImgs=[];LM._lbIdx=0;
