@@ -568,11 +568,11 @@ LM.initWallPhoto = function() {
 };
 
 // ── PATH / NAV ────────────────────────────────────────────────
-function getBase(){ const segs=window.location.pathname.split('/').filter(Boolean); return segs.length?'../'.repeat(segs.length):'./'; }
-LM.basePath=getBase;
-LM.markActiveNav=function(){ const cur=window.location.pathname.split('/').pop().replace('.html','')||'index'; document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(a=>{ const p=(a.getAttribute('href')||'').split('/').pop().replace('.html','')||'index'; a.classList.toggle('active',p===cur); }); };
-LM.initHamburger=function(){ const b=document.querySelector('.hamburger'),m=document.querySelector('.mobile-menu'); if(!b||!m)return; b.addEventListener('click',()=>{ const o=m.classList.toggle('open'); document.body.style.overflow=o?'hidden':''; }); };
-LM.initSearch=function(){ document.querySelectorAll('.search-input').forEach(inp=>inp.addEventListener('keydown',e=>{ if(e.key==='Enter'){const q=inp.value.trim();if(q)location.href=LM.basePath()+'search.html?q='+encodeURIComponent(q);} })); document.querySelectorAll('.search-submit').forEach(b=>b.addEventListener('click',()=>{ const inp=b.closest('.nav-search,.mobile-search')?.querySelector('input'); const q=inp?.value?.trim(); if(q)location.href=LM.basePath()+'search.html?q='+encodeURIComponent(q); })); };
+function getBase(){
+  const path=window.location.pathname;
+  // Find the last slash and return everything up to and including it
+  return path.substring(0,path.lastIndexOf('/')+1);
+}
 
 // ── LIGHTBOX ──────────────────────────────────────────────────
 LM.initLightbox=function(){ if(document.getElementById('lm-lb'))return; const el=document.createElement('div');el.id='lm-lb';el.innerHTML=`<button class="lb-close">✕</button><button class="lb-prev">‹</button><div class="lb-img-wrap"><img id="lb-img" src="" alt=""/></div><button class="lb-next">›</button><div class="lb-counter" id="lb-counter"></div>`; document.body.appendChild(el); el.addEventListener('click',e=>{if(e.target===el)LM.closeLightbox();}); el.querySelector('.lb-close').onclick=LM.closeLightbox; el.querySelector('.lb-prev').onclick=()=>LM.lightboxStep(-1); el.querySelector('.lb-next').onclick=()=>LM.lightboxStep(1); document.addEventListener('keydown',e=>{if(!document.getElementById('lm-lb').classList.contains('open'))return;if(e.key==='Escape')LM.closeLightbox();if(e.key==='ArrowLeft')LM.lightboxStep(-1);if(e.key==='ArrowRight')LM.lightboxStep(1);}); };
